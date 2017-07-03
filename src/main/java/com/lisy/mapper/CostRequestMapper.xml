@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lisy.dao.CostRequestMapper">
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostRequest">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="requestMonth" jdbcType="TIMESTAMP" property="requestMonth" />
+    <result column="companyId" jdbcType="BIGINT" property="companyId" />
+    <result column="breedId" jdbcType="BIGINT" property="breedId" />
+    <result column="hospitalId" jdbcType="BIGINT" property="hospitalId" />
+    <result column="targetDeptId" jdbcType="BIGINT" property="targetDeptId" />
+    <result column="requestFee" jdbcType="DECIMAL" property="requestFee" />
+    <result column="requestRemark" jdbcType="VARCHAR" property="requestRemark" />
+    <result column="proposerId" jdbcType="BIGINT" property="proposerId" />
+    <result column="deptId" jdbcType="BIGINT" property="deptId" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostRequest">
+    insert into cost_request (id, requestMonth, companyId, 
+      breedId, hospitalId, targetDeptId, 
+      requestFee, requestRemark, proposerId, 
+      deptId, status)
+    values (#{id,jdbcType=BIGINT}, #{requestMonth,jdbcType=TIMESTAMP}, #{companyId,jdbcType=BIGINT}, 
+      #{breedId,jdbcType=BIGINT}, #{hospitalId,jdbcType=BIGINT}, #{targetDeptId,jdbcType=BIGINT}, 
+      #{requestFee,jdbcType=DECIMAL}, #{requestRemark,jdbcType=VARCHAR}, #{proposerId,jdbcType=BIGINT}, 
+      #{deptId,jdbcType=BIGINT}, #{status,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostRequest">
+    insert into cost_request
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="requestMonth != null">
+        requestMonth,
+      </if>
+      <if test="companyId != null">
+        companyId,
+      </if>
+      <if test="breedId != null">
+        breedId,
+      </if>
+      <if test="hospitalId != null">
+        hospitalId,
+      </if>
+      <if test="targetDeptId != null">
+        targetDeptId,
+      </if>
+      <if test="requestFee != null">
+        requestFee,
+      </if>
+      <if test="requestRemark != null">
+        requestRemark,
+      </if>
+      <if test="proposerId != null">
+        proposerId,
+      </if>
+      <if test="deptId != null">
+        deptId,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="requestMonth != null">
+        #{requestMonth,jdbcType=TIMESTAMP},
+      </if>
+      <if test="companyId != null">
+        #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="breedId != null">
+        #{breedId,jdbcType=BIGINT},
+      </if>
+      <if test="hospitalId != null">
+        #{hospitalId,jdbcType=BIGINT},
+      </if>
+      <if test="targetDeptId != null">
+        #{targetDeptId,jdbcType=BIGINT},
+      </if>
+      <if test="requestFee != null">
+        #{requestFee,jdbcType=DECIMAL},
+      </if>
+      <if test="requestRemark != null">
+        #{requestRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="proposerId != null">
+        #{proposerId,jdbcType=BIGINT},
+      </if>
+      <if test="deptId != null">
+        #{deptId,jdbcType=BIGINT},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostRequest">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="requestMonth" jdbcType="TIMESTAMP" property="requestMonth" />
+    <result column="companyId" jdbcType="BIGINT" property="companyId" />
+    <result column="breedId" jdbcType="BIGINT" property="breedId" />
+    <result column="hospitalId" jdbcType="BIGINT" property="hospitalId" />
+    <result column="targetDeptId" jdbcType="BIGINT" property="targetDeptId" />
+    <result column="requestFee" jdbcType="DECIMAL" property="requestFee" />
+    <result column="requestRemark" jdbcType="VARCHAR" property="requestRemark" />
+    <result column="proposerId" jdbcType="BIGINT" property="proposerId" />
+    <result column="deptId" jdbcType="BIGINT" property="deptId" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostRequest">
+    insert into cost_request (id, requestMonth, companyId, 
+      breedId, hospitalId, targetDeptId, 
+      requestFee, requestRemark, proposerId, 
+      deptId, status)
+    values (#{id,jdbcType=BIGINT}, #{requestMonth,jdbcType=TIMESTAMP}, #{companyId,jdbcType=BIGINT}, 
+      #{breedId,jdbcType=BIGINT}, #{hospitalId,jdbcType=BIGINT}, #{targetDeptId,jdbcType=BIGINT}, 
+      #{requestFee,jdbcType=DECIMAL}, #{requestRemark,jdbcType=VARCHAR}, #{proposerId,jdbcType=BIGINT}, 
+      #{deptId,jdbcType=BIGINT}, #{status,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostRequest">
+    insert into cost_request
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="requestMonth != null">
+        requestMonth,
+      </if>
+      <if test="companyId != null">
+        companyId,
+      </if>
+      <if test="breedId != null">
+        breedId,
+      </if>
+      <if test="hospitalId != null">
+        hospitalId,
+      </if>
+      <if test="targetDeptId != null">
+        targetDeptId,
+      </if>
+      <if test="requestFee != null">
+        requestFee,
+      </if>
+      <if test="requestRemark != null">
+        requestRemark,
+      </if>
+      <if test="proposerId != null">
+        proposerId,
+      </if>
+      <if test="deptId != null">
+        deptId,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="requestMonth != null">
+        #{requestMonth,jdbcType=TIMESTAMP},
+      </if>
+      <if test="companyId != null">
+        #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="breedId != null">
+        #{breedId,jdbcType=BIGINT},
+      </if>
+      <if test="hospitalId != null">
+        #{hospitalId,jdbcType=BIGINT},
+      </if>
+      <if test="targetDeptId != null">
+        #{targetDeptId,jdbcType=BIGINT},
+      </if>
+      <if test="requestFee != null">
+        #{requestFee,jdbcType=DECIMAL},
+      </if>
+      <if test="requestRemark != null">
+        #{requestRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="proposerId != null">
+        #{proposerId,jdbcType=BIGINT},
+      </if>
+      <if test="deptId != null">
+        #{deptId,jdbcType=BIGINT},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostRequest">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="requestMonth" jdbcType="TIMESTAMP" property="requestMonth" />
+    <result column="companyId" jdbcType="BIGINT" property="companyId" />
+    <result column="breedId" jdbcType="BIGINT" property="breedId" />
+    <result column="hospitalId" jdbcType="BIGINT" property="hospitalId" />
+    <result column="targetDeptId" jdbcType="BIGINT" property="targetDeptId" />
+    <result column="requestFee" jdbcType="DECIMAL" property="requestFee" />
+    <result column="requestRemark" jdbcType="VARCHAR" property="requestRemark" />
+    <result column="proposerId" jdbcType="BIGINT" property="proposerId" />
+    <result column="deptId" jdbcType="BIGINT" property="deptId" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostRequest">
+    insert into cost_request (id, requestMonth, companyId, 
+      breedId, hospitalId, targetDeptId, 
+      requestFee, requestRemark, proposerId, 
+      deptId, status)
+    values (#{id,jdbcType=BIGINT}, #{requestMonth,jdbcType=TIMESTAMP}, #{companyId,jdbcType=BIGINT}, 
+      #{breedId,jdbcType=BIGINT}, #{hospitalId,jdbcType=BIGINT}, #{targetDeptId,jdbcType=BIGINT}, 
+      #{requestFee,jdbcType=DECIMAL}, #{requestRemark,jdbcType=VARCHAR}, #{proposerId,jdbcType=BIGINT}, 
+      #{deptId,jdbcType=BIGINT}, #{status,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostRequest">
+    insert into cost_request
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="requestMonth != null">
+        requestMonth,
+      </if>
+      <if test="companyId != null">
+        companyId,
+      </if>
+      <if test="breedId != null">
+        breedId,
+      </if>
+      <if test="hospitalId != null">
+        hospitalId,
+      </if>
+      <if test="targetDeptId != null">
+        targetDeptId,
+      </if>
+      <if test="requestFee != null">
+        requestFee,
+      </if>
+      <if test="requestRemark != null">
+        requestRemark,
+      </if>
+      <if test="proposerId != null">
+        proposerId,
+      </if>
+      <if test="deptId != null">
+        deptId,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="requestMonth != null">
+        #{requestMonth,jdbcType=TIMESTAMP},
+      </if>
+      <if test="companyId != null">
+        #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="breedId != null">
+        #{breedId,jdbcType=BIGINT},
+      </if>
+      <if test="hospitalId != null">
+        #{hospitalId,jdbcType=BIGINT},
+      </if>
+      <if test="targetDeptId != null">
+        #{targetDeptId,jdbcType=BIGINT},
+      </if>
+      <if test="requestFee != null">
+        #{requestFee,jdbcType=DECIMAL},
+      </if>
+      <if test="requestRemark != null">
+        #{requestRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="proposerId != null">
+        #{proposerId,jdbcType=BIGINT},
+      </if>
+      <if test="deptId != null">
+        #{deptId,jdbcType=BIGINT},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostRequest">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="requestMonth" jdbcType="TIMESTAMP" property="requestmonth" />
+    <result column="companyId" jdbcType="BIGINT" property="companyid" />
+    <result column="breedId" jdbcType="BIGINT" property="breedid" />
+    <result column="hospitalId" jdbcType="BIGINT" property="hospitalid" />
+    <result column="targetDeptId" jdbcType="BIGINT" property="targetdeptid" />
+    <result column="requestFee" jdbcType="DECIMAL" property="requestfee" />
+    <result column="requestRemark" jdbcType="VARCHAR" property="requestremark" />
+    <result column="proposerId" jdbcType="BIGINT" property="proposerid" />
+    <result column="deptId" jdbcType="BIGINT" property="deptid" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostRequest">
+    insert into cost_request (id, requestMonth, companyId, 
+      breedId, hospitalId, targetDeptId, 
+      requestFee, requestRemark, proposerId, 
+      deptId, status)
+    values (#{id,jdbcType=BIGINT}, #{requestmonth,jdbcType=TIMESTAMP}, #{companyid,jdbcType=BIGINT}, 
+      #{breedid,jdbcType=BIGINT}, #{hospitalid,jdbcType=BIGINT}, #{targetdeptid,jdbcType=BIGINT}, 
+      #{requestfee,jdbcType=DECIMAL}, #{requestremark,jdbcType=VARCHAR}, #{proposerid,jdbcType=BIGINT}, 
+      #{deptid,jdbcType=BIGINT}, #{status,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostRequest">
+    insert into cost_request
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="requestmonth != null">
+        requestMonth,
+      </if>
+      <if test="companyid != null">
+        companyId,
+      </if>
+      <if test="breedid != null">
+        breedId,
+      </if>
+      <if test="hospitalid != null">
+        hospitalId,
+      </if>
+      <if test="targetdeptid != null">
+        targetDeptId,
+      </if>
+      <if test="requestfee != null">
+        requestFee,
+      </if>
+      <if test="requestremark != null">
+        requestRemark,
+      </if>
+      <if test="proposerid != null">
+        proposerId,
+      </if>
+      <if test="deptid != null">
+        deptId,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="requestmonth != null">
+        #{requestmonth,jdbcType=TIMESTAMP},
+      </if>
+      <if test="companyid != null">
+        #{companyid,jdbcType=BIGINT},
+      </if>
+      <if test="breedid != null">
+        #{breedid,jdbcType=BIGINT},
+      </if>
+      <if test="hospitalid != null">
+        #{hospitalid,jdbcType=BIGINT},
+      </if>
+      <if test="targetdeptid != null">
+        #{targetdeptid,jdbcType=BIGINT},
+      </if>
+      <if test="requestfee != null">
+        #{requestfee,jdbcType=DECIMAL},
+      </if>
+      <if test="requestremark != null">
+        #{requestremark,jdbcType=VARCHAR},
+      </if>
+      <if test="proposerid != null">
+        #{proposerid,jdbcType=BIGINT},
+      </if>
+      <if test="deptid != null">
+        #{deptid,jdbcType=BIGINT},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostRequest">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="requestMonth" jdbcType="TIMESTAMP" property="requestmonth" />
+    <result column="companyId" jdbcType="BIGINT" property="companyid" />
+    <result column="breedId" jdbcType="BIGINT" property="breedid" />
+    <result column="hospitalId" jdbcType="BIGINT" property="hospitalid" />
+    <result column="targetDeptId" jdbcType="BIGINT" property="targetdeptid" />
+    <result column="requestFee" jdbcType="DECIMAL" property="requestfee" />
+    <result column="requestRemark" jdbcType="VARCHAR" property="requestremark" />
+    <result column="proposerId" jdbcType="BIGINT" property="proposerid" />
+    <result column="deptId" jdbcType="BIGINT" property="deptid" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostRequest">
+    insert into cost_request (id, requestMonth, companyId, 
+      breedId, hospitalId, targetDeptId, 
+      requestFee, requestRemark, proposerId, 
+      deptId, status)
+    values (#{id,jdbcType=BIGINT}, #{requestmonth,jdbcType=TIMESTAMP}, #{companyid,jdbcType=BIGINT}, 
+      #{breedid,jdbcType=BIGINT}, #{hospitalid,jdbcType=BIGINT}, #{targetdeptid,jdbcType=BIGINT}, 
+      #{requestfee,jdbcType=DECIMAL}, #{requestremark,jdbcType=VARCHAR}, #{proposerid,jdbcType=BIGINT}, 
+      #{deptid,jdbcType=BIGINT}, #{status,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostRequest">
+    insert into cost_request
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="requestmonth != null">
+        requestMonth,
+      </if>
+      <if test="companyid != null">
+        companyId,
+      </if>
+      <if test="breedid != null">
+        breedId,
+      </if>
+      <if test="hospitalid != null">
+        hospitalId,
+      </if>
+      <if test="targetdeptid != null">
+        targetDeptId,
+      </if>
+      <if test="requestfee != null">
+        requestFee,
+      </if>
+      <if test="requestremark != null">
+        requestRemark,
+      </if>
+      <if test="proposerid != null">
+        proposerId,
+      </if>
+      <if test="deptid != null">
+        deptId,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="requestmonth != null">
+        #{requestmonth,jdbcType=TIMESTAMP},
+      </if>
+      <if test="companyid != null">
+        #{companyid,jdbcType=BIGINT},
+      </if>
+      <if test="breedid != null">
+        #{breedid,jdbcType=BIGINT},
+      </if>
+      <if test="hospitalid != null">
+        #{hospitalid,jdbcType=BIGINT},
+      </if>
+      <if test="targetdeptid != null">
+        #{targetdeptid,jdbcType=BIGINT},
+      </if>
+      <if test="requestfee != null">
+        #{requestfee,jdbcType=DECIMAL},
+      </if>
+      <if test="requestremark != null">
+        #{requestremark,jdbcType=VARCHAR},
+      </if>
+      <if test="proposerid != null">
+        #{proposerid,jdbcType=BIGINT},
+      </if>
+      <if test="deptid != null">
+        #{deptid,jdbcType=BIGINT},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>

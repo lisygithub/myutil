@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lisy.dao.CostSubjectCompanyMapper">
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostSubjectCompany">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="subjectId" jdbcType="BIGINT" property="subjectId" />
+    <result column="companyId" jdbcType="BIGINT" property="companyId" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostSubjectCompany">
+    insert into cost_subject_company (id, subjectId, companyId
+      )
+    values (#{id,jdbcType=BIGINT}, #{subjectId,jdbcType=BIGINT}, #{companyId,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostSubjectCompany">
+    insert into cost_subject_company
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="subjectId != null">
+        subjectId,
+      </if>
+      <if test="companyId != null">
+        companyId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="subjectId != null">
+        #{subjectId,jdbcType=BIGINT},
+      </if>
+      <if test="companyId != null">
+        #{companyId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostSubjectCompany">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="subjectId" jdbcType="BIGINT" property="subjectId" />
+    <result column="companyId" jdbcType="BIGINT" property="companyId" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostSubjectCompany">
+    insert into cost_subject_company (id, subjectId, companyId
+      )
+    values (#{id,jdbcType=BIGINT}, #{subjectId,jdbcType=BIGINT}, #{companyId,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostSubjectCompany">
+    insert into cost_subject_company
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="subjectId != null">
+        subjectId,
+      </if>
+      <if test="companyId != null">
+        companyId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="subjectId != null">
+        #{subjectId,jdbcType=BIGINT},
+      </if>
+      <if test="companyId != null">
+        #{companyId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostSubjectCompany">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="subjectId" jdbcType="BIGINT" property="subjectId" />
+    <result column="companyId" jdbcType="BIGINT" property="companyId" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostSubjectCompany">
+    insert into cost_subject_company (id, subjectId, companyId
+      )
+    values (#{id,jdbcType=BIGINT}, #{subjectId,jdbcType=BIGINT}, #{companyId,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostSubjectCompany">
+    insert into cost_subject_company
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="subjectId != null">
+        subjectId,
+      </if>
+      <if test="companyId != null">
+        companyId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="subjectId != null">
+        #{subjectId,jdbcType=BIGINT},
+      </if>
+      <if test="companyId != null">
+        #{companyId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostSubjectCompany">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="subjectId" jdbcType="BIGINT" property="subjectid" />
+    <result column="companyId" jdbcType="BIGINT" property="companyid" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostSubjectCompany">
+    insert into cost_subject_company (id, subjectId, companyId
+      )
+    values (#{id,jdbcType=BIGINT}, #{subjectid,jdbcType=BIGINT}, #{companyid,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostSubjectCompany">
+    insert into cost_subject_company
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="subjectid != null">
+        subjectId,
+      </if>
+      <if test="companyid != null">
+        companyId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="subjectid != null">
+        #{subjectid,jdbcType=BIGINT},
+      </if>
+      <if test="companyid != null">
+        #{companyid,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostSubjectCompany">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="subjectId" jdbcType="BIGINT" property="subjectid" />
+    <result column="companyId" jdbcType="BIGINT" property="companyid" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostSubjectCompany">
+    insert into cost_subject_company (id, subjectId, companyId
+      )
+    values (#{id,jdbcType=BIGINT}, #{subjectid,jdbcType=BIGINT}, #{companyid,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostSubjectCompany">
+    insert into cost_subject_company
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="subjectid != null">
+        subjectId,
+      </if>
+      <if test="companyid != null">
+        companyId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="subjectid != null">
+        #{subjectid,jdbcType=BIGINT},
+      </if>
+      <if test="companyid != null">
+        #{companyid,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+</mapper>

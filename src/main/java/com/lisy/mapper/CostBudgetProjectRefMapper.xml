@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lisy.dao.CostBudgetProjectRefMapper">
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostBudgetProjectRef">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="costBudgetId" jdbcType="BIGINT" property="costBudgetId" />
+    <result column="projectTypeId" jdbcType="BIGINT" property="projectTypeId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, costBudgetId, projectTypeId
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cost_budget_project_ref
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from cost_budget_project_ref
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.CostBudgetProjectRef">
+    insert into cost_budget_project_ref (id, costBudgetId, projectTypeId
+      )
+    values (#{id,jdbcType=BIGINT}, #{costBudgetId,jdbcType=BIGINT}, #{projectTypeId,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostBudgetProjectRef">
+    insert into cost_budget_project_ref
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="costBudgetId != null">
+        costBudgetId,
+      </if>
+      <if test="projectTypeId != null">
+        projectTypeId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="costBudgetId != null">
+        #{costBudgetId,jdbcType=BIGINT},
+      </if>
+      <if test="projectTypeId != null">
+        #{projectTypeId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.CostBudgetProjectRef">
+    update cost_budget_project_ref
+    <set>
+      <if test="costBudgetId != null">
+        costBudgetId = #{costBudgetId,jdbcType=BIGINT},
+      </if>
+      <if test="projectTypeId != null">
+        projectTypeId = #{projectTypeId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.CostBudgetProjectRef">
+    update cost_budget_project_ref
+    set costBudgetId = #{costBudgetId,jdbcType=BIGINT},
+      projectTypeId = #{projectTypeId,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostBudgetProjectRef">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="costBudgetId" jdbcType="BIGINT" property="costBudgetId" />
+    <result column="projectTypeId" jdbcType="BIGINT" property="projectTypeId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, costBudgetId, projectTypeId
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cost_budget_project_ref
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from cost_budget_project_ref
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.CostBudgetProjectRef">
+    insert into cost_budget_project_ref (id, costBudgetId, projectTypeId
+      )
+    values (#{id,jdbcType=BIGINT}, #{costBudgetId,jdbcType=BIGINT}, #{projectTypeId,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostBudgetProjectRef">
+    insert into cost_budget_project_ref
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="costBudgetId != null">
+        costBudgetId,
+      </if>
+      <if test="projectTypeId != null">
+        projectTypeId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="costBudgetId != null">
+        #{costBudgetId,jdbcType=BIGINT},
+      </if>
+      <if test="projectTypeId != null">
+        #{projectTypeId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.CostBudgetProjectRef">
+    update cost_budget_project_ref
+    <set>
+      <if test="costBudgetId != null">
+        costBudgetId = #{costBudgetId,jdbcType=BIGINT},
+      </if>
+      <if test="projectTypeId != null">
+        projectTypeId = #{projectTypeId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.CostBudgetProjectRef">
+    update cost_budget_project_ref
+    set costBudgetId = #{costBudgetId,jdbcType=BIGINT},
+      projectTypeId = #{projectTypeId,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostBudgetProjectRef">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="costBudgetId" jdbcType="BIGINT" property="costBudgetId" />
+    <result column="projectTypeId" jdbcType="BIGINT" property="projectTypeId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, costBudgetId, projectTypeId
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cost_budget_project_ref
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from cost_budget_project_ref
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.CostBudgetProjectRef">
+    insert into cost_budget_project_ref (id, costBudgetId, projectTypeId
+      )
+    values (#{id,jdbcType=BIGINT}, #{costBudgetId,jdbcType=BIGINT}, #{projectTypeId,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostBudgetProjectRef">
+    insert into cost_budget_project_ref
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="costBudgetId != null">
+        costBudgetId,
+      </if>
+      <if test="projectTypeId != null">
+        projectTypeId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="costBudgetId != null">
+        #{costBudgetId,jdbcType=BIGINT},
+      </if>
+      <if test="projectTypeId != null">
+        #{projectTypeId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.CostBudgetProjectRef">
+    update cost_budget_project_ref
+    <set>
+      <if test="costBudgetId != null">
+        costBudgetId = #{costBudgetId,jdbcType=BIGINT},
+      </if>
+      <if test="projectTypeId != null">
+        projectTypeId = #{projectTypeId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.CostBudgetProjectRef">
+    update cost_budget_project_ref
+    set costBudgetId = #{costBudgetId,jdbcType=BIGINT},
+      projectTypeId = #{projectTypeId,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostBudgetProjectRef">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="costBudgetId" jdbcType="BIGINT" property="costBudgetId" />
+    <result column="projectTypeId" jdbcType="BIGINT" property="projectTypeId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, costBudgetId, projectTypeId
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cost_budget_project_ref
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from cost_budget_project_ref
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.CostBudgetProjectRef">
+    insert into cost_budget_project_ref (id, costBudgetId, projectTypeId
+      )
+    values (#{id,jdbcType=BIGINT}, #{costBudgetId,jdbcType=BIGINT}, #{projectTypeId,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostBudgetProjectRef">
+    insert into cost_budget_project_ref
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="costBudgetId != null">
+        costBudgetId,
+      </if>
+      <if test="projectTypeId != null">
+        projectTypeId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="costBudgetId != null">
+        #{costBudgetId,jdbcType=BIGINT},
+      </if>
+      <if test="projectTypeId != null">
+        #{projectTypeId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.CostBudgetProjectRef">
+    update cost_budget_project_ref
+    <set>
+      <if test="costBudgetId != null">
+        costBudgetId = #{costBudgetId,jdbcType=BIGINT},
+      </if>
+      <if test="projectTypeId != null">
+        projectTypeId = #{projectTypeId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.CostBudgetProjectRef">
+    update cost_budget_project_ref
+    set costBudgetId = #{costBudgetId,jdbcType=BIGINT},
+      projectTypeId = #{projectTypeId,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostBudgetProjectRef">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="costBudgetId" jdbcType="BIGINT" property="costBudgetId" />
+    <result column="projectTypeId" jdbcType="BIGINT" property="projectTypeId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, costBudgetId, projectTypeId
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cost_budget_project_ref
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from cost_budget_project_ref
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.CostBudgetProjectRef">
+    insert into cost_budget_project_ref (id, costBudgetId, projectTypeId
+      )
+    values (#{id,jdbcType=BIGINT}, #{costBudgetId,jdbcType=BIGINT}, #{projectTypeId,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostBudgetProjectRef">
+    insert into cost_budget_project_ref
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="costBudgetId != null">
+        costBudgetId,
+      </if>
+      <if test="projectTypeId != null">
+        projectTypeId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="costBudgetId != null">
+        #{costBudgetId,jdbcType=BIGINT},
+      </if>
+      <if test="projectTypeId != null">
+        #{projectTypeId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.CostBudgetProjectRef">
+    update cost_budget_project_ref
+    <set>
+      <if test="costBudgetId != null">
+        costBudgetId = #{costBudgetId,jdbcType=BIGINT},
+      </if>
+      <if test="projectTypeId != null">
+        projectTypeId = #{projectTypeId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.CostBudgetProjectRef">
+    update cost_budget_project_ref
+    set costBudgetId = #{costBudgetId,jdbcType=BIGINT},
+      projectTypeId = #{projectTypeId,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostBudgetProjectRef">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="costBudgetId" jdbcType="BIGINT" property="costBudgetId" />
+    <result column="projectTypeId" jdbcType="BIGINT" property="projectTypeId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, costBudgetId, projectTypeId
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cost_budget_project_ref
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from cost_budget_project_ref
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.CostBudgetProjectRef">
+    insert into cost_budget_project_ref (id, costBudgetId, projectTypeId
+      )
+    values (#{id,jdbcType=BIGINT}, #{costBudgetId,jdbcType=BIGINT}, #{projectTypeId,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostBudgetProjectRef">
+    insert into cost_budget_project_ref
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="costBudgetId != null">
+        costBudgetId,
+      </if>
+      <if test="projectTypeId != null">
+        projectTypeId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="costBudgetId != null">
+        #{costBudgetId,jdbcType=BIGINT},
+      </if>
+      <if test="projectTypeId != null">
+        #{projectTypeId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.CostBudgetProjectRef">
+    update cost_budget_project_ref
+    <set>
+      <if test="costBudgetId != null">
+        costBudgetId = #{costBudgetId,jdbcType=BIGINT},
+      </if>
+      <if test="projectTypeId != null">
+        projectTypeId = #{projectTypeId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.CostBudgetProjectRef">
+    update cost_budget_project_ref
+    set costBudgetId = #{costBudgetId,jdbcType=BIGINT},
+      projectTypeId = #{projectTypeId,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

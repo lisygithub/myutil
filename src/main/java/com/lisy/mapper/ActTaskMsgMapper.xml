@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lisy.dao.ActTaskMsgMapper">
+  <resultMap id="BaseResultMap" type="com.lisy.entity.ActTaskMsg">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="taskDetailId" jdbcType="BIGINT" property="taskDetailId" />
+    <result column="sender" jdbcType="VARCHAR" property="sender" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, taskDetailId, sender, content, createTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from act_task_msg
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from act_task_msg
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.ActTaskMsg">
+    insert into act_task_msg (id, taskDetailId, sender, 
+      content, createTime)
+    values (#{id,jdbcType=BIGINT}, #{taskDetailId,jdbcType=BIGINT}, #{sender,jdbcType=VARCHAR}, 
+      #{content,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.ActTaskMsg">
+    insert into act_task_msg
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="taskDetailId != null">
+        taskDetailId,
+      </if>
+      <if test="sender != null">
+        sender,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="createTime != null">
+        createTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="taskDetailId != null">
+        #{taskDetailId,jdbcType=BIGINT},
+      </if>
+      <if test="sender != null">
+        #{sender,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.ActTaskMsg">
+    update act_task_msg
+    <set>
+      <if test="taskDetailId != null">
+        taskDetailId = #{taskDetailId,jdbcType=BIGINT},
+      </if>
+      <if test="sender != null">
+        sender = #{sender,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        createTime = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.ActTaskMsg">
+    update act_task_msg
+    set taskDetailId = #{taskDetailId,jdbcType=BIGINT},
+      sender = #{sender,jdbcType=VARCHAR},
+      content = #{content,jdbcType=VARCHAR},
+      createTime = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.ActTaskMsg">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="taskDetailId" jdbcType="BIGINT" property="taskDetailId" />
+    <result column="sender" jdbcType="VARCHAR" property="sender" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, taskDetailId, sender, content, createTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from act_task_msg
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from act_task_msg
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.ActTaskMsg">
+    insert into act_task_msg (id, taskDetailId, sender, 
+      content, createTime)
+    values (#{id,jdbcType=BIGINT}, #{taskDetailId,jdbcType=BIGINT}, #{sender,jdbcType=VARCHAR}, 
+      #{content,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.ActTaskMsg">
+    insert into act_task_msg
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="taskDetailId != null">
+        taskDetailId,
+      </if>
+      <if test="sender != null">
+        sender,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="createTime != null">
+        createTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="taskDetailId != null">
+        #{taskDetailId,jdbcType=BIGINT},
+      </if>
+      <if test="sender != null">
+        #{sender,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.ActTaskMsg">
+    update act_task_msg
+    <set>
+      <if test="taskDetailId != null">
+        taskDetailId = #{taskDetailId,jdbcType=BIGINT},
+      </if>
+      <if test="sender != null">
+        sender = #{sender,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        createTime = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.ActTaskMsg">
+    update act_task_msg
+    set taskDetailId = #{taskDetailId,jdbcType=BIGINT},
+      sender = #{sender,jdbcType=VARCHAR},
+      content = #{content,jdbcType=VARCHAR},
+      createTime = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.ActTaskMsg">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="taskDetailId" jdbcType="BIGINT" property="taskDetailId" />
+    <result column="sender" jdbcType="VARCHAR" property="sender" />
+    <result column="content" jdbcType="VARCHAR" property="content" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, taskDetailId, sender, content, createTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from act_task_msg
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from act_task_msg
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.ActTaskMsg">
+    insert into act_task_msg (id, taskDetailId, sender, 
+      content, createTime)
+    values (#{id,jdbcType=BIGINT}, #{taskDetailId,jdbcType=BIGINT}, #{sender,jdbcType=VARCHAR}, 
+      #{content,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.ActTaskMsg">
+    insert into act_task_msg
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="taskDetailId != null">
+        taskDetailId,
+      </if>
+      <if test="sender != null">
+        sender,
+      </if>
+      <if test="content != null">
+        content,
+      </if>
+      <if test="createTime != null">
+        createTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="taskDetailId != null">
+        #{taskDetailId,jdbcType=BIGINT},
+      </if>
+      <if test="sender != null">
+        #{sender,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.ActTaskMsg">
+    update act_task_msg
+    <set>
+      <if test="taskDetailId != null">
+        taskDetailId = #{taskDetailId,jdbcType=BIGINT},
+      </if>
+      <if test="sender != null">
+        sender = #{sender,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null">
+        content = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        createTime = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.ActTaskMsg">
+    update act_task_msg
+    set taskDetailId = #{taskDetailId,jdbcType=BIGINT},
+      sender = #{sender,jdbcType=VARCHAR},
+      content = #{content,jdbcType=VARCHAR},
+      createTime = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lisy.dao.CostTemplateMapper">
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostTemplate">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="templateName" jdbcType="VARCHAR" property="templateName" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="isAvailable" jdbcType="INTEGER" property="isAvailable" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostTemplate">
+    insert into cost_template (id, templateName, remark, 
+      createTime, isAvailable)
+    values (#{id,jdbcType=BIGINT}, #{templateName,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{isAvailable,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostTemplate">
+    insert into cost_template
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="templateName != null">
+        templateName,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="createTime != null">
+        createTime,
+      </if>
+      <if test="isAvailable != null">
+        isAvailable,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="templateName != null">
+        #{templateName,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isAvailable != null">
+        #{isAvailable,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostTemplate">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="templateName" jdbcType="VARCHAR" property="templateName" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="isAvailable" jdbcType="INTEGER" property="isAvailable" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostTemplate">
+    insert into cost_template (id, templateName, remark, 
+      createTime, isAvailable)
+    values (#{id,jdbcType=BIGINT}, #{templateName,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{isAvailable,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostTemplate">
+    insert into cost_template
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="templateName != null">
+        templateName,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="createTime != null">
+        createTime,
+      </if>
+      <if test="isAvailable != null">
+        isAvailable,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="templateName != null">
+        #{templateName,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isAvailable != null">
+        #{isAvailable,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostTemplate">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="templateName" jdbcType="VARCHAR" property="templateName" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="isAvailable" jdbcType="INTEGER" property="isAvailable" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostTemplate">
+    insert into cost_template (id, templateName, remark, 
+      createTime, isAvailable)
+    values (#{id,jdbcType=BIGINT}, #{templateName,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{isAvailable,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostTemplate">
+    insert into cost_template
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="templateName != null">
+        templateName,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="createTime != null">
+        createTime,
+      </if>
+      <if test="isAvailable != null">
+        isAvailable,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="templateName != null">
+        #{templateName,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isAvailable != null">
+        #{isAvailable,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostTemplate">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="templateName" jdbcType="VARCHAR" property="templatename" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="isAvailable" jdbcType="INTEGER" property="isavailable" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostTemplate">
+    insert into cost_template (id, templateName, remark, 
+      createTime, isAvailable)
+    values (#{id,jdbcType=BIGINT}, #{templatename,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
+      #{createtime,jdbcType=TIMESTAMP}, #{isavailable,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostTemplate">
+    insert into cost_template
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="templatename != null">
+        templateName,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="createtime != null">
+        createTime,
+      </if>
+      <if test="isavailable != null">
+        isAvailable,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="templatename != null">
+        #{templatename,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isavailable != null">
+        #{isavailable,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostTemplate">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="templateName" jdbcType="VARCHAR" property="templatename" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="isAvailable" jdbcType="INTEGER" property="isavailable" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostTemplate">
+    insert into cost_template (id, templateName, remark, 
+      createTime, isAvailable)
+    values (#{id,jdbcType=BIGINT}, #{templatename,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
+      #{createtime,jdbcType=TIMESTAMP}, #{isavailable,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostTemplate">
+    insert into cost_template
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="templatename != null">
+        templateName,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="createtime != null">
+        createTime,
+      </if>
+      <if test="isavailable != null">
+        isAvailable,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="templatename != null">
+        #{templatename,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isavailable != null">
+        #{isavailable,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lisy.dao.ActBreedProjectMapper">
+  <resultMap id="BaseResultMap" type="com.lisy.entity.ActBreedProject">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="breedId" jdbcType="BIGINT" property="breedId" />
+    <result column="projectId" jdbcType="BIGINT" property="projectId" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.ActBreedProject">
+    insert into act_breed_project (id, breedId, projectId
+      )
+    values (#{id,jdbcType=BIGINT}, #{breedId,jdbcType=BIGINT}, #{projectId,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.ActBreedProject">
+    insert into act_breed_project
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="breedId != null">
+        breedId,
+      </if>
+      <if test="projectId != null">
+        projectId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="breedId != null">
+        #{breedId,jdbcType=BIGINT},
+      </if>
+      <if test="projectId != null">
+        #{projectId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.ActBreedProject">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="breedId" jdbcType="BIGINT" property="breedId" />
+    <result column="projectId" jdbcType="BIGINT" property="projectId" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.ActBreedProject">
+    insert into act_breed_project (id, breedId, projectId
+      )
+    values (#{id,jdbcType=BIGINT}, #{breedId,jdbcType=BIGINT}, #{projectId,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.ActBreedProject">
+    insert into act_breed_project
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="breedId != null">
+        breedId,
+      </if>
+      <if test="projectId != null">
+        projectId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="breedId != null">
+        #{breedId,jdbcType=BIGINT},
+      </if>
+      <if test="projectId != null">
+        #{projectId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.ActBreedProject">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="breedId" jdbcType="BIGINT" property="breedId" />
+    <result column="projectId" jdbcType="BIGINT" property="projectId" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.ActBreedProject">
+    insert into act_breed_project (id, breedId, projectId
+      )
+    values (#{id,jdbcType=BIGINT}, #{breedId,jdbcType=BIGINT}, #{projectId,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.ActBreedProject">
+    insert into act_breed_project
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="breedId != null">
+        breedId,
+      </if>
+      <if test="projectId != null">
+        projectId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="breedId != null">
+        #{breedId,jdbcType=BIGINT},
+      </if>
+      <if test="projectId != null">
+        #{projectId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+</mapper>

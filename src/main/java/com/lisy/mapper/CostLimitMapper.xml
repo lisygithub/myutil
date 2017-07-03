@@ -1,0 +1,647 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lisy.dao.CostLimitMapper">
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostLimit">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="version" jdbcType="VARCHAR" property="version" />
+    <result column="operantTime" jdbcType="TIMESTAMP" property="operantTime" />
+    <result column="city" jdbcType="INTEGER" property="city" />
+    <result column="post" jdbcType="VARCHAR" property="post" />
+    <result column="keepCredit" jdbcType="DECIMAL" property="keepCredit" />
+    <result column="totalCredit" jdbcType="DECIMAL" property="totalCredit" />
+    <result column="timeRule" jdbcType="VARCHAR" property="timeRule" />
+    <result column="isBudgetInner" jdbcType="INTEGER" property="isBudgetInner" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="templateId" jdbcType="BIGINT" property="templateId" />
+    <result column="costTypeId" jdbcType="BIGINT" property="costTypeId" />
+    <result column="isAvailable" jdbcType="INTEGER" property="isAvailable" />
+    <result column="createrId" jdbcType="BIGINT" property="createrId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, version, operantTime, city, post, keepCredit, totalCredit, timeRule, isBudgetInner, 
+    createTime, templateId, costTypeId, isAvailable, createrId
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cost_limit
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from cost_limit
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.CostLimit">
+    insert into cost_limit (id, version, operantTime, 
+      city, post, keepCredit, 
+      totalCredit, timeRule, isBudgetInner, 
+      createTime, templateId, costTypeId, 
+      isAvailable, createrId)
+    values (#{id,jdbcType=BIGINT}, #{version,jdbcType=VARCHAR}, #{operantTime,jdbcType=TIMESTAMP}, 
+      #{city,jdbcType=INTEGER}, #{post,jdbcType=VARCHAR}, #{keepCredit,jdbcType=DECIMAL}, 
+      #{totalCredit,jdbcType=DECIMAL}, #{timeRule,jdbcType=VARCHAR}, #{isBudgetInner,jdbcType=INTEGER}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{templateId,jdbcType=BIGINT}, #{costTypeId,jdbcType=BIGINT}, 
+      #{isAvailable,jdbcType=INTEGER}, #{createrId,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostLimit">
+    insert into cost_limit
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="version != null">
+        version,
+      </if>
+      <if test="operantTime != null">
+        operantTime,
+      </if>
+      <if test="city != null">
+        city,
+      </if>
+      <if test="post != null">
+        post,
+      </if>
+      <if test="keepCredit != null">
+        keepCredit,
+      </if>
+      <if test="totalCredit != null">
+        totalCredit,
+      </if>
+      <if test="timeRule != null">
+        timeRule,
+      </if>
+      <if test="isBudgetInner != null">
+        isBudgetInner,
+      </if>
+      <if test="createTime != null">
+        createTime,
+      </if>
+      <if test="templateId != null">
+        templateId,
+      </if>
+      <if test="costTypeId != null">
+        costTypeId,
+      </if>
+      <if test="isAvailable != null">
+        isAvailable,
+      </if>
+      <if test="createrId != null">
+        createrId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="version != null">
+        #{version,jdbcType=VARCHAR},
+      </if>
+      <if test="operantTime != null">
+        #{operantTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="city != null">
+        #{city,jdbcType=INTEGER},
+      </if>
+      <if test="post != null">
+        #{post,jdbcType=VARCHAR},
+      </if>
+      <if test="keepCredit != null">
+        #{keepCredit,jdbcType=DECIMAL},
+      </if>
+      <if test="totalCredit != null">
+        #{totalCredit,jdbcType=DECIMAL},
+      </if>
+      <if test="timeRule != null">
+        #{timeRule,jdbcType=VARCHAR},
+      </if>
+      <if test="isBudgetInner != null">
+        #{isBudgetInner,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="templateId != null">
+        #{templateId,jdbcType=BIGINT},
+      </if>
+      <if test="costTypeId != null">
+        #{costTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="isAvailable != null">
+        #{isAvailable,jdbcType=INTEGER},
+      </if>
+      <if test="createrId != null">
+        #{createrId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.CostLimit">
+    update cost_limit
+    <set>
+      <if test="version != null">
+        version = #{version,jdbcType=VARCHAR},
+      </if>
+      <if test="operantTime != null">
+        operantTime = #{operantTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="city != null">
+        city = #{city,jdbcType=INTEGER},
+      </if>
+      <if test="post != null">
+        post = #{post,jdbcType=VARCHAR},
+      </if>
+      <if test="keepCredit != null">
+        keepCredit = #{keepCredit,jdbcType=DECIMAL},
+      </if>
+      <if test="totalCredit != null">
+        totalCredit = #{totalCredit,jdbcType=DECIMAL},
+      </if>
+      <if test="timeRule != null">
+        timeRule = #{timeRule,jdbcType=VARCHAR},
+      </if>
+      <if test="isBudgetInner != null">
+        isBudgetInner = #{isBudgetInner,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null">
+        createTime = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="templateId != null">
+        templateId = #{templateId,jdbcType=BIGINT},
+      </if>
+      <if test="costTypeId != null">
+        costTypeId = #{costTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="isAvailable != null">
+        isAvailable = #{isAvailable,jdbcType=INTEGER},
+      </if>
+      <if test="createrId != null">
+        createrId = #{createrId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.CostLimit">
+    update cost_limit
+    set version = #{version,jdbcType=VARCHAR},
+      operantTime = #{operantTime,jdbcType=TIMESTAMP},
+      city = #{city,jdbcType=INTEGER},
+      post = #{post,jdbcType=VARCHAR},
+      keepCredit = #{keepCredit,jdbcType=DECIMAL},
+      totalCredit = #{totalCredit,jdbcType=DECIMAL},
+      timeRule = #{timeRule,jdbcType=VARCHAR},
+      isBudgetInner = #{isBudgetInner,jdbcType=INTEGER},
+      createTime = #{createTime,jdbcType=TIMESTAMP},
+      templateId = #{templateId,jdbcType=BIGINT},
+      costTypeId = #{costTypeId,jdbcType=BIGINT},
+      isAvailable = #{isAvailable,jdbcType=INTEGER},
+      createrId = #{createrId,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostLimit">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="version" jdbcType="VARCHAR" property="version" />
+    <result column="operantTime" jdbcType="TIMESTAMP" property="operantTime" />
+    <result column="city" jdbcType="INTEGER" property="city" />
+    <result column="post" jdbcType="VARCHAR" property="post" />
+    <result column="keepCreditUpLimit" jdbcType="VARCHAR" property="keepCreditUpLimit" />
+    <result column="totalCreditUpLimit" jdbcType="VARCHAR" property="totalCreditUpLimit" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="subjectId" jdbcType="BIGINT" property="subjectId" />
+    <result column="templateId" jdbcType="BIGINT" property="templateId" />
+    <result column="costTypeId" jdbcType="BIGINT" property="costTypeId" />
+    <result column="isAvailable" jdbcType="INTEGER" property="isAvailable" />
+    <result column="createrId" jdbcType="BIGINT" property="createrId" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostLimit">
+    insert into cost_limit (id, version, operantTime, 
+      city, post, keepCreditUpLimit, 
+      totalCreditUpLimit, createTime, subjectId, 
+      templateId, costTypeId, isAvailable, 
+      createrId)
+    values (#{id,jdbcType=BIGINT}, #{version,jdbcType=VARCHAR}, #{operantTime,jdbcType=TIMESTAMP}, 
+      #{city,jdbcType=INTEGER}, #{post,jdbcType=VARCHAR}, #{keepCreditUpLimit,jdbcType=VARCHAR}, 
+      #{totalCreditUpLimit,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{subjectId,jdbcType=BIGINT}, 
+      #{templateId,jdbcType=BIGINT}, #{costTypeId,jdbcType=BIGINT}, #{isAvailable,jdbcType=INTEGER}, 
+      #{createrId,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostLimit">
+    insert into cost_limit
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="version != null">
+        version,
+      </if>
+      <if test="operantTime != null">
+        operantTime,
+      </if>
+      <if test="city != null">
+        city,
+      </if>
+      <if test="post != null">
+        post,
+      </if>
+      <if test="keepCreditUpLimit != null">
+        keepCreditUpLimit,
+      </if>
+      <if test="totalCreditUpLimit != null">
+        totalCreditUpLimit,
+      </if>
+      <if test="createTime != null">
+        createTime,
+      </if>
+      <if test="subjectId != null">
+        subjectId,
+      </if>
+      <if test="templateId != null">
+        templateId,
+      </if>
+      <if test="costTypeId != null">
+        costTypeId,
+      </if>
+      <if test="isAvailable != null">
+        isAvailable,
+      </if>
+      <if test="createrId != null">
+        createrId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="version != null">
+        #{version,jdbcType=VARCHAR},
+      </if>
+      <if test="operantTime != null">
+        #{operantTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="city != null">
+        #{city,jdbcType=INTEGER},
+      </if>
+      <if test="post != null">
+        #{post,jdbcType=VARCHAR},
+      </if>
+      <if test="keepCreditUpLimit != null">
+        #{keepCreditUpLimit,jdbcType=VARCHAR},
+      </if>
+      <if test="totalCreditUpLimit != null">
+        #{totalCreditUpLimit,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="subjectId != null">
+        #{subjectId,jdbcType=BIGINT},
+      </if>
+      <if test="templateId != null">
+        #{templateId,jdbcType=BIGINT},
+      </if>
+      <if test="costTypeId != null">
+        #{costTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="isAvailable != null">
+        #{isAvailable,jdbcType=INTEGER},
+      </if>
+      <if test="createrId != null">
+        #{createrId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostLimit">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="version" jdbcType="VARCHAR" property="version" />
+    <result column="operantTime" jdbcType="TIMESTAMP" property="operantTime" />
+    <result column="city" jdbcType="INTEGER" property="city" />
+    <result column="post" jdbcType="VARCHAR" property="post" />
+    <result column="keepCreditUpLimit" jdbcType="VARCHAR" property="keepCreditUpLimit" />
+    <result column="totalCreditUpLimit" jdbcType="VARCHAR" property="totalCreditUpLimit" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="subjectId" jdbcType="BIGINT" property="subjectId" />
+    <result column="templateId" jdbcType="BIGINT" property="templateId" />
+    <result column="costTypeId" jdbcType="BIGINT" property="costTypeId" />
+    <result column="isAvailable" jdbcType="INTEGER" property="isAvailable" />
+    <result column="createrId" jdbcType="BIGINT" property="createrId" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostLimit">
+    insert into cost_limit (id, version, operantTime, 
+      city, post, keepCreditUpLimit, 
+      totalCreditUpLimit, createTime, subjectId, 
+      templateId, costTypeId, isAvailable, 
+      createrId)
+    values (#{id,jdbcType=BIGINT}, #{version,jdbcType=VARCHAR}, #{operantTime,jdbcType=TIMESTAMP}, 
+      #{city,jdbcType=INTEGER}, #{post,jdbcType=VARCHAR}, #{keepCreditUpLimit,jdbcType=VARCHAR}, 
+      #{totalCreditUpLimit,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{subjectId,jdbcType=BIGINT}, 
+      #{templateId,jdbcType=BIGINT}, #{costTypeId,jdbcType=BIGINT}, #{isAvailable,jdbcType=INTEGER}, 
+      #{createrId,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostLimit">
+    insert into cost_limit
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="version != null">
+        version,
+      </if>
+      <if test="operantTime != null">
+        operantTime,
+      </if>
+      <if test="city != null">
+        city,
+      </if>
+      <if test="post != null">
+        post,
+      </if>
+      <if test="keepCreditUpLimit != null">
+        keepCreditUpLimit,
+      </if>
+      <if test="totalCreditUpLimit != null">
+        totalCreditUpLimit,
+      </if>
+      <if test="createTime != null">
+        createTime,
+      </if>
+      <if test="subjectId != null">
+        subjectId,
+      </if>
+      <if test="templateId != null">
+        templateId,
+      </if>
+      <if test="costTypeId != null">
+        costTypeId,
+      </if>
+      <if test="isAvailable != null">
+        isAvailable,
+      </if>
+      <if test="createrId != null">
+        createrId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="version != null">
+        #{version,jdbcType=VARCHAR},
+      </if>
+      <if test="operantTime != null">
+        #{operantTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="city != null">
+        #{city,jdbcType=INTEGER},
+      </if>
+      <if test="post != null">
+        #{post,jdbcType=VARCHAR},
+      </if>
+      <if test="keepCreditUpLimit != null">
+        #{keepCreditUpLimit,jdbcType=VARCHAR},
+      </if>
+      <if test="totalCreditUpLimit != null">
+        #{totalCreditUpLimit,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="subjectId != null">
+        #{subjectId,jdbcType=BIGINT},
+      </if>
+      <if test="templateId != null">
+        #{templateId,jdbcType=BIGINT},
+      </if>
+      <if test="costTypeId != null">
+        #{costTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="isAvailable != null">
+        #{isAvailable,jdbcType=INTEGER},
+      </if>
+      <if test="createrId != null">
+        #{createrId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostLimit">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="version" jdbcType="VARCHAR" property="version" />
+    <result column="operantTime" jdbcType="TIMESTAMP" property="operantTime" />
+    <result column="city" jdbcType="INTEGER" property="city" />
+    <result column="post" jdbcType="VARCHAR" property="post" />
+    <result column="keepCreditUpLimit" jdbcType="VARCHAR" property="keepCreditUpLimit" />
+    <result column="totalCreditUpLimit" jdbcType="VARCHAR" property="totalCreditUpLimit" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="subjectId" jdbcType="BIGINT" property="subjectId" />
+    <result column="templateId" jdbcType="BIGINT" property="templateId" />
+    <result column="costTypeId" jdbcType="BIGINT" property="costTypeId" />
+    <result column="isAvailable" jdbcType="INTEGER" property="isAvailable" />
+    <result column="createrId" jdbcType="BIGINT" property="createrId" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostLimit">
+    insert into cost_limit (id, version, operantTime, 
+      city, post, keepCreditUpLimit, 
+      totalCreditUpLimit, createTime, subjectId, 
+      templateId, costTypeId, isAvailable, 
+      createrId)
+    values (#{id,jdbcType=BIGINT}, #{version,jdbcType=VARCHAR}, #{operantTime,jdbcType=TIMESTAMP}, 
+      #{city,jdbcType=INTEGER}, #{post,jdbcType=VARCHAR}, #{keepCreditUpLimit,jdbcType=VARCHAR}, 
+      #{totalCreditUpLimit,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{subjectId,jdbcType=BIGINT}, 
+      #{templateId,jdbcType=BIGINT}, #{costTypeId,jdbcType=BIGINT}, #{isAvailable,jdbcType=INTEGER}, 
+      #{createrId,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostLimit">
+    insert into cost_limit
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="version != null">
+        version,
+      </if>
+      <if test="operantTime != null">
+        operantTime,
+      </if>
+      <if test="city != null">
+        city,
+      </if>
+      <if test="post != null">
+        post,
+      </if>
+      <if test="keepCreditUpLimit != null">
+        keepCreditUpLimit,
+      </if>
+      <if test="totalCreditUpLimit != null">
+        totalCreditUpLimit,
+      </if>
+      <if test="createTime != null">
+        createTime,
+      </if>
+      <if test="subjectId != null">
+        subjectId,
+      </if>
+      <if test="templateId != null">
+        templateId,
+      </if>
+      <if test="costTypeId != null">
+        costTypeId,
+      </if>
+      <if test="isAvailable != null">
+        isAvailable,
+      </if>
+      <if test="createrId != null">
+        createrId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="version != null">
+        #{version,jdbcType=VARCHAR},
+      </if>
+      <if test="operantTime != null">
+        #{operantTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="city != null">
+        #{city,jdbcType=INTEGER},
+      </if>
+      <if test="post != null">
+        #{post,jdbcType=VARCHAR},
+      </if>
+      <if test="keepCreditUpLimit != null">
+        #{keepCreditUpLimit,jdbcType=VARCHAR},
+      </if>
+      <if test="totalCreditUpLimit != null">
+        #{totalCreditUpLimit,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="subjectId != null">
+        #{subjectId,jdbcType=BIGINT},
+      </if>
+      <if test="templateId != null">
+        #{templateId,jdbcType=BIGINT},
+      </if>
+      <if test="costTypeId != null">
+        #{costTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="isAvailable != null">
+        #{isAvailable,jdbcType=INTEGER},
+      </if>
+      <if test="createrId != null">
+        #{createrId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostLimit">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="version" jdbcType="VARCHAR" property="version" />
+    <result column="operantTime" jdbcType="TIMESTAMP" property="operantTime" />
+    <result column="city" jdbcType="INTEGER" property="city" />
+    <result column="post" jdbcType="VARCHAR" property="post" />
+    <result column="keepCreditUpLimit" jdbcType="VARCHAR" property="keepCreditUpLimit" />
+    <result column="totalCreditUpLimit" jdbcType="VARCHAR" property="totalCreditUpLimit" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="subjectId" jdbcType="BIGINT" property="subjectId" />
+    <result column="templateId" jdbcType="BIGINT" property="templateId" />
+    <result column="costTypeId" jdbcType="BIGINT" property="costTypeId" />
+    <result column="isAvailable" jdbcType="INTEGER" property="isAvailable" />
+    <result column="createrId" jdbcType="BIGINT" property="createrId" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostLimit">
+    insert into cost_limit (id, version, operantTime, 
+      city, post, keepCreditUpLimit, 
+      totalCreditUpLimit, createTime, subjectId, 
+      templateId, costTypeId, isAvailable, 
+      createrId)
+    values (#{id,jdbcType=BIGINT}, #{version,jdbcType=VARCHAR}, #{operantTime,jdbcType=TIMESTAMP}, 
+      #{city,jdbcType=INTEGER}, #{post,jdbcType=VARCHAR}, #{keepCreditUpLimit,jdbcType=VARCHAR}, 
+      #{totalCreditUpLimit,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{subjectId,jdbcType=BIGINT}, 
+      #{templateId,jdbcType=BIGINT}, #{costTypeId,jdbcType=BIGINT}, #{isAvailable,jdbcType=INTEGER}, 
+      #{createrId,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostLimit">
+    insert into cost_limit
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="version != null">
+        version,
+      </if>
+      <if test="operantTime != null">
+        operantTime,
+      </if>
+      <if test="city != null">
+        city,
+      </if>
+      <if test="post != null">
+        post,
+      </if>
+      <if test="keepCreditUpLimit != null">
+        keepCreditUpLimit,
+      </if>
+      <if test="totalCreditUpLimit != null">
+        totalCreditUpLimit,
+      </if>
+      <if test="createTime != null">
+        createTime,
+      </if>
+      <if test="subjectId != null">
+        subjectId,
+      </if>
+      <if test="templateId != null">
+        templateId,
+      </if>
+      <if test="costTypeId != null">
+        costTypeId,
+      </if>
+      <if test="isAvailable != null">
+        isAvailable,
+      </if>
+      <if test="createrId != null">
+        createrId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="version != null">
+        #{version,jdbcType=VARCHAR},
+      </if>
+      <if test="operantTime != null">
+        #{operantTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="city != null">
+        #{city,jdbcType=INTEGER},
+      </if>
+      <if test="post != null">
+        #{post,jdbcType=VARCHAR},
+      </if>
+      <if test="keepCreditUpLimit != null">
+        #{keepCreditUpLimit,jdbcType=VARCHAR},
+      </if>
+      <if test="totalCreditUpLimit != null">
+        #{totalCreditUpLimit,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="subjectId != null">
+        #{subjectId,jdbcType=BIGINT},
+      </if>
+      <if test="templateId != null">
+        #{templateId,jdbcType=BIGINT},
+      </if>
+      <if test="costTypeId != null">
+        #{costTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="isAvailable != null">
+        #{isAvailable,jdbcType=INTEGER},
+      </if>
+      <if test="createrId != null">
+        #{createrId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+</mapper>

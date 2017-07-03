@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lisy.dao.CostSubjectMapper">
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostSubject">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="costProjectName" jdbcType="VARCHAR" property="costProjectName" />
+    <result column="typeId" jdbcType="BIGINT" property="typeId" />
+    <result column="rule" jdbcType="VARCHAR" property="rule" />
+    <result column="companyId" jdbcType="BIGINT" property="companyId" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="isAvailable" jdbcType="INTEGER" property="isAvailable" />
+    <result column="isNeedPlan" jdbcType="INTEGER" property="isNeedPlan" />
+    <result column="isNeedBorrow" jdbcType="INTEGER" property="isNeedBorrow" />
+    <result column="isbudget" jdbcType="INTEGER" property="isbudget" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostSubject">
+    insert into cost_subject (id, costProjectName, typeId, 
+      rule, companyId, createTime, 
+      isAvailable, isNeedPlan, isNeedBorrow, 
+      isbudget)
+    values (#{id,jdbcType=BIGINT}, #{costProjectName,jdbcType=VARCHAR}, #{typeId,jdbcType=BIGINT}, 
+      #{rule,jdbcType=VARCHAR}, #{companyId,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{isAvailable,jdbcType=INTEGER}, #{isNeedPlan,jdbcType=INTEGER}, #{isNeedBorrow,jdbcType=INTEGER}, 
+      #{isbudget,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostSubject">
+    insert into cost_subject
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="costProjectName != null">
+        costProjectName,
+      </if>
+      <if test="typeId != null">
+        typeId,
+      </if>
+      <if test="rule != null">
+        rule,
+      </if>
+      <if test="companyId != null">
+        companyId,
+      </if>
+      <if test="createTime != null">
+        createTime,
+      </if>
+      <if test="isAvailable != null">
+        isAvailable,
+      </if>
+      <if test="isNeedPlan != null">
+        isNeedPlan,
+      </if>
+      <if test="isNeedBorrow != null">
+        isNeedBorrow,
+      </if>
+      <if test="isbudget != null">
+        isbudget,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="costProjectName != null">
+        #{costProjectName,jdbcType=VARCHAR},
+      </if>
+      <if test="typeId != null">
+        #{typeId,jdbcType=BIGINT},
+      </if>
+      <if test="rule != null">
+        #{rule,jdbcType=VARCHAR},
+      </if>
+      <if test="companyId != null">
+        #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isAvailable != null">
+        #{isAvailable,jdbcType=INTEGER},
+      </if>
+      <if test="isNeedPlan != null">
+        #{isNeedPlan,jdbcType=INTEGER},
+      </if>
+      <if test="isNeedBorrow != null">
+        #{isNeedBorrow,jdbcType=INTEGER},
+      </if>
+      <if test="isbudget != null">
+        #{isbudget,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostSubject">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="costProjectName" jdbcType="VARCHAR" property="costProjectName" />
+    <result column="typeId" jdbcType="BIGINT" property="typeId" />
+    <result column="rule" jdbcType="VARCHAR" property="rule" />
+    <result column="companyId" jdbcType="BIGINT" property="companyId" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="isAvailable" jdbcType="INTEGER" property="isAvailable" />
+    <result column="isNeedPlan" jdbcType="INTEGER" property="isNeedPlan" />
+    <result column="isNeedBorrow" jdbcType="INTEGER" property="isNeedBorrow" />
+    <result column="isbudget" jdbcType="INTEGER" property="isbudget" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostSubject">
+    insert into cost_subject (id, costProjectName, typeId, 
+      rule, companyId, createTime, 
+      isAvailable, isNeedPlan, isNeedBorrow, 
+      isbudget)
+    values (#{id,jdbcType=BIGINT}, #{costProjectName,jdbcType=VARCHAR}, #{typeId,jdbcType=BIGINT}, 
+      #{rule,jdbcType=VARCHAR}, #{companyId,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{isAvailable,jdbcType=INTEGER}, #{isNeedPlan,jdbcType=INTEGER}, #{isNeedBorrow,jdbcType=INTEGER}, 
+      #{isbudget,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostSubject">
+    insert into cost_subject
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="costProjectName != null">
+        costProjectName,
+      </if>
+      <if test="typeId != null">
+        typeId,
+      </if>
+      <if test="rule != null">
+        rule,
+      </if>
+      <if test="companyId != null">
+        companyId,
+      </if>
+      <if test="createTime != null">
+        createTime,
+      </if>
+      <if test="isAvailable != null">
+        isAvailable,
+      </if>
+      <if test="isNeedPlan != null">
+        isNeedPlan,
+      </if>
+      <if test="isNeedBorrow != null">
+        isNeedBorrow,
+      </if>
+      <if test="isbudget != null">
+        isbudget,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="costProjectName != null">
+        #{costProjectName,jdbcType=VARCHAR},
+      </if>
+      <if test="typeId != null">
+        #{typeId,jdbcType=BIGINT},
+      </if>
+      <if test="rule != null">
+        #{rule,jdbcType=VARCHAR},
+      </if>
+      <if test="companyId != null">
+        #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isAvailable != null">
+        #{isAvailable,jdbcType=INTEGER},
+      </if>
+      <if test="isNeedPlan != null">
+        #{isNeedPlan,jdbcType=INTEGER},
+      </if>
+      <if test="isNeedBorrow != null">
+        #{isNeedBorrow,jdbcType=INTEGER},
+      </if>
+      <if test="isbudget != null">
+        #{isbudget,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostSubject">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="costProjectName" jdbcType="VARCHAR" property="costProjectName" />
+    <result column="typeId" jdbcType="BIGINT" property="typeId" />
+    <result column="rule" jdbcType="VARCHAR" property="rule" />
+    <result column="companyId" jdbcType="BIGINT" property="companyId" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="isAvailable" jdbcType="INTEGER" property="isAvailable" />
+    <result column="isNeedPlan" jdbcType="INTEGER" property="isNeedPlan" />
+    <result column="isNeedBorrow" jdbcType="INTEGER" property="isNeedBorrow" />
+    <result column="isbudget" jdbcType="INTEGER" property="isbudget" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostSubject">
+    insert into cost_subject (id, costProjectName, typeId, 
+      rule, companyId, createTime, 
+      isAvailable, isNeedPlan, isNeedBorrow, 
+      isbudget)
+    values (#{id,jdbcType=BIGINT}, #{costProjectName,jdbcType=VARCHAR}, #{typeId,jdbcType=BIGINT}, 
+      #{rule,jdbcType=VARCHAR}, #{companyId,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{isAvailable,jdbcType=INTEGER}, #{isNeedPlan,jdbcType=INTEGER}, #{isNeedBorrow,jdbcType=INTEGER}, 
+      #{isbudget,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostSubject">
+    insert into cost_subject
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="costProjectName != null">
+        costProjectName,
+      </if>
+      <if test="typeId != null">
+        typeId,
+      </if>
+      <if test="rule != null">
+        rule,
+      </if>
+      <if test="companyId != null">
+        companyId,
+      </if>
+      <if test="createTime != null">
+        createTime,
+      </if>
+      <if test="isAvailable != null">
+        isAvailable,
+      </if>
+      <if test="isNeedPlan != null">
+        isNeedPlan,
+      </if>
+      <if test="isNeedBorrow != null">
+        isNeedBorrow,
+      </if>
+      <if test="isbudget != null">
+        isbudget,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="costProjectName != null">
+        #{costProjectName,jdbcType=VARCHAR},
+      </if>
+      <if test="typeId != null">
+        #{typeId,jdbcType=BIGINT},
+      </if>
+      <if test="rule != null">
+        #{rule,jdbcType=VARCHAR},
+      </if>
+      <if test="companyId != null">
+        #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isAvailable != null">
+        #{isAvailable,jdbcType=INTEGER},
+      </if>
+      <if test="isNeedPlan != null">
+        #{isNeedPlan,jdbcType=INTEGER},
+      </if>
+      <if test="isNeedBorrow != null">
+        #{isNeedBorrow,jdbcType=INTEGER},
+      </if>
+      <if test="isbudget != null">
+        #{isbudget,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostSubject">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="costProjectName" jdbcType="VARCHAR" property="costprojectname" />
+    <result column="typeId" jdbcType="BIGINT" property="typeid" />
+    <result column="rule" jdbcType="VARCHAR" property="rule" />
+    <result column="companyId" jdbcType="BIGINT" property="companyid" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="isAvailable" jdbcType="INTEGER" property="isavailable" />
+    <result column="isNeedPlan" jdbcType="INTEGER" property="isneedplan" />
+    <result column="isNeedBorrow" jdbcType="INTEGER" property="isneedborrow" />
+    <result column="isbudget" jdbcType="INTEGER" property="isbudget" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostSubject">
+    insert into cost_subject (id, costProjectName, typeId, 
+      rule, companyId, createTime, 
+      isAvailable, isNeedPlan, isNeedBorrow, 
+      isbudget)
+    values (#{id,jdbcType=BIGINT}, #{costprojectname,jdbcType=VARCHAR}, #{typeid,jdbcType=BIGINT}, 
+      #{rule,jdbcType=VARCHAR}, #{companyid,jdbcType=BIGINT}, #{createtime,jdbcType=TIMESTAMP}, 
+      #{isavailable,jdbcType=INTEGER}, #{isneedplan,jdbcType=INTEGER}, #{isneedborrow,jdbcType=INTEGER}, 
+      #{isbudget,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostSubject">
+    insert into cost_subject
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="costprojectname != null">
+        costProjectName,
+      </if>
+      <if test="typeid != null">
+        typeId,
+      </if>
+      <if test="rule != null">
+        rule,
+      </if>
+      <if test="companyid != null">
+        companyId,
+      </if>
+      <if test="createtime != null">
+        createTime,
+      </if>
+      <if test="isavailable != null">
+        isAvailable,
+      </if>
+      <if test="isneedplan != null">
+        isNeedPlan,
+      </if>
+      <if test="isneedborrow != null">
+        isNeedBorrow,
+      </if>
+      <if test="isbudget != null">
+        isbudget,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="costprojectname != null">
+        #{costprojectname,jdbcType=VARCHAR},
+      </if>
+      <if test="typeid != null">
+        #{typeid,jdbcType=BIGINT},
+      </if>
+      <if test="rule != null">
+        #{rule,jdbcType=VARCHAR},
+      </if>
+      <if test="companyid != null">
+        #{companyid,jdbcType=BIGINT},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isavailable != null">
+        #{isavailable,jdbcType=INTEGER},
+      </if>
+      <if test="isneedplan != null">
+        #{isneedplan,jdbcType=INTEGER},
+      </if>
+      <if test="isneedborrow != null">
+        #{isneedborrow,jdbcType=INTEGER},
+      </if>
+      <if test="isbudget != null">
+        #{isbudget,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostSubject">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="costProjectName" jdbcType="VARCHAR" property="costprojectname" />
+    <result column="typeId" jdbcType="BIGINT" property="typeid" />
+    <result column="rule" jdbcType="VARCHAR" property="rule" />
+    <result column="companyId" jdbcType="BIGINT" property="companyid" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="isAvailable" jdbcType="INTEGER" property="isavailable" />
+    <result column="isNeedPlan" jdbcType="INTEGER" property="isneedplan" />
+    <result column="isNeedBorrow" jdbcType="INTEGER" property="isneedborrow" />
+    <result column="isbudget" jdbcType="INTEGER" property="isbudget" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostSubject">
+    insert into cost_subject (id, costProjectName, typeId, 
+      rule, companyId, createTime, 
+      isAvailable, isNeedPlan, isNeedBorrow, 
+      isbudget)
+    values (#{id,jdbcType=BIGINT}, #{costprojectname,jdbcType=VARCHAR}, #{typeid,jdbcType=BIGINT}, 
+      #{rule,jdbcType=VARCHAR}, #{companyid,jdbcType=BIGINT}, #{createtime,jdbcType=TIMESTAMP}, 
+      #{isavailable,jdbcType=INTEGER}, #{isneedplan,jdbcType=INTEGER}, #{isneedborrow,jdbcType=INTEGER}, 
+      #{isbudget,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostSubject">
+    insert into cost_subject
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="costprojectname != null">
+        costProjectName,
+      </if>
+      <if test="typeid != null">
+        typeId,
+      </if>
+      <if test="rule != null">
+        rule,
+      </if>
+      <if test="companyid != null">
+        companyId,
+      </if>
+      <if test="createtime != null">
+        createTime,
+      </if>
+      <if test="isavailable != null">
+        isAvailable,
+      </if>
+      <if test="isneedplan != null">
+        isNeedPlan,
+      </if>
+      <if test="isneedborrow != null">
+        isNeedBorrow,
+      </if>
+      <if test="isbudget != null">
+        isbudget,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="costprojectname != null">
+        #{costprojectname,jdbcType=VARCHAR},
+      </if>
+      <if test="typeid != null">
+        #{typeid,jdbcType=BIGINT},
+      </if>
+      <if test="rule != null">
+        #{rule,jdbcType=VARCHAR},
+      </if>
+      <if test="companyid != null">
+        #{companyid,jdbcType=BIGINT},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isavailable != null">
+        #{isavailable,jdbcType=INTEGER},
+      </if>
+      <if test="isneedplan != null">
+        #{isneedplan,jdbcType=INTEGER},
+      </if>
+      <if test="isneedborrow != null">
+        #{isneedborrow,jdbcType=INTEGER},
+      </if>
+      <if test="isbudget != null">
+        #{isbudget,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>

@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lisy.dao.CostSubjectEmployeeMapper">
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostSubjectEmployee">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="employeeId" jdbcType="BIGINT" property="employeeId" />
+    <result column="limitId" jdbcType="BIGINT" property="limitId" />
+    <result column="credient" jdbcType="DECIMAL" property="credient" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostSubjectEmployee">
+    insert into cost_subject_employee (id, employeeId, limitId, 
+      credient)
+    values (#{id,jdbcType=BIGINT}, #{employeeId,jdbcType=BIGINT}, #{limitId,jdbcType=BIGINT}, 
+      #{credient,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostSubjectEmployee">
+    insert into cost_subject_employee
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="employeeId != null">
+        employeeId,
+      </if>
+      <if test="limitId != null">
+        limitId,
+      </if>
+      <if test="credient != null">
+        credient,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="employeeId != null">
+        #{employeeId,jdbcType=BIGINT},
+      </if>
+      <if test="limitId != null">
+        #{limitId,jdbcType=BIGINT},
+      </if>
+      <if test="credient != null">
+        #{credient,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostSubjectEmployee">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="employeeId" jdbcType="BIGINT" property="employeeId" />
+    <result column="limitId" jdbcType="BIGINT" property="limitId" />
+    <result column="credient" jdbcType="DECIMAL" property="credient" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostSubjectEmployee">
+    insert into cost_subject_employee (id, employeeId, limitId, 
+      credient)
+    values (#{id,jdbcType=BIGINT}, #{employeeId,jdbcType=BIGINT}, #{limitId,jdbcType=BIGINT}, 
+      #{credient,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostSubjectEmployee">
+    insert into cost_subject_employee
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="employeeId != null">
+        employeeId,
+      </if>
+      <if test="limitId != null">
+        limitId,
+      </if>
+      <if test="credient != null">
+        credient,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="employeeId != null">
+        #{employeeId,jdbcType=BIGINT},
+      </if>
+      <if test="limitId != null">
+        #{limitId,jdbcType=BIGINT},
+      </if>
+      <if test="credient != null">
+        #{credient,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostSubjectEmployee">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="employeeId" jdbcType="BIGINT" property="employeeId" />
+    <result column="limitId" jdbcType="BIGINT" property="limitId" />
+    <result column="credient" jdbcType="DECIMAL" property="credient" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostSubjectEmployee">
+    insert into cost_subject_employee (id, employeeId, limitId, 
+      credient)
+    values (#{id,jdbcType=BIGINT}, #{employeeId,jdbcType=BIGINT}, #{limitId,jdbcType=BIGINT}, 
+      #{credient,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostSubjectEmployee">
+    insert into cost_subject_employee
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="employeeId != null">
+        employeeId,
+      </if>
+      <if test="limitId != null">
+        limitId,
+      </if>
+      <if test="credient != null">
+        credient,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="employeeId != null">
+        #{employeeId,jdbcType=BIGINT},
+      </if>
+      <if test="limitId != null">
+        #{limitId,jdbcType=BIGINT},
+      </if>
+      <if test="credient != null">
+        #{credient,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostSubjectEmployee">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="employeeId" jdbcType="BIGINT" property="employeeid" />
+    <result column="limitId" jdbcType="BIGINT" property="limitid" />
+    <result column="credient" jdbcType="DECIMAL" property="credient" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostSubjectEmployee">
+    insert into cost_subject_employee (id, employeeId, limitId, 
+      credient)
+    values (#{id,jdbcType=BIGINT}, #{employeeid,jdbcType=BIGINT}, #{limitid,jdbcType=BIGINT}, 
+      #{credient,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostSubjectEmployee">
+    insert into cost_subject_employee
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="employeeid != null">
+        employeeId,
+      </if>
+      <if test="limitid != null">
+        limitId,
+      </if>
+      <if test="credient != null">
+        credient,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="employeeid != null">
+        #{employeeid,jdbcType=BIGINT},
+      </if>
+      <if test="limitid != null">
+        #{limitid,jdbcType=BIGINT},
+      </if>
+      <if test="credient != null">
+        #{credient,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostSubjectEmployee">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="employeeId" jdbcType="BIGINT" property="employeeid" />
+    <result column="limitId" jdbcType="BIGINT" property="limitid" />
+    <result column="credient" jdbcType="DECIMAL" property="credient" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostSubjectEmployee">
+    insert into cost_subject_employee (id, employeeId, limitId, 
+      credient)
+    values (#{id,jdbcType=BIGINT}, #{employeeid,jdbcType=BIGINT}, #{limitid,jdbcType=BIGINT}, 
+      #{credient,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostSubjectEmployee">
+    insert into cost_subject_employee
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="employeeid != null">
+        employeeId,
+      </if>
+      <if test="limitid != null">
+        limitId,
+      </if>
+      <if test="credient != null">
+        credient,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="employeeid != null">
+        #{employeeid,jdbcType=BIGINT},
+      </if>
+      <if test="limitid != null">
+        #{limitid,jdbcType=BIGINT},
+      </if>
+      <if test="credient != null">
+        #{credient,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+</mapper>

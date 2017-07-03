@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lisy.dao.ActBudgetProjectMapper">
+  <resultMap id="BaseResultMap" type="com.lisy.entity.ActBudgetProject">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="principalId" jdbcType="BIGINT" property="principalId" />
+    <result column="companyId" jdbcType="BIGINT" property="companyId" />
+    <result column="breedId" jdbcType="BIGINT" property="breedId" />
+    <result column="district" jdbcType="VARCHAR" property="district" />
+    <result column="availableCredit" jdbcType="DECIMAL" property="availableCredit" />
+    <result column="budgetFee" jdbcType="DECIMAL" property="budgetFee" />
+    <result column="activeId" jdbcType="BIGINT" property="activeId" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, principalId, companyId, breedId, district, availableCredit, budgetFee, 
+    activeId, createTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from act_budget_project
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from act_budget_project
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.ActBudgetProject">
+    insert into act_budget_project (id, name, principalId, 
+      companyId, breedId, district, 
+      availableCredit, budgetFee, activeId, 
+      createTime)
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{principalId,jdbcType=BIGINT}, 
+      #{companyId,jdbcType=BIGINT}, #{breedId,jdbcType=BIGINT}, #{district,jdbcType=VARCHAR}, 
+      #{availableCredit,jdbcType=DECIMAL}, #{budgetFee,jdbcType=DECIMAL}, #{activeId,jdbcType=BIGINT}, 
+      #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.ActBudgetProject">
+    insert into act_budget_project
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="principalId != null">
+        principalId,
+      </if>
+      <if test="companyId != null">
+        companyId,
+      </if>
+      <if test="breedId != null">
+        breedId,
+      </if>
+      <if test="district != null">
+        district,
+      </if>
+      <if test="availableCredit != null">
+        availableCredit,
+      </if>
+      <if test="budgetFee != null">
+        budgetFee,
+      </if>
+      <if test="activeId != null">
+        activeId,
+      </if>
+      <if test="createTime != null">
+        createTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="principalId != null">
+        #{principalId,jdbcType=BIGINT},
+      </if>
+      <if test="companyId != null">
+        #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="breedId != null">
+        #{breedId,jdbcType=BIGINT},
+      </if>
+      <if test="district != null">
+        #{district,jdbcType=VARCHAR},
+      </if>
+      <if test="availableCredit != null">
+        #{availableCredit,jdbcType=DECIMAL},
+      </if>
+      <if test="budgetFee != null">
+        #{budgetFee,jdbcType=DECIMAL},
+      </if>
+      <if test="activeId != null">
+        #{activeId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.ActBudgetProject">
+    update act_budget_project
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="principalId != null">
+        principalId = #{principalId,jdbcType=BIGINT},
+      </if>
+      <if test="companyId != null">
+        companyId = #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="breedId != null">
+        breedId = #{breedId,jdbcType=BIGINT},
+      </if>
+      <if test="district != null">
+        district = #{district,jdbcType=VARCHAR},
+      </if>
+      <if test="availableCredit != null">
+        availableCredit = #{availableCredit,jdbcType=DECIMAL},
+      </if>
+      <if test="budgetFee != null">
+        budgetFee = #{budgetFee,jdbcType=DECIMAL},
+      </if>
+      <if test="activeId != null">
+        activeId = #{activeId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        createTime = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.ActBudgetProject">
+    update act_budget_project
+    set name = #{name,jdbcType=VARCHAR},
+      principalId = #{principalId,jdbcType=BIGINT},
+      companyId = #{companyId,jdbcType=BIGINT},
+      breedId = #{breedId,jdbcType=BIGINT},
+      district = #{district,jdbcType=VARCHAR},
+      availableCredit = #{availableCredit,jdbcType=DECIMAL},
+      budgetFee = #{budgetFee,jdbcType=DECIMAL},
+      activeId = #{activeId,jdbcType=BIGINT},
+      createTime = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.ActBudgetProject">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="principalId" jdbcType="BIGINT" property="principalId" />
+    <result column="companyId" jdbcType="BIGINT" property="companyId" />
+    <result column="breedId" jdbcType="BIGINT" property="breedId" />
+    <result column="district" jdbcType="VARCHAR" property="district" />
+    <result column="availableCredit" jdbcType="DECIMAL" property="availableCredit" />
+    <result column="budgetFee" jdbcType="DECIMAL" property="budgetFee" />
+    <result column="activeId" jdbcType="BIGINT" property="activeId" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, principalId, companyId, breedId, district, availableCredit, budgetFee, 
+    activeId, createTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from act_budget_project
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from act_budget_project
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.ActBudgetProject">
+    insert into act_budget_project (id, name, principalId, 
+      companyId, breedId, district, 
+      availableCredit, budgetFee, activeId, 
+      createTime)
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{principalId,jdbcType=BIGINT}, 
+      #{companyId,jdbcType=BIGINT}, #{breedId,jdbcType=BIGINT}, #{district,jdbcType=VARCHAR}, 
+      #{availableCredit,jdbcType=DECIMAL}, #{budgetFee,jdbcType=DECIMAL}, #{activeId,jdbcType=BIGINT}, 
+      #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.ActBudgetProject">
+    insert into act_budget_project
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="principalId != null">
+        principalId,
+      </if>
+      <if test="companyId != null">
+        companyId,
+      </if>
+      <if test="breedId != null">
+        breedId,
+      </if>
+      <if test="district != null">
+        district,
+      </if>
+      <if test="availableCredit != null">
+        availableCredit,
+      </if>
+      <if test="budgetFee != null">
+        budgetFee,
+      </if>
+      <if test="activeId != null">
+        activeId,
+      </if>
+      <if test="createTime != null">
+        createTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="principalId != null">
+        #{principalId,jdbcType=BIGINT},
+      </if>
+      <if test="companyId != null">
+        #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="breedId != null">
+        #{breedId,jdbcType=BIGINT},
+      </if>
+      <if test="district != null">
+        #{district,jdbcType=VARCHAR},
+      </if>
+      <if test="availableCredit != null">
+        #{availableCredit,jdbcType=DECIMAL},
+      </if>
+      <if test="budgetFee != null">
+        #{budgetFee,jdbcType=DECIMAL},
+      </if>
+      <if test="activeId != null">
+        #{activeId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.ActBudgetProject">
+    update act_budget_project
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="principalId != null">
+        principalId = #{principalId,jdbcType=BIGINT},
+      </if>
+      <if test="companyId != null">
+        companyId = #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="breedId != null">
+        breedId = #{breedId,jdbcType=BIGINT},
+      </if>
+      <if test="district != null">
+        district = #{district,jdbcType=VARCHAR},
+      </if>
+      <if test="availableCredit != null">
+        availableCredit = #{availableCredit,jdbcType=DECIMAL},
+      </if>
+      <if test="budgetFee != null">
+        budgetFee = #{budgetFee,jdbcType=DECIMAL},
+      </if>
+      <if test="activeId != null">
+        activeId = #{activeId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        createTime = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.ActBudgetProject">
+    update act_budget_project
+    set name = #{name,jdbcType=VARCHAR},
+      principalId = #{principalId,jdbcType=BIGINT},
+      companyId = #{companyId,jdbcType=BIGINT},
+      breedId = #{breedId,jdbcType=BIGINT},
+      district = #{district,jdbcType=VARCHAR},
+      availableCredit = #{availableCredit,jdbcType=DECIMAL},
+      budgetFee = #{budgetFee,jdbcType=DECIMAL},
+      activeId = #{activeId,jdbcType=BIGINT},
+      createTime = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.ActBudgetProject">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="principalId" jdbcType="BIGINT" property="principalId" />
+    <result column="companyId" jdbcType="BIGINT" property="companyId" />
+    <result column="breedId" jdbcType="BIGINT" property="breedId" />
+    <result column="district" jdbcType="VARCHAR" property="district" />
+    <result column="availableCredit" jdbcType="DECIMAL" property="availableCredit" />
+    <result column="budgetFee" jdbcType="DECIMAL" property="budgetFee" />
+    <result column="activeId" jdbcType="BIGINT" property="activeId" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, principalId, companyId, breedId, district, availableCredit, budgetFee, 
+    activeId, createTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from act_budget_project
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from act_budget_project
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.ActBudgetProject">
+    insert into act_budget_project (id, name, principalId, 
+      companyId, breedId, district, 
+      availableCredit, budgetFee, activeId, 
+      createTime)
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{principalId,jdbcType=BIGINT}, 
+      #{companyId,jdbcType=BIGINT}, #{breedId,jdbcType=BIGINT}, #{district,jdbcType=VARCHAR}, 
+      #{availableCredit,jdbcType=DECIMAL}, #{budgetFee,jdbcType=DECIMAL}, #{activeId,jdbcType=BIGINT}, 
+      #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.ActBudgetProject">
+    insert into act_budget_project
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="principalId != null">
+        principalId,
+      </if>
+      <if test="companyId != null">
+        companyId,
+      </if>
+      <if test="breedId != null">
+        breedId,
+      </if>
+      <if test="district != null">
+        district,
+      </if>
+      <if test="availableCredit != null">
+        availableCredit,
+      </if>
+      <if test="budgetFee != null">
+        budgetFee,
+      </if>
+      <if test="activeId != null">
+        activeId,
+      </if>
+      <if test="createTime != null">
+        createTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="principalId != null">
+        #{principalId,jdbcType=BIGINT},
+      </if>
+      <if test="companyId != null">
+        #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="breedId != null">
+        #{breedId,jdbcType=BIGINT},
+      </if>
+      <if test="district != null">
+        #{district,jdbcType=VARCHAR},
+      </if>
+      <if test="availableCredit != null">
+        #{availableCredit,jdbcType=DECIMAL},
+      </if>
+      <if test="budgetFee != null">
+        #{budgetFee,jdbcType=DECIMAL},
+      </if>
+      <if test="activeId != null">
+        #{activeId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.ActBudgetProject">
+    update act_budget_project
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="principalId != null">
+        principalId = #{principalId,jdbcType=BIGINT},
+      </if>
+      <if test="companyId != null">
+        companyId = #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="breedId != null">
+        breedId = #{breedId,jdbcType=BIGINT},
+      </if>
+      <if test="district != null">
+        district = #{district,jdbcType=VARCHAR},
+      </if>
+      <if test="availableCredit != null">
+        availableCredit = #{availableCredit,jdbcType=DECIMAL},
+      </if>
+      <if test="budgetFee != null">
+        budgetFee = #{budgetFee,jdbcType=DECIMAL},
+      </if>
+      <if test="activeId != null">
+        activeId = #{activeId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        createTime = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.ActBudgetProject">
+    update act_budget_project
+    set name = #{name,jdbcType=VARCHAR},
+      principalId = #{principalId,jdbcType=BIGINT},
+      companyId = #{companyId,jdbcType=BIGINT},
+      breedId = #{breedId,jdbcType=BIGINT},
+      district = #{district,jdbcType=VARCHAR},
+      availableCredit = #{availableCredit,jdbcType=DECIMAL},
+      budgetFee = #{budgetFee,jdbcType=DECIMAL},
+      activeId = #{activeId,jdbcType=BIGINT},
+      createTime = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

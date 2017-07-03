@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lisy.dao.CostBudgetDetailMapper">
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostBudgetDetail">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="projectNum" jdbcType="VARCHAR" property="projectNum" />
+    <result column="budgetProjectId" jdbcType="BIGINT" property="budgetProjectId" />
+    <result column="projectName" jdbcType="VARCHAR" property="projectName" />
+    <result column="budgetFee" jdbcType="DECIMAL" property="budgetFee" />
+    <result column="costBudgetId" jdbcType="BIGINT" property="costBudgetId" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostBudgetDetail">
+    insert into cost_budget_detail (id, projectNum, budgetProjectId, 
+      projectName, budgetFee, costBudgetId
+      )
+    values (#{id,jdbcType=BIGINT}, #{projectNum,jdbcType=VARCHAR}, #{budgetProjectId,jdbcType=BIGINT}, 
+      #{projectName,jdbcType=VARCHAR}, #{budgetFee,jdbcType=DECIMAL}, #{costBudgetId,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostBudgetDetail">
+    insert into cost_budget_detail
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="projectNum != null">
+        projectNum,
+      </if>
+      <if test="budgetProjectId != null">
+        budgetProjectId,
+      </if>
+      <if test="projectName != null">
+        projectName,
+      </if>
+      <if test="budgetFee != null">
+        budgetFee,
+      </if>
+      <if test="costBudgetId != null">
+        costBudgetId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="projectNum != null">
+        #{projectNum,jdbcType=VARCHAR},
+      </if>
+      <if test="budgetProjectId != null">
+        #{budgetProjectId,jdbcType=BIGINT},
+      </if>
+      <if test="projectName != null">
+        #{projectName,jdbcType=VARCHAR},
+      </if>
+      <if test="budgetFee != null">
+        #{budgetFee,jdbcType=DECIMAL},
+      </if>
+      <if test="costBudgetId != null">
+        #{costBudgetId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostBudgetDetail">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="projectNum" jdbcType="VARCHAR" property="projectNum" />
+    <result column="budgetProjectId" jdbcType="BIGINT" property="budgetProjectId" />
+    <result column="projectName" jdbcType="VARCHAR" property="projectName" />
+    <result column="budgetFee" jdbcType="DECIMAL" property="budgetFee" />
+    <result column="costBudgetId" jdbcType="BIGINT" property="costBudgetId" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostBudgetDetail">
+    insert into cost_budget_detail (id, projectNum, budgetProjectId, 
+      projectName, budgetFee, costBudgetId
+      )
+    values (#{id,jdbcType=BIGINT}, #{projectNum,jdbcType=VARCHAR}, #{budgetProjectId,jdbcType=BIGINT}, 
+      #{projectName,jdbcType=VARCHAR}, #{budgetFee,jdbcType=DECIMAL}, #{costBudgetId,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostBudgetDetail">
+    insert into cost_budget_detail
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="projectNum != null">
+        projectNum,
+      </if>
+      <if test="budgetProjectId != null">
+        budgetProjectId,
+      </if>
+      <if test="projectName != null">
+        projectName,
+      </if>
+      <if test="budgetFee != null">
+        budgetFee,
+      </if>
+      <if test="costBudgetId != null">
+        costBudgetId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="projectNum != null">
+        #{projectNum,jdbcType=VARCHAR},
+      </if>
+      <if test="budgetProjectId != null">
+        #{budgetProjectId,jdbcType=BIGINT},
+      </if>
+      <if test="projectName != null">
+        #{projectName,jdbcType=VARCHAR},
+      </if>
+      <if test="budgetFee != null">
+        #{budgetFee,jdbcType=DECIMAL},
+      </if>
+      <if test="costBudgetId != null">
+        #{costBudgetId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostBudgetDetail">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="projectNum" jdbcType="VARCHAR" property="projectNum" />
+    <result column="budgetProjectId" jdbcType="BIGINT" property="budgetProjectId" />
+    <result column="projectName" jdbcType="VARCHAR" property="projectName" />
+    <result column="budgetFee" jdbcType="DECIMAL" property="budgetFee" />
+    <result column="costBudgetId" jdbcType="BIGINT" property="costBudgetId" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostBudgetDetail">
+    insert into cost_budget_detail (id, projectNum, budgetProjectId, 
+      projectName, budgetFee, costBudgetId
+      )
+    values (#{id,jdbcType=BIGINT}, #{projectNum,jdbcType=VARCHAR}, #{budgetProjectId,jdbcType=BIGINT}, 
+      #{projectName,jdbcType=VARCHAR}, #{budgetFee,jdbcType=DECIMAL}, #{costBudgetId,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostBudgetDetail">
+    insert into cost_budget_detail
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="projectNum != null">
+        projectNum,
+      </if>
+      <if test="budgetProjectId != null">
+        budgetProjectId,
+      </if>
+      <if test="projectName != null">
+        projectName,
+      </if>
+      <if test="budgetFee != null">
+        budgetFee,
+      </if>
+      <if test="costBudgetId != null">
+        costBudgetId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="projectNum != null">
+        #{projectNum,jdbcType=VARCHAR},
+      </if>
+      <if test="budgetProjectId != null">
+        #{budgetProjectId,jdbcType=BIGINT},
+      </if>
+      <if test="projectName != null">
+        #{projectName,jdbcType=VARCHAR},
+      </if>
+      <if test="budgetFee != null">
+        #{budgetFee,jdbcType=DECIMAL},
+      </if>
+      <if test="costBudgetId != null">
+        #{costBudgetId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostBudgetDetail">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="projectNum" jdbcType="VARCHAR" property="projectnum" />
+    <result column="budgetProjectId" jdbcType="BIGINT" property="budgetprojectid" />
+    <result column="projectName" jdbcType="VARCHAR" property="projectname" />
+    <result column="budgetFee" jdbcType="DECIMAL" property="budgetfee" />
+    <result column="costBudgetId" jdbcType="BIGINT" property="costbudgetid" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostBudgetDetail">
+    insert into cost_budget_detail (id, projectNum, budgetProjectId, 
+      projectName, budgetFee, costBudgetId
+      )
+    values (#{id,jdbcType=BIGINT}, #{projectnum,jdbcType=VARCHAR}, #{budgetprojectid,jdbcType=BIGINT}, 
+      #{projectname,jdbcType=VARCHAR}, #{budgetfee,jdbcType=DECIMAL}, #{costbudgetid,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostBudgetDetail">
+    insert into cost_budget_detail
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="projectnum != null">
+        projectNum,
+      </if>
+      <if test="budgetprojectid != null">
+        budgetProjectId,
+      </if>
+      <if test="projectname != null">
+        projectName,
+      </if>
+      <if test="budgetfee != null">
+        budgetFee,
+      </if>
+      <if test="costbudgetid != null">
+        costBudgetId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="projectnum != null">
+        #{projectnum,jdbcType=VARCHAR},
+      </if>
+      <if test="budgetprojectid != null">
+        #{budgetprojectid,jdbcType=BIGINT},
+      </if>
+      <if test="projectname != null">
+        #{projectname,jdbcType=VARCHAR},
+      </if>
+      <if test="budgetfee != null">
+        #{budgetfee,jdbcType=DECIMAL},
+      </if>
+      <if test="costbudgetid != null">
+        #{costbudgetid,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostBudgetDetail">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="projectNum" jdbcType="VARCHAR" property="projectnum" />
+    <result column="budgetProjectId" jdbcType="BIGINT" property="budgetprojectid" />
+    <result column="projectName" jdbcType="VARCHAR" property="projectname" />
+    <result column="budgetFee" jdbcType="DECIMAL" property="budgetfee" />
+    <result column="costBudgetId" jdbcType="BIGINT" property="costbudgetid" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostBudgetDetail">
+    insert into cost_budget_detail (id, projectNum, budgetProjectId, 
+      projectName, budgetFee, costBudgetId
+      )
+    values (#{id,jdbcType=BIGINT}, #{projectnum,jdbcType=VARCHAR}, #{budgetprojectid,jdbcType=BIGINT}, 
+      #{projectname,jdbcType=VARCHAR}, #{budgetfee,jdbcType=DECIMAL}, #{costbudgetid,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostBudgetDetail">
+    insert into cost_budget_detail
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="projectnum != null">
+        projectNum,
+      </if>
+      <if test="budgetprojectid != null">
+        budgetProjectId,
+      </if>
+      <if test="projectname != null">
+        projectName,
+      </if>
+      <if test="budgetfee != null">
+        budgetFee,
+      </if>
+      <if test="costbudgetid != null">
+        costBudgetId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="projectnum != null">
+        #{projectnum,jdbcType=VARCHAR},
+      </if>
+      <if test="budgetprojectid != null">
+        #{budgetprojectid,jdbcType=BIGINT},
+      </if>
+      <if test="projectname != null">
+        #{projectname,jdbcType=VARCHAR},
+      </if>
+      <if test="budgetfee != null">
+        #{budgetfee,jdbcType=DECIMAL},
+      </if>
+      <if test="costbudgetid != null">
+        #{costbudgetid,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+</mapper>

@@ -1,0 +1,621 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lisy.dao.CostBudgetProjectMapper">
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostBudgetProject">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="projectName" jdbcType="VARCHAR" property="projectName" />
+    <result column="isNeedRemark" jdbcType="INTEGER" property="isNeedRemark" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, projectName, isNeedRemark
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cost_budget_project
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from cost_budget_project
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.CostBudgetProject">
+    insert into cost_budget_project (id, projectName, isNeedRemark
+      )
+    values (#{id,jdbcType=BIGINT}, #{projectName,jdbcType=VARCHAR}, #{isNeedRemark,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostBudgetProject">
+    insert into cost_budget_project
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="projectName != null">
+        projectName,
+      </if>
+      <if test="isNeedRemark != null">
+        isNeedRemark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="projectName != null">
+        #{projectName,jdbcType=VARCHAR},
+      </if>
+      <if test="isNeedRemark != null">
+        #{isNeedRemark,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.CostBudgetProject">
+    update cost_budget_project
+    <set>
+      <if test="projectName != null">
+        projectName = #{projectName,jdbcType=VARCHAR},
+      </if>
+      <if test="isNeedRemark != null">
+        isNeedRemark = #{isNeedRemark,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.CostBudgetProject">
+    update cost_budget_project
+    set projectName = #{projectName,jdbcType=VARCHAR},
+      isNeedRemark = #{isNeedRemark,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostBudgetProject">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="projectName" jdbcType="VARCHAR" property="projectName" />
+    <result column="isNeedRemark" jdbcType="INTEGER" property="isNeedRemark" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, projectName, isNeedRemark
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cost_budget_project
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from cost_budget_project
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.CostBudgetProject">
+    insert into cost_budget_project (id, projectName, isNeedRemark
+      )
+    values (#{id,jdbcType=BIGINT}, #{projectName,jdbcType=VARCHAR}, #{isNeedRemark,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostBudgetProject">
+    insert into cost_budget_project
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="projectName != null">
+        projectName,
+      </if>
+      <if test="isNeedRemark != null">
+        isNeedRemark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="projectName != null">
+        #{projectName,jdbcType=VARCHAR},
+      </if>
+      <if test="isNeedRemark != null">
+        #{isNeedRemark,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.CostBudgetProject">
+    update cost_budget_project
+    <set>
+      <if test="projectName != null">
+        projectName = #{projectName,jdbcType=VARCHAR},
+      </if>
+      <if test="isNeedRemark != null">
+        isNeedRemark = #{isNeedRemark,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.CostBudgetProject">
+    update cost_budget_project
+    set projectName = #{projectName,jdbcType=VARCHAR},
+      isNeedRemark = #{isNeedRemark,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostBudgetProject">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="projectName" jdbcType="VARCHAR" property="projectName" />
+    <result column="isNeedRemark" jdbcType="INTEGER" property="isNeedRemark" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, projectName, isNeedRemark
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cost_budget_project
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from cost_budget_project
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.CostBudgetProject">
+    insert into cost_budget_project (id, projectName, isNeedRemark
+      )
+    values (#{id,jdbcType=BIGINT}, #{projectName,jdbcType=VARCHAR}, #{isNeedRemark,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostBudgetProject">
+    insert into cost_budget_project
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="projectName != null">
+        projectName,
+      </if>
+      <if test="isNeedRemark != null">
+        isNeedRemark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="projectName != null">
+        #{projectName,jdbcType=VARCHAR},
+      </if>
+      <if test="isNeedRemark != null">
+        #{isNeedRemark,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.CostBudgetProject">
+    update cost_budget_project
+    <set>
+      <if test="projectName != null">
+        projectName = #{projectName,jdbcType=VARCHAR},
+      </if>
+      <if test="isNeedRemark != null">
+        isNeedRemark = #{isNeedRemark,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.CostBudgetProject">
+    update cost_budget_project
+    set projectName = #{projectName,jdbcType=VARCHAR},
+      isNeedRemark = #{isNeedRemark,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostBudgetProject">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="projectName" jdbcType="VARCHAR" property="projectName" />
+    <result column="isNeedRemark" jdbcType="INTEGER" property="isNeedRemark" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, projectName, isNeedRemark
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cost_budget_project
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from cost_budget_project
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.CostBudgetProject">
+    insert into cost_budget_project (id, projectName, isNeedRemark
+      )
+    values (#{id,jdbcType=BIGINT}, #{projectName,jdbcType=VARCHAR}, #{isNeedRemark,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostBudgetProject">
+    insert into cost_budget_project
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="projectName != null">
+        projectName,
+      </if>
+      <if test="isNeedRemark != null">
+        isNeedRemark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="projectName != null">
+        #{projectName,jdbcType=VARCHAR},
+      </if>
+      <if test="isNeedRemark != null">
+        #{isNeedRemark,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.CostBudgetProject">
+    update cost_budget_project
+    <set>
+      <if test="projectName != null">
+        projectName = #{projectName,jdbcType=VARCHAR},
+      </if>
+      <if test="isNeedRemark != null">
+        isNeedRemark = #{isNeedRemark,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.CostBudgetProject">
+    update cost_budget_project
+    set projectName = #{projectName,jdbcType=VARCHAR},
+      isNeedRemark = #{isNeedRemark,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostBudgetProject">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="projectName" jdbcType="VARCHAR" property="projectName" />
+    <result column="isNeedRemark" jdbcType="INTEGER" property="isNeedRemark" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, projectName, isNeedRemark
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cost_budget_project
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from cost_budget_project
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.CostBudgetProject">
+    insert into cost_budget_project (id, projectName, isNeedRemark
+      )
+    values (#{id,jdbcType=BIGINT}, #{projectName,jdbcType=VARCHAR}, #{isNeedRemark,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostBudgetProject">
+    insert into cost_budget_project
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="projectName != null">
+        projectName,
+      </if>
+      <if test="isNeedRemark != null">
+        isNeedRemark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="projectName != null">
+        #{projectName,jdbcType=VARCHAR},
+      </if>
+      <if test="isNeedRemark != null">
+        #{isNeedRemark,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.CostBudgetProject">
+    update cost_budget_project
+    <set>
+      <if test="projectName != null">
+        projectName = #{projectName,jdbcType=VARCHAR},
+      </if>
+      <if test="isNeedRemark != null">
+        isNeedRemark = #{isNeedRemark,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.CostBudgetProject">
+    update cost_budget_project
+    set projectName = #{projectName,jdbcType=VARCHAR},
+      isNeedRemark = #{isNeedRemark,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostBudgetProject">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="projectName" jdbcType="VARCHAR" property="projectName" />
+    <result column="isNeedRemark" jdbcType="INTEGER" property="isNeedRemark" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, projectName, isNeedRemark
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cost_budget_project
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from cost_budget_project
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.CostBudgetProject">
+    insert into cost_budget_project (id, projectName, isNeedRemark
+      )
+    values (#{id,jdbcType=BIGINT}, #{projectName,jdbcType=VARCHAR}, #{isNeedRemark,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostBudgetProject">
+    insert into cost_budget_project
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="projectName != null">
+        projectName,
+      </if>
+      <if test="isNeedRemark != null">
+        isNeedRemark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="projectName != null">
+        #{projectName,jdbcType=VARCHAR},
+      </if>
+      <if test="isNeedRemark != null">
+        #{isNeedRemark,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.CostBudgetProject">
+    update cost_budget_project
+    <set>
+      <if test="projectName != null">
+        projectName = #{projectName,jdbcType=VARCHAR},
+      </if>
+      <if test="isNeedRemark != null">
+        isNeedRemark = #{isNeedRemark,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.CostBudgetProject">
+    update cost_budget_project
+    set projectName = #{projectName,jdbcType=VARCHAR},
+      isNeedRemark = #{isNeedRemark,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostBudgetProject">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="projectName" jdbcType="VARCHAR" property="projectName" />
+    <result column="isNeedRemark" jdbcType="INTEGER" property="isNeedRemark" />
+    <result column="budgetId" jdbcType="BIGINT" property="budgetId" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostBudgetProject">
+    insert into cost_budget_project (id, projectName, isNeedRemark, 
+      budgetId)
+    values (#{id,jdbcType=BIGINT}, #{projectName,jdbcType=VARCHAR}, #{isNeedRemark,jdbcType=INTEGER}, 
+      #{budgetId,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostBudgetProject">
+    insert into cost_budget_project
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="projectName != null">
+        projectName,
+      </if>
+      <if test="isNeedRemark != null">
+        isNeedRemark,
+      </if>
+      <if test="budgetId != null">
+        budgetId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="projectName != null">
+        #{projectName,jdbcType=VARCHAR},
+      </if>
+      <if test="isNeedRemark != null">
+        #{isNeedRemark,jdbcType=INTEGER},
+      </if>
+      <if test="budgetId != null">
+        #{budgetId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostBudgetProject">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="projectName" jdbcType="VARCHAR" property="projectName" />
+    <result column="isNeedRemark" jdbcType="INTEGER" property="isNeedRemark" />
+    <result column="budgetId" jdbcType="BIGINT" property="budgetId" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostBudgetProject">
+    insert into cost_budget_project (id, projectName, isNeedRemark, 
+      budgetId)
+    values (#{id,jdbcType=BIGINT}, #{projectName,jdbcType=VARCHAR}, #{isNeedRemark,jdbcType=INTEGER}, 
+      #{budgetId,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostBudgetProject">
+    insert into cost_budget_project
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="projectName != null">
+        projectName,
+      </if>
+      <if test="isNeedRemark != null">
+        isNeedRemark,
+      </if>
+      <if test="budgetId != null">
+        budgetId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="projectName != null">
+        #{projectName,jdbcType=VARCHAR},
+      </if>
+      <if test="isNeedRemark != null">
+        #{isNeedRemark,jdbcType=INTEGER},
+      </if>
+      <if test="budgetId != null">
+        #{budgetId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostBudgetProject">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="projectName" jdbcType="VARCHAR" property="projectName" />
+    <result column="isNeedRemark" jdbcType="INTEGER" property="isNeedRemark" />
+    <result column="budgetId" jdbcType="BIGINT" property="budgetId" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostBudgetProject">
+    insert into cost_budget_project (id, projectName, isNeedRemark, 
+      budgetId)
+    values (#{id,jdbcType=BIGINT}, #{projectName,jdbcType=VARCHAR}, #{isNeedRemark,jdbcType=INTEGER}, 
+      #{budgetId,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostBudgetProject">
+    insert into cost_budget_project
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="projectName != null">
+        projectName,
+      </if>
+      <if test="isNeedRemark != null">
+        isNeedRemark,
+      </if>
+      <if test="budgetId != null">
+        budgetId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="projectName != null">
+        #{projectName,jdbcType=VARCHAR},
+      </if>
+      <if test="isNeedRemark != null">
+        #{isNeedRemark,jdbcType=INTEGER},
+      </if>
+      <if test="budgetId != null">
+        #{budgetId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostBudgetProject">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="projectName" jdbcType="VARCHAR" property="projectname" />
+    <result column="isNeedRemark" jdbcType="INTEGER" property="isneedremark" />
+    <result column="budgetId" jdbcType="BIGINT" property="budgetid" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostBudgetProject">
+    insert into cost_budget_project (id, projectName, isNeedRemark, 
+      budgetId)
+    values (#{id,jdbcType=BIGINT}, #{projectname,jdbcType=VARCHAR}, #{isneedremark,jdbcType=INTEGER}, 
+      #{budgetid,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostBudgetProject">
+    insert into cost_budget_project
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="projectname != null">
+        projectName,
+      </if>
+      <if test="isneedremark != null">
+        isNeedRemark,
+      </if>
+      <if test="budgetid != null">
+        budgetId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="projectname != null">
+        #{projectname,jdbcType=VARCHAR},
+      </if>
+      <if test="isneedremark != null">
+        #{isneedremark,jdbcType=INTEGER},
+      </if>
+      <if test="budgetid != null">
+        #{budgetid,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostBudgetProject">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="projectName" jdbcType="VARCHAR" property="projectname" />
+    <result column="isNeedRemark" jdbcType="INTEGER" property="isneedremark" />
+    <result column="budgetId" jdbcType="BIGINT" property="budgetid" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostBudgetProject">
+    insert into cost_budget_project (id, projectName, isNeedRemark, 
+      budgetId)
+    values (#{id,jdbcType=BIGINT}, #{projectname,jdbcType=VARCHAR}, #{isneedremark,jdbcType=INTEGER}, 
+      #{budgetid,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostBudgetProject">
+    insert into cost_budget_project
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="projectname != null">
+        projectName,
+      </if>
+      <if test="isneedremark != null">
+        isNeedRemark,
+      </if>
+      <if test="budgetid != null">
+        budgetId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="projectname != null">
+        #{projectname,jdbcType=VARCHAR},
+      </if>
+      <if test="isneedremark != null">
+        #{isneedremark,jdbcType=INTEGER},
+      </if>
+      <if test="budgetid != null">
+        #{budgetid,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+</mapper>

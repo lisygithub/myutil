@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lisy.dao.CostExpenseBreedGroupMapper" >
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostExpenseBreedGroup" >
+    <result column="id" property="id" jdbcType="BIGINT" />
+    <result column="breedGroupId" property="breedGroupId" jdbcType="BIGINT" />
+    <result column="expenseAcctId" property="expenseAcctId" jdbcType="BIGINT" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostExpenseBreedGroup" >
+    insert into cost_expense_breed_group (id, breedGroupId, expenseAcctId
+      )
+    values (#{id,jdbcType=BIGINT}, #{breedGroupId,jdbcType=BIGINT}, #{expenseAcctId,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostExpenseBreedGroup" >
+    insert into cost_expense_breed_group
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="breedGroupId != null" >
+        breedGroupId,
+      </if>
+      <if test="expenseAcctId != null" >
+        expenseAcctId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="breedGroupId != null" >
+        #{breedGroupId,jdbcType=BIGINT},
+      </if>
+      <if test="expenseAcctId != null" >
+        #{expenseAcctId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+</mapper>

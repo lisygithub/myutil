@@ -1,0 +1,1368 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lisy.dao.CostBudgetTypeMapper">
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostBudgetType">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="cycle" jdbcType="VARCHAR" property="cycle" />
+    <result column="budgetUsage" jdbcType="VARCHAR" property="budgetUsage" />
+    <result column="isRelatedBreed" jdbcType="INTEGER" property="isRelatedBreed" />
+    <result column="isRelatedHospital" jdbcType="INTEGER" property="isRelatedHospital" />
+    <result column="updateTime" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="isAvailable" jdbcType="INTEGER" property="isAvailable" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, cycle, budgetUsage, isRelatedBreed, isRelatedHospital, updateTime, isAvailable
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cost_budget_type
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from cost_budget_type
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.CostBudgetType">
+    insert into cost_budget_type (id, name, cycle, 
+      budgetUsage, isRelatedBreed, isRelatedHospital, 
+      updateTime, isAvailable)
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{cycle,jdbcType=VARCHAR}, 
+      #{budgetUsage,jdbcType=VARCHAR}, #{isRelatedBreed,jdbcType=INTEGER}, #{isRelatedHospital,jdbcType=INTEGER}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{isAvailable,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostBudgetType">
+    insert into cost_budget_type
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="cycle != null">
+        cycle,
+      </if>
+      <if test="budgetUsage != null">
+        budgetUsage,
+      </if>
+      <if test="isRelatedBreed != null">
+        isRelatedBreed,
+      </if>
+      <if test="isRelatedHospital != null">
+        isRelatedHospital,
+      </if>
+      <if test="updateTime != null">
+        updateTime,
+      </if>
+      <if test="isAvailable != null">
+        isAvailable,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="cycle != null">
+        #{cycle,jdbcType=VARCHAR},
+      </if>
+      <if test="budgetUsage != null">
+        #{budgetUsage,jdbcType=VARCHAR},
+      </if>
+      <if test="isRelatedBreed != null">
+        #{isRelatedBreed,jdbcType=INTEGER},
+      </if>
+      <if test="isRelatedHospital != null">
+        #{isRelatedHospital,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isAvailable != null">
+        #{isAvailable,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.CostBudgetType">
+    update cost_budget_type
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="cycle != null">
+        cycle = #{cycle,jdbcType=VARCHAR},
+      </if>
+      <if test="budgetUsage != null">
+        budgetUsage = #{budgetUsage,jdbcType=VARCHAR},
+      </if>
+      <if test="isRelatedBreed != null">
+        isRelatedBreed = #{isRelatedBreed,jdbcType=INTEGER},
+      </if>
+      <if test="isRelatedHospital != null">
+        isRelatedHospital = #{isRelatedHospital,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        updateTime = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isAvailable != null">
+        isAvailable = #{isAvailable,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.CostBudgetType">
+    update cost_budget_type
+    set name = #{name,jdbcType=VARCHAR},
+      cycle = #{cycle,jdbcType=VARCHAR},
+      budgetUsage = #{budgetUsage,jdbcType=VARCHAR},
+      isRelatedBreed = #{isRelatedBreed,jdbcType=INTEGER},
+      isRelatedHospital = #{isRelatedHospital,jdbcType=INTEGER},
+      updateTime = #{updateTime,jdbcType=TIMESTAMP},
+      isAvailable = #{isAvailable,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostBudgetType">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="cycle" jdbcType="VARCHAR" property="cycle" />
+    <result column="budgetUsage" jdbcType="VARCHAR" property="budgetUsage" />
+    <result column="isRelatedBreed" jdbcType="INTEGER" property="isRelatedBreed" />
+    <result column="isRelatedHospital" jdbcType="INTEGER" property="isRelatedHospital" />
+    <result column="updateTime" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="isAvailable" jdbcType="INTEGER" property="isAvailable" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, cycle, budgetUsage, isRelatedBreed, isRelatedHospital, updateTime, isAvailable
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cost_budget_type
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from cost_budget_type
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.CostBudgetType">
+    insert into cost_budget_type (id, name, cycle, 
+      budgetUsage, isRelatedBreed, isRelatedHospital, 
+      updateTime, isAvailable)
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{cycle,jdbcType=VARCHAR}, 
+      #{budgetUsage,jdbcType=VARCHAR}, #{isRelatedBreed,jdbcType=INTEGER}, #{isRelatedHospital,jdbcType=INTEGER}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{isAvailable,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostBudgetType">
+    insert into cost_budget_type
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="cycle != null">
+        cycle,
+      </if>
+      <if test="budgetUsage != null">
+        budgetUsage,
+      </if>
+      <if test="isRelatedBreed != null">
+        isRelatedBreed,
+      </if>
+      <if test="isRelatedHospital != null">
+        isRelatedHospital,
+      </if>
+      <if test="updateTime != null">
+        updateTime,
+      </if>
+      <if test="isAvailable != null">
+        isAvailable,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="cycle != null">
+        #{cycle,jdbcType=VARCHAR},
+      </if>
+      <if test="budgetUsage != null">
+        #{budgetUsage,jdbcType=VARCHAR},
+      </if>
+      <if test="isRelatedBreed != null">
+        #{isRelatedBreed,jdbcType=INTEGER},
+      </if>
+      <if test="isRelatedHospital != null">
+        #{isRelatedHospital,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isAvailable != null">
+        #{isAvailable,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.CostBudgetType">
+    update cost_budget_type
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="cycle != null">
+        cycle = #{cycle,jdbcType=VARCHAR},
+      </if>
+      <if test="budgetUsage != null">
+        budgetUsage = #{budgetUsage,jdbcType=VARCHAR},
+      </if>
+      <if test="isRelatedBreed != null">
+        isRelatedBreed = #{isRelatedBreed,jdbcType=INTEGER},
+      </if>
+      <if test="isRelatedHospital != null">
+        isRelatedHospital = #{isRelatedHospital,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        updateTime = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isAvailable != null">
+        isAvailable = #{isAvailable,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.CostBudgetType">
+    update cost_budget_type
+    set name = #{name,jdbcType=VARCHAR},
+      cycle = #{cycle,jdbcType=VARCHAR},
+      budgetUsage = #{budgetUsage,jdbcType=VARCHAR},
+      isRelatedBreed = #{isRelatedBreed,jdbcType=INTEGER},
+      isRelatedHospital = #{isRelatedHospital,jdbcType=INTEGER},
+      updateTime = #{updateTime,jdbcType=TIMESTAMP},
+      isAvailable = #{isAvailable,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostBudgetType">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="cycle" jdbcType="VARCHAR" property="cycle" />
+    <result column="budgetUsage" jdbcType="VARCHAR" property="budgetUsage" />
+    <result column="isRelatedBreed" jdbcType="INTEGER" property="isRelatedBreed" />
+    <result column="isRelatedHospital" jdbcType="INTEGER" property="isRelatedHospital" />
+    <result column="updateTime" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="isAvailable" jdbcType="INTEGER" property="isAvailable" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, cycle, budgetUsage, isRelatedBreed, isRelatedHospital, updateTime, isAvailable
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cost_budget_type
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from cost_budget_type
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.CostBudgetType">
+    insert into cost_budget_type (id, name, cycle, 
+      budgetUsage, isRelatedBreed, isRelatedHospital, 
+      updateTime, isAvailable)
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{cycle,jdbcType=VARCHAR}, 
+      #{budgetUsage,jdbcType=VARCHAR}, #{isRelatedBreed,jdbcType=INTEGER}, #{isRelatedHospital,jdbcType=INTEGER}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{isAvailable,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostBudgetType">
+    insert into cost_budget_type
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="cycle != null">
+        cycle,
+      </if>
+      <if test="budgetUsage != null">
+        budgetUsage,
+      </if>
+      <if test="isRelatedBreed != null">
+        isRelatedBreed,
+      </if>
+      <if test="isRelatedHospital != null">
+        isRelatedHospital,
+      </if>
+      <if test="updateTime != null">
+        updateTime,
+      </if>
+      <if test="isAvailable != null">
+        isAvailable,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="cycle != null">
+        #{cycle,jdbcType=VARCHAR},
+      </if>
+      <if test="budgetUsage != null">
+        #{budgetUsage,jdbcType=VARCHAR},
+      </if>
+      <if test="isRelatedBreed != null">
+        #{isRelatedBreed,jdbcType=INTEGER},
+      </if>
+      <if test="isRelatedHospital != null">
+        #{isRelatedHospital,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isAvailable != null">
+        #{isAvailable,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.CostBudgetType">
+    update cost_budget_type
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="cycle != null">
+        cycle = #{cycle,jdbcType=VARCHAR},
+      </if>
+      <if test="budgetUsage != null">
+        budgetUsage = #{budgetUsage,jdbcType=VARCHAR},
+      </if>
+      <if test="isRelatedBreed != null">
+        isRelatedBreed = #{isRelatedBreed,jdbcType=INTEGER},
+      </if>
+      <if test="isRelatedHospital != null">
+        isRelatedHospital = #{isRelatedHospital,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        updateTime = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isAvailable != null">
+        isAvailable = #{isAvailable,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.CostBudgetType">
+    update cost_budget_type
+    set name = #{name,jdbcType=VARCHAR},
+      cycle = #{cycle,jdbcType=VARCHAR},
+      budgetUsage = #{budgetUsage,jdbcType=VARCHAR},
+      isRelatedBreed = #{isRelatedBreed,jdbcType=INTEGER},
+      isRelatedHospital = #{isRelatedHospital,jdbcType=INTEGER},
+      updateTime = #{updateTime,jdbcType=TIMESTAMP},
+      isAvailable = #{isAvailable,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostBudgetType">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="cycle" jdbcType="VARCHAR" property="cycle" />
+    <result column="budgetUsage" jdbcType="VARCHAR" property="budgetUsage" />
+    <result column="isRelatedBreed" jdbcType="INTEGER" property="isRelatedBreed" />
+    <result column="isRelatedHospital" jdbcType="INTEGER" property="isRelatedHospital" />
+    <result column="updateTime" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="isAvailable" jdbcType="INTEGER" property="isAvailable" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, cycle, budgetUsage, isRelatedBreed, isRelatedHospital, updateTime, isAvailable
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cost_budget_type
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from cost_budget_type
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.CostBudgetType">
+    insert into cost_budget_type (id, name, cycle, 
+      budgetUsage, isRelatedBreed, isRelatedHospital, 
+      updateTime, isAvailable)
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{cycle,jdbcType=VARCHAR}, 
+      #{budgetUsage,jdbcType=VARCHAR}, #{isRelatedBreed,jdbcType=INTEGER}, #{isRelatedHospital,jdbcType=INTEGER}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{isAvailable,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostBudgetType">
+    insert into cost_budget_type
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="cycle != null">
+        cycle,
+      </if>
+      <if test="budgetUsage != null">
+        budgetUsage,
+      </if>
+      <if test="isRelatedBreed != null">
+        isRelatedBreed,
+      </if>
+      <if test="isRelatedHospital != null">
+        isRelatedHospital,
+      </if>
+      <if test="updateTime != null">
+        updateTime,
+      </if>
+      <if test="isAvailable != null">
+        isAvailable,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="cycle != null">
+        #{cycle,jdbcType=VARCHAR},
+      </if>
+      <if test="budgetUsage != null">
+        #{budgetUsage,jdbcType=VARCHAR},
+      </if>
+      <if test="isRelatedBreed != null">
+        #{isRelatedBreed,jdbcType=INTEGER},
+      </if>
+      <if test="isRelatedHospital != null">
+        #{isRelatedHospital,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isAvailable != null">
+        #{isAvailable,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.CostBudgetType">
+    update cost_budget_type
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="cycle != null">
+        cycle = #{cycle,jdbcType=VARCHAR},
+      </if>
+      <if test="budgetUsage != null">
+        budgetUsage = #{budgetUsage,jdbcType=VARCHAR},
+      </if>
+      <if test="isRelatedBreed != null">
+        isRelatedBreed = #{isRelatedBreed,jdbcType=INTEGER},
+      </if>
+      <if test="isRelatedHospital != null">
+        isRelatedHospital = #{isRelatedHospital,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        updateTime = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isAvailable != null">
+        isAvailable = #{isAvailable,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.CostBudgetType">
+    update cost_budget_type
+    set name = #{name,jdbcType=VARCHAR},
+      cycle = #{cycle,jdbcType=VARCHAR},
+      budgetUsage = #{budgetUsage,jdbcType=VARCHAR},
+      isRelatedBreed = #{isRelatedBreed,jdbcType=INTEGER},
+      isRelatedHospital = #{isRelatedHospital,jdbcType=INTEGER},
+      updateTime = #{updateTime,jdbcType=TIMESTAMP},
+      isAvailable = #{isAvailable,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostBudgetType">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="cycle" jdbcType="VARCHAR" property="cycle" />
+    <result column="budgetUsage" jdbcType="VARCHAR" property="budgetUsage" />
+    <result column="isRelatedBreed" jdbcType="INTEGER" property="isRelatedBreed" />
+    <result column="isRelatedHospital" jdbcType="INTEGER" property="isRelatedHospital" />
+    <result column="updateTime" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="isAvailable" jdbcType="INTEGER" property="isAvailable" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, cycle, budgetUsage, isRelatedBreed, isRelatedHospital, updateTime, isAvailable
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cost_budget_type
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from cost_budget_type
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.CostBudgetType">
+    insert into cost_budget_type (id, name, cycle, 
+      budgetUsage, isRelatedBreed, isRelatedHospital, 
+      updateTime, isAvailable)
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{cycle,jdbcType=VARCHAR}, 
+      #{budgetUsage,jdbcType=VARCHAR}, #{isRelatedBreed,jdbcType=INTEGER}, #{isRelatedHospital,jdbcType=INTEGER}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{isAvailable,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostBudgetType">
+    insert into cost_budget_type
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="cycle != null">
+        cycle,
+      </if>
+      <if test="budgetUsage != null">
+        budgetUsage,
+      </if>
+      <if test="isRelatedBreed != null">
+        isRelatedBreed,
+      </if>
+      <if test="isRelatedHospital != null">
+        isRelatedHospital,
+      </if>
+      <if test="updateTime != null">
+        updateTime,
+      </if>
+      <if test="isAvailable != null">
+        isAvailable,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="cycle != null">
+        #{cycle,jdbcType=VARCHAR},
+      </if>
+      <if test="budgetUsage != null">
+        #{budgetUsage,jdbcType=VARCHAR},
+      </if>
+      <if test="isRelatedBreed != null">
+        #{isRelatedBreed,jdbcType=INTEGER},
+      </if>
+      <if test="isRelatedHospital != null">
+        #{isRelatedHospital,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isAvailable != null">
+        #{isAvailable,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.CostBudgetType">
+    update cost_budget_type
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="cycle != null">
+        cycle = #{cycle,jdbcType=VARCHAR},
+      </if>
+      <if test="budgetUsage != null">
+        budgetUsage = #{budgetUsage,jdbcType=VARCHAR},
+      </if>
+      <if test="isRelatedBreed != null">
+        isRelatedBreed = #{isRelatedBreed,jdbcType=INTEGER},
+      </if>
+      <if test="isRelatedHospital != null">
+        isRelatedHospital = #{isRelatedHospital,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        updateTime = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isAvailable != null">
+        isAvailable = #{isAvailable,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.CostBudgetType">
+    update cost_budget_type
+    set name = #{name,jdbcType=VARCHAR},
+      cycle = #{cycle,jdbcType=VARCHAR},
+      budgetUsage = #{budgetUsage,jdbcType=VARCHAR},
+      isRelatedBreed = #{isRelatedBreed,jdbcType=INTEGER},
+      isRelatedHospital = #{isRelatedHospital,jdbcType=INTEGER},
+      updateTime = #{updateTime,jdbcType=TIMESTAMP},
+      isAvailable = #{isAvailable,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostBudgetType">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="cycle" jdbcType="VARCHAR" property="cycle" />
+    <result column="budgetUsage" jdbcType="VARCHAR" property="budgetUsage" />
+    <result column="isRelatedBreed" jdbcType="INTEGER" property="isRelatedBreed" />
+    <result column="isRelatedHospital" jdbcType="INTEGER" property="isRelatedHospital" />
+    <result column="updateTime" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="isAvailable" jdbcType="INTEGER" property="isAvailable" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, cycle, budgetUsage, isRelatedBreed, isRelatedHospital, updateTime, isAvailable
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cost_budget_type
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from cost_budget_type
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.CostBudgetType">
+    insert into cost_budget_type (id, name, cycle, 
+      budgetUsage, isRelatedBreed, isRelatedHospital, 
+      updateTime, isAvailable)
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{cycle,jdbcType=VARCHAR}, 
+      #{budgetUsage,jdbcType=VARCHAR}, #{isRelatedBreed,jdbcType=INTEGER}, #{isRelatedHospital,jdbcType=INTEGER}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{isAvailable,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostBudgetType">
+    insert into cost_budget_type
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="cycle != null">
+        cycle,
+      </if>
+      <if test="budgetUsage != null">
+        budgetUsage,
+      </if>
+      <if test="isRelatedBreed != null">
+        isRelatedBreed,
+      </if>
+      <if test="isRelatedHospital != null">
+        isRelatedHospital,
+      </if>
+      <if test="updateTime != null">
+        updateTime,
+      </if>
+      <if test="isAvailable != null">
+        isAvailable,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="cycle != null">
+        #{cycle,jdbcType=VARCHAR},
+      </if>
+      <if test="budgetUsage != null">
+        #{budgetUsage,jdbcType=VARCHAR},
+      </if>
+      <if test="isRelatedBreed != null">
+        #{isRelatedBreed,jdbcType=INTEGER},
+      </if>
+      <if test="isRelatedHospital != null">
+        #{isRelatedHospital,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isAvailable != null">
+        #{isAvailable,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.CostBudgetType">
+    update cost_budget_type
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="cycle != null">
+        cycle = #{cycle,jdbcType=VARCHAR},
+      </if>
+      <if test="budgetUsage != null">
+        budgetUsage = #{budgetUsage,jdbcType=VARCHAR},
+      </if>
+      <if test="isRelatedBreed != null">
+        isRelatedBreed = #{isRelatedBreed,jdbcType=INTEGER},
+      </if>
+      <if test="isRelatedHospital != null">
+        isRelatedHospital = #{isRelatedHospital,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        updateTime = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isAvailable != null">
+        isAvailable = #{isAvailable,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.CostBudgetType">
+    update cost_budget_type
+    set name = #{name,jdbcType=VARCHAR},
+      cycle = #{cycle,jdbcType=VARCHAR},
+      budgetUsage = #{budgetUsage,jdbcType=VARCHAR},
+      isRelatedBreed = #{isRelatedBreed,jdbcType=INTEGER},
+      isRelatedHospital = #{isRelatedHospital,jdbcType=INTEGER},
+      updateTime = #{updateTime,jdbcType=TIMESTAMP},
+      isAvailable = #{isAvailable,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostBudgetType">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="cycle" jdbcType="VARCHAR" property="cycle" />
+    <result column="budgetUsage" jdbcType="VARCHAR" property="budgetUsage" />
+    <result column="isRelatedBreed" jdbcType="INTEGER" property="isRelatedBreed" />
+    <result column="isRelatedHospital" jdbcType="INTEGER" property="isRelatedHospital" />
+    <result column="updateTime" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="isAvailable" jdbcType="INTEGER" property="isAvailable" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, cycle, budgetUsage, isRelatedBreed, isRelatedHospital, updateTime, isAvailable
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cost_budget_type
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from cost_budget_type
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.CostBudgetType">
+    insert into cost_budget_type (id, name, cycle, 
+      budgetUsage, isRelatedBreed, isRelatedHospital, 
+      updateTime, isAvailable)
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{cycle,jdbcType=VARCHAR}, 
+      #{budgetUsage,jdbcType=VARCHAR}, #{isRelatedBreed,jdbcType=INTEGER}, #{isRelatedHospital,jdbcType=INTEGER}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{isAvailable,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostBudgetType">
+    insert into cost_budget_type
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="cycle != null">
+        cycle,
+      </if>
+      <if test="budgetUsage != null">
+        budgetUsage,
+      </if>
+      <if test="isRelatedBreed != null">
+        isRelatedBreed,
+      </if>
+      <if test="isRelatedHospital != null">
+        isRelatedHospital,
+      </if>
+      <if test="updateTime != null">
+        updateTime,
+      </if>
+      <if test="isAvailable != null">
+        isAvailable,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="cycle != null">
+        #{cycle,jdbcType=VARCHAR},
+      </if>
+      <if test="budgetUsage != null">
+        #{budgetUsage,jdbcType=VARCHAR},
+      </if>
+      <if test="isRelatedBreed != null">
+        #{isRelatedBreed,jdbcType=INTEGER},
+      </if>
+      <if test="isRelatedHospital != null">
+        #{isRelatedHospital,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isAvailable != null">
+        #{isAvailable,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.CostBudgetType">
+    update cost_budget_type
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="cycle != null">
+        cycle = #{cycle,jdbcType=VARCHAR},
+      </if>
+      <if test="budgetUsage != null">
+        budgetUsage = #{budgetUsage,jdbcType=VARCHAR},
+      </if>
+      <if test="isRelatedBreed != null">
+        isRelatedBreed = #{isRelatedBreed,jdbcType=INTEGER},
+      </if>
+      <if test="isRelatedHospital != null">
+        isRelatedHospital = #{isRelatedHospital,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        updateTime = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isAvailable != null">
+        isAvailable = #{isAvailable,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.CostBudgetType">
+    update cost_budget_type
+    set name = #{name,jdbcType=VARCHAR},
+      cycle = #{cycle,jdbcType=VARCHAR},
+      budgetUsage = #{budgetUsage,jdbcType=VARCHAR},
+      isRelatedBreed = #{isRelatedBreed,jdbcType=INTEGER},
+      isRelatedHospital = #{isRelatedHospital,jdbcType=INTEGER},
+      updateTime = #{updateTime,jdbcType=TIMESTAMP},
+      isAvailable = #{isAvailable,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostBudgetType">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="cycle" jdbcType="VARCHAR" property="cycle" />
+    <result column="budgetUsage" jdbcType="VARCHAR" property="budgetUsage" />
+    <result column="isRelatedBreed" jdbcType="INTEGER" property="isRelatedBreed" />
+    <result column="isRelatedHospital" jdbcType="INTEGER" property="isRelatedHospital" />
+    <result column="updateTime" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="isAvailable" jdbcType="INTEGER" property="isAvailable" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, cycle, budgetUsage, isRelatedBreed, isRelatedHospital, updateTime, isAvailable
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cost_budget_type
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from cost_budget_type
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.CostBudgetType">
+    insert into cost_budget_type (id, name, cycle, 
+      budgetUsage, isRelatedBreed, isRelatedHospital, 
+      updateTime, isAvailable)
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{cycle,jdbcType=VARCHAR}, 
+      #{budgetUsage,jdbcType=VARCHAR}, #{isRelatedBreed,jdbcType=INTEGER}, #{isRelatedHospital,jdbcType=INTEGER}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{isAvailable,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostBudgetType">
+    insert into cost_budget_type
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="cycle != null">
+        cycle,
+      </if>
+      <if test="budgetUsage != null">
+        budgetUsage,
+      </if>
+      <if test="isRelatedBreed != null">
+        isRelatedBreed,
+      </if>
+      <if test="isRelatedHospital != null">
+        isRelatedHospital,
+      </if>
+      <if test="updateTime != null">
+        updateTime,
+      </if>
+      <if test="isAvailable != null">
+        isAvailable,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="cycle != null">
+        #{cycle,jdbcType=VARCHAR},
+      </if>
+      <if test="budgetUsage != null">
+        #{budgetUsage,jdbcType=VARCHAR},
+      </if>
+      <if test="isRelatedBreed != null">
+        #{isRelatedBreed,jdbcType=INTEGER},
+      </if>
+      <if test="isRelatedHospital != null">
+        #{isRelatedHospital,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isAvailable != null">
+        #{isAvailable,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.CostBudgetType">
+    update cost_budget_type
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="cycle != null">
+        cycle = #{cycle,jdbcType=VARCHAR},
+      </if>
+      <if test="budgetUsage != null">
+        budgetUsage = #{budgetUsage,jdbcType=VARCHAR},
+      </if>
+      <if test="isRelatedBreed != null">
+        isRelatedBreed = #{isRelatedBreed,jdbcType=INTEGER},
+      </if>
+      <if test="isRelatedHospital != null">
+        isRelatedHospital = #{isRelatedHospital,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        updateTime = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isAvailable != null">
+        isAvailable = #{isAvailable,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.CostBudgetType">
+    update cost_budget_type
+    set name = #{name,jdbcType=VARCHAR},
+      cycle = #{cycle,jdbcType=VARCHAR},
+      budgetUsage = #{budgetUsage,jdbcType=VARCHAR},
+      isRelatedBreed = #{isRelatedBreed,jdbcType=INTEGER},
+      isRelatedHospital = #{isRelatedHospital,jdbcType=INTEGER},
+      updateTime = #{updateTime,jdbcType=TIMESTAMP},
+      isAvailable = #{isAvailable,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostBudgetType">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="cycle" jdbcType="VARCHAR" property="cycle" />
+    <result column="budgetUsage" jdbcType="VARCHAR" property="budgetUsage" />
+    <result column="isRelatedBreed" jdbcType="INTEGER" property="isRelatedBreed" />
+    <result column="isRelatedHospital" jdbcType="INTEGER" property="isRelatedHospital" />
+    <result column="updateTime" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="isAvailable" jdbcType="INTEGER" property="isAvailable" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, cycle, budgetUsage, isRelatedBreed, isRelatedHospital, updateTime, isAvailable
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cost_budget_type
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from cost_budget_type
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.CostBudgetType">
+    insert into cost_budget_type (id, name, cycle, 
+      budgetUsage, isRelatedBreed, isRelatedHospital, 
+      updateTime, isAvailable)
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{cycle,jdbcType=VARCHAR}, 
+      #{budgetUsage,jdbcType=VARCHAR}, #{isRelatedBreed,jdbcType=INTEGER}, #{isRelatedHospital,jdbcType=INTEGER}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{isAvailable,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostBudgetType">
+    insert into cost_budget_type
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="cycle != null">
+        cycle,
+      </if>
+      <if test="budgetUsage != null">
+        budgetUsage,
+      </if>
+      <if test="isRelatedBreed != null">
+        isRelatedBreed,
+      </if>
+      <if test="isRelatedHospital != null">
+        isRelatedHospital,
+      </if>
+      <if test="updateTime != null">
+        updateTime,
+      </if>
+      <if test="isAvailable != null">
+        isAvailable,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="cycle != null">
+        #{cycle,jdbcType=VARCHAR},
+      </if>
+      <if test="budgetUsage != null">
+        #{budgetUsage,jdbcType=VARCHAR},
+      </if>
+      <if test="isRelatedBreed != null">
+        #{isRelatedBreed,jdbcType=INTEGER},
+      </if>
+      <if test="isRelatedHospital != null">
+        #{isRelatedHospital,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isAvailable != null">
+        #{isAvailable,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.CostBudgetType">
+    update cost_budget_type
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="cycle != null">
+        cycle = #{cycle,jdbcType=VARCHAR},
+      </if>
+      <if test="budgetUsage != null">
+        budgetUsage = #{budgetUsage,jdbcType=VARCHAR},
+      </if>
+      <if test="isRelatedBreed != null">
+        isRelatedBreed = #{isRelatedBreed,jdbcType=INTEGER},
+      </if>
+      <if test="isRelatedHospital != null">
+        isRelatedHospital = #{isRelatedHospital,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        updateTime = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isAvailable != null">
+        isAvailable = #{isAvailable,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.CostBudgetType">
+    update cost_budget_type
+    set name = #{name,jdbcType=VARCHAR},
+      cycle = #{cycle,jdbcType=VARCHAR},
+      budgetUsage = #{budgetUsage,jdbcType=VARCHAR},
+      isRelatedBreed = #{isRelatedBreed,jdbcType=INTEGER},
+      isRelatedHospital = #{isRelatedHospital,jdbcType=INTEGER},
+      updateTime = #{updateTime,jdbcType=TIMESTAMP},
+      isAvailable = #{isAvailable,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostBudgetType">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="cycle" jdbcType="VARCHAR" property="cycle" />
+    <result column="budgetUsage" jdbcType="VARCHAR" property="budgetusage" />
+    <result column="isRelatedBreed" jdbcType="INTEGER" property="isrelatedbreed" />
+    <result column="isRelatedHospital" jdbcType="INTEGER" property="isrelatedhospital" />
+    <result column="updateTime" jdbcType="TIMESTAMP" property="updatetime" />
+    <result column="isAvailable" jdbcType="INTEGER" property="isavailable" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, cycle, budgetUsage, isRelatedBreed, isRelatedHospital, updateTime, isAvailable
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cost_budget_type
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from cost_budget_type
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.CostBudgetType">
+    insert into cost_budget_type (id, name, cycle, 
+      budgetUsage, isRelatedBreed, isRelatedHospital, 
+      updateTime, isAvailable)
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{cycle,jdbcType=VARCHAR}, 
+      #{budgetusage,jdbcType=VARCHAR}, #{isrelatedbreed,jdbcType=INTEGER}, #{isrelatedhospital,jdbcType=INTEGER}, 
+      #{updatetime,jdbcType=TIMESTAMP}, #{isavailable,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostBudgetType">
+    insert into cost_budget_type
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="cycle != null">
+        cycle,
+      </if>
+      <if test="budgetusage != null">
+        budgetUsage,
+      </if>
+      <if test="isrelatedbreed != null">
+        isRelatedBreed,
+      </if>
+      <if test="isrelatedhospital != null">
+        isRelatedHospital,
+      </if>
+      <if test="updatetime != null">
+        updateTime,
+      </if>
+      <if test="isavailable != null">
+        isAvailable,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="cycle != null">
+        #{cycle,jdbcType=VARCHAR},
+      </if>
+      <if test="budgetusage != null">
+        #{budgetusage,jdbcType=VARCHAR},
+      </if>
+      <if test="isrelatedbreed != null">
+        #{isrelatedbreed,jdbcType=INTEGER},
+      </if>
+      <if test="isrelatedhospital != null">
+        #{isrelatedhospital,jdbcType=INTEGER},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isavailable != null">
+        #{isavailable,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.CostBudgetType">
+    update cost_budget_type
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="cycle != null">
+        cycle = #{cycle,jdbcType=VARCHAR},
+      </if>
+      <if test="budgetusage != null">
+        budgetUsage = #{budgetusage,jdbcType=VARCHAR},
+      </if>
+      <if test="isrelatedbreed != null">
+        isRelatedBreed = #{isrelatedbreed,jdbcType=INTEGER},
+      </if>
+      <if test="isrelatedhospital != null">
+        isRelatedHospital = #{isrelatedhospital,jdbcType=INTEGER},
+      </if>
+      <if test="updatetime != null">
+        updateTime = #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isavailable != null">
+        isAvailable = #{isavailable,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.CostBudgetType">
+    update cost_budget_type
+    set name = #{name,jdbcType=VARCHAR},
+      cycle = #{cycle,jdbcType=VARCHAR},
+      budgetUsage = #{budgetusage,jdbcType=VARCHAR},
+      isRelatedBreed = #{isrelatedbreed,jdbcType=INTEGER},
+      isRelatedHospital = #{isrelatedhospital,jdbcType=INTEGER},
+      updateTime = #{updatetime,jdbcType=TIMESTAMP},
+      isAvailable = #{isavailable,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostBudgetType">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="cycle" jdbcType="VARCHAR" property="cycle" />
+    <result column="budgetUsage" jdbcType="VARCHAR" property="budgetusage" />
+    <result column="isRelatedBreed" jdbcType="INTEGER" property="isrelatedbreed" />
+    <result column="isRelatedHospital" jdbcType="INTEGER" property="isrelatedhospital" />
+    <result column="updateTime" jdbcType="TIMESTAMP" property="updatetime" />
+    <result column="isAvailable" jdbcType="INTEGER" property="isavailable" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, cycle, budgetUsage, isRelatedBreed, isRelatedHospital, updateTime, isAvailable
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cost_budget_type
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from cost_budget_type
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.CostBudgetType">
+    insert into cost_budget_type (id, name, cycle, 
+      budgetUsage, isRelatedBreed, isRelatedHospital, 
+      updateTime, isAvailable)
+    values (#{id,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, #{cycle,jdbcType=VARCHAR}, 
+      #{budgetusage,jdbcType=VARCHAR}, #{isrelatedbreed,jdbcType=INTEGER}, #{isrelatedhospital,jdbcType=INTEGER}, 
+      #{updatetime,jdbcType=TIMESTAMP}, #{isavailable,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostBudgetType">
+    insert into cost_budget_type
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="cycle != null">
+        cycle,
+      </if>
+      <if test="budgetusage != null">
+        budgetUsage,
+      </if>
+      <if test="isrelatedbreed != null">
+        isRelatedBreed,
+      </if>
+      <if test="isrelatedhospital != null">
+        isRelatedHospital,
+      </if>
+      <if test="updatetime != null">
+        updateTime,
+      </if>
+      <if test="isavailable != null">
+        isAvailable,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="cycle != null">
+        #{cycle,jdbcType=VARCHAR},
+      </if>
+      <if test="budgetusage != null">
+        #{budgetusage,jdbcType=VARCHAR},
+      </if>
+      <if test="isrelatedbreed != null">
+        #{isrelatedbreed,jdbcType=INTEGER},
+      </if>
+      <if test="isrelatedhospital != null">
+        #{isrelatedhospital,jdbcType=INTEGER},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isavailable != null">
+        #{isavailable,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.CostBudgetType">
+    update cost_budget_type
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="cycle != null">
+        cycle = #{cycle,jdbcType=VARCHAR},
+      </if>
+      <if test="budgetusage != null">
+        budgetUsage = #{budgetusage,jdbcType=VARCHAR},
+      </if>
+      <if test="isrelatedbreed != null">
+        isRelatedBreed = #{isrelatedbreed,jdbcType=INTEGER},
+      </if>
+      <if test="isrelatedhospital != null">
+        isRelatedHospital = #{isrelatedhospital,jdbcType=INTEGER},
+      </if>
+      <if test="updatetime != null">
+        updateTime = #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="isavailable != null">
+        isAvailable = #{isavailable,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.CostBudgetType">
+    update cost_budget_type
+    set name = #{name,jdbcType=VARCHAR},
+      cycle = #{cycle,jdbcType=VARCHAR},
+      budgetUsage = #{budgetusage,jdbcType=VARCHAR},
+      isRelatedBreed = #{isrelatedbreed,jdbcType=INTEGER},
+      isRelatedHospital = #{isrelatedhospital,jdbcType=INTEGER},
+      updateTime = #{updatetime,jdbcType=TIMESTAMP},
+      isAvailable = #{isavailable,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

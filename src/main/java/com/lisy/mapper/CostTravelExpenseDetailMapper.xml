@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lisy.dao.CostTravelExpenseDetailMapper" >
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostTravelExpenseDetail" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="expenseAcctID" property="expenseAcctID" jdbcType="BIGINT" />
+    <result column="subjectId" property="subjectId" jdbcType="BIGINT" />
+    <result column="rideTime" property="rideTime" jdbcType="TIMESTAMP" />
+    <result column="rideBegin" property="rideBegin" jdbcType="VARCHAR" />
+    <result column="rideEnd" property="rideEnd" jdbcType="VARCHAR" />
+    <result column="money" property="money" jdbcType="DECIMAL" />
+    <result column="dayCount" property="dayCount" jdbcType="INTEGER" />
+    <result column="city" property="city" jdbcType="VARCHAR" />
+    <result column="vehicle" property="vehicle" jdbcType="VARCHAR" />
+    <result column="name" property="name" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, expenseAcctID, subjectId, rideTime, rideBegin, rideEnd, money, dayCount, city, 
+    vehicle, name
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from cost_travel_expense_detail
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from cost_travel_expense_detail
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.CostTravelExpenseDetail" >
+    insert into cost_travel_expense_detail (id, expenseAcctID, subjectId, 
+      rideTime, rideBegin, rideEnd, 
+      money, dayCount, city, 
+      vehicle, name)
+    values (#{id,jdbcType=BIGINT}, #{expenseAcctID,jdbcType=BIGINT}, #{subjectId,jdbcType=BIGINT}, 
+      #{rideTime,jdbcType=TIMESTAMP}, #{rideBegin,jdbcType=VARCHAR}, #{rideEnd,jdbcType=VARCHAR}, 
+      #{money,jdbcType=DECIMAL}, #{dayCount,jdbcType=INTEGER}, #{city,jdbcType=VARCHAR}, 
+      #{vehicle,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostTravelExpenseDetail" >
+    insert into cost_travel_expense_detail
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="expenseAcctID != null" >
+        expenseAcctID,
+      </if>
+      <if test="subjectId != null" >
+        subjectId,
+      </if>
+      <if test="rideTime != null" >
+        rideTime,
+      </if>
+      <if test="rideBegin != null" >
+        rideBegin,
+      </if>
+      <if test="rideEnd != null" >
+        rideEnd,
+      </if>
+      <if test="money != null" >
+        money,
+      </if>
+      <if test="dayCount != null" >
+        dayCount,
+      </if>
+      <if test="city != null" >
+        city,
+      </if>
+      <if test="vehicle != null" >
+        vehicle,
+      </if>
+      <if test="name != null" >
+        name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="expenseAcctID != null" >
+        #{expenseAcctID,jdbcType=BIGINT},
+      </if>
+      <if test="subjectId != null" >
+        #{subjectId,jdbcType=BIGINT},
+      </if>
+      <if test="rideTime != null" >
+        #{rideTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="rideBegin != null" >
+        #{rideBegin,jdbcType=VARCHAR},
+      </if>
+      <if test="rideEnd != null" >
+        #{rideEnd,jdbcType=VARCHAR},
+      </if>
+      <if test="money != null" >
+        #{money,jdbcType=DECIMAL},
+      </if>
+      <if test="dayCount != null" >
+        #{dayCount,jdbcType=INTEGER},
+      </if>
+      <if test="city != null" >
+        #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="vehicle != null" >
+        #{vehicle,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.CostTravelExpenseDetail" >
+    update cost_travel_expense_detail
+    <set >
+      <if test="expenseAcctID != null" >
+        expenseAcctID = #{expenseAcctID,jdbcType=BIGINT},
+      </if>
+      <if test="subjectId != null" >
+        subjectId = #{subjectId,jdbcType=BIGINT},
+      </if>
+      <if test="rideTime != null" >
+        rideTime = #{rideTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="rideBegin != null" >
+        rideBegin = #{rideBegin,jdbcType=VARCHAR},
+      </if>
+      <if test="rideEnd != null" >
+        rideEnd = #{rideEnd,jdbcType=VARCHAR},
+      </if>
+      <if test="money != null" >
+        money = #{money,jdbcType=DECIMAL},
+      </if>
+      <if test="dayCount != null" >
+        dayCount = #{dayCount,jdbcType=INTEGER},
+      </if>
+      <if test="city != null" >
+        city = #{city,jdbcType=VARCHAR},
+      </if>
+      <if test="vehicle != null" >
+        vehicle = #{vehicle,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.CostTravelExpenseDetail" >
+    update cost_travel_expense_detail
+    set expenseAcctID = #{expenseAcctID,jdbcType=BIGINT},
+      subjectId = #{subjectId,jdbcType=BIGINT},
+      rideTime = #{rideTime,jdbcType=TIMESTAMP},
+      rideBegin = #{rideBegin,jdbcType=VARCHAR},
+      rideEnd = #{rideEnd,jdbcType=VARCHAR},
+      money = #{money,jdbcType=DECIMAL},
+      dayCount = #{dayCount,jdbcType=INTEGER},
+      city = #{city,jdbcType=VARCHAR},
+      vehicle = #{vehicle,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

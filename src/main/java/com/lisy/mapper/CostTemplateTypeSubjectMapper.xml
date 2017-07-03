@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lisy.dao.CostTemplateTypeSubjectMapper">
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostTemplateTypeSubject">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="templateId" jdbcType="BIGINT" property="templateId" />
+    <result column="typeId" jdbcType="BIGINT" property="typeId" />
+    <result column="subjectId" jdbcType="BIGINT" property="subjectId" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostTemplateTypeSubject">
+    insert into cost_template_type_subject (id, templateId, typeId, 
+      subjectId)
+    values (#{id,jdbcType=BIGINT}, #{templateId,jdbcType=BIGINT}, #{typeId,jdbcType=BIGINT}, 
+      #{subjectId,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostTemplateTypeSubject">
+    insert into cost_template_type_subject
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="templateId != null">
+        templateId,
+      </if>
+      <if test="typeId != null">
+        typeId,
+      </if>
+      <if test="subjectId != null">
+        subjectId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="templateId != null">
+        #{templateId,jdbcType=BIGINT},
+      </if>
+      <if test="typeId != null">
+        #{typeId,jdbcType=BIGINT},
+      </if>
+      <if test="subjectId != null">
+        #{subjectId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostTemplateTypeSubject">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="templateId" jdbcType="BIGINT" property="templateId" />
+    <result column="typeId" jdbcType="BIGINT" property="typeId" />
+    <result column="subjectId" jdbcType="BIGINT" property="subjectId" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostTemplateTypeSubject">
+    insert into cost_template_type_subject (id, templateId, typeId, 
+      subjectId)
+    values (#{id,jdbcType=BIGINT}, #{templateId,jdbcType=BIGINT}, #{typeId,jdbcType=BIGINT}, 
+      #{subjectId,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostTemplateTypeSubject">
+    insert into cost_template_type_subject
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="templateId != null">
+        templateId,
+      </if>
+      <if test="typeId != null">
+        typeId,
+      </if>
+      <if test="subjectId != null">
+        subjectId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="templateId != null">
+        #{templateId,jdbcType=BIGINT},
+      </if>
+      <if test="typeId != null">
+        #{typeId,jdbcType=BIGINT},
+      </if>
+      <if test="subjectId != null">
+        #{subjectId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostTemplateTypeSubject">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="templateId" jdbcType="BIGINT" property="templateId" />
+    <result column="typeId" jdbcType="BIGINT" property="typeId" />
+    <result column="subjectId" jdbcType="BIGINT" property="subjectId" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostTemplateTypeSubject">
+    insert into cost_template_type_subject (id, templateId, typeId, 
+      subjectId)
+    values (#{id,jdbcType=BIGINT}, #{templateId,jdbcType=BIGINT}, #{typeId,jdbcType=BIGINT}, 
+      #{subjectId,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostTemplateTypeSubject">
+    insert into cost_template_type_subject
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="templateId != null">
+        templateId,
+      </if>
+      <if test="typeId != null">
+        typeId,
+      </if>
+      <if test="subjectId != null">
+        subjectId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="templateId != null">
+        #{templateId,jdbcType=BIGINT},
+      </if>
+      <if test="typeId != null">
+        #{typeId,jdbcType=BIGINT},
+      </if>
+      <if test="subjectId != null">
+        #{subjectId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostTemplateTypeSubject">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="costTemplateId" jdbcType="BIGINT" property="costtemplateid" />
+    <result column="costTypeId" jdbcType="BIGINT" property="costtypeid" />
+    <result column="costSubjectId" jdbcType="BIGINT" property="costsubjectid" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostTemplateTypeSubject">
+    insert into cost_template_type_subject (id, costTemplateId, costTypeId, 
+      costSubjectId)
+    values (#{id,jdbcType=BIGINT}, #{costtemplateid,jdbcType=BIGINT}, #{costtypeid,jdbcType=BIGINT}, 
+      #{costsubjectid,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostTemplateTypeSubject">
+    insert into cost_template_type_subject
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="costtemplateid != null">
+        costTemplateId,
+      </if>
+      <if test="costtypeid != null">
+        costTypeId,
+      </if>
+      <if test="costsubjectid != null">
+        costSubjectId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="costtemplateid != null">
+        #{costtemplateid,jdbcType=BIGINT},
+      </if>
+      <if test="costtypeid != null">
+        #{costtypeid,jdbcType=BIGINT},
+      </if>
+      <if test="costsubjectid != null">
+        #{costsubjectid,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostTemplateTypeSubject">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="costTemplateId" jdbcType="BIGINT" property="costtemplateid" />
+    <result column="costTypeId" jdbcType="BIGINT" property="costtypeid" />
+    <result column="costSubjectId" jdbcType="BIGINT" property="costsubjectid" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostTemplateTypeSubject">
+    insert into cost_template_type_subject (id, costTemplateId, costTypeId, 
+      costSubjectId)
+    values (#{id,jdbcType=BIGINT}, #{costtemplateid,jdbcType=BIGINT}, #{costtypeid,jdbcType=BIGINT}, 
+      #{costsubjectid,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostTemplateTypeSubject">
+    insert into cost_template_type_subject
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="costtemplateid != null">
+        costTemplateId,
+      </if>
+      <if test="costtypeid != null">
+        costTypeId,
+      </if>
+      <if test="costsubjectid != null">
+        costSubjectId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="costtemplateid != null">
+        #{costtemplateid,jdbcType=BIGINT},
+      </if>
+      <if test="costtypeid != null">
+        #{costtypeid,jdbcType=BIGINT},
+      </if>
+      <if test="costsubjectid != null">
+        #{costsubjectid,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+</mapper>

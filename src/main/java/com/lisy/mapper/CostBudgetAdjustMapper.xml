@@ -1,0 +1,921 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lisy.dao.CostBudgetAdjustMapper">
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostBudgetAdjust">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="adjustNum" jdbcType="VARCHAR" property="adjustNum" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="updateTime" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="updateCause" jdbcType="VARCHAR" property="updateCause" />
+    <result column="historyBudget" jdbcType="DECIMAL" property="historyBudget" />
+    <result column="updatedBudget" jdbcType="DECIMAL" property="updatedBudget" />
+    <result column="adjustBudget" jdbcType="DECIMAL" property="adjustBudget" />
+    <result column="costBudgetId" jdbcType="BIGINT" property="costBudgetId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, adjustNum, status, updateTime, updateCause, historyBudget, updatedBudget, adjustBudget, 
+    costBudgetId
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cost_budget_adjust
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from cost_budget_adjust
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.CostBudgetAdjust">
+    insert into cost_budget_adjust (id, adjustNum, status, 
+      updateTime, updateCause, historyBudget, 
+      updatedBudget, adjustBudget, costBudgetId
+      )
+    values (#{id,jdbcType=BIGINT}, #{adjustNum,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{updateCause,jdbcType=VARCHAR}, #{historyBudget,jdbcType=DECIMAL}, 
+      #{updatedBudget,jdbcType=DECIMAL}, #{adjustBudget,jdbcType=DECIMAL}, #{costBudgetId,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostBudgetAdjust">
+    insert into cost_budget_adjust
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="adjustNum != null">
+        adjustNum,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="updateTime != null">
+        updateTime,
+      </if>
+      <if test="updateCause != null">
+        updateCause,
+      </if>
+      <if test="historyBudget != null">
+        historyBudget,
+      </if>
+      <if test="updatedBudget != null">
+        updatedBudget,
+      </if>
+      <if test="adjustBudget != null">
+        adjustBudget,
+      </if>
+      <if test="costBudgetId != null">
+        costBudgetId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="adjustNum != null">
+        #{adjustNum,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateCause != null">
+        #{updateCause,jdbcType=VARCHAR},
+      </if>
+      <if test="historyBudget != null">
+        #{historyBudget,jdbcType=DECIMAL},
+      </if>
+      <if test="updatedBudget != null">
+        #{updatedBudget,jdbcType=DECIMAL},
+      </if>
+      <if test="adjustBudget != null">
+        #{adjustBudget,jdbcType=DECIMAL},
+      </if>
+      <if test="costBudgetId != null">
+        #{costBudgetId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.CostBudgetAdjust">
+    update cost_budget_adjust
+    <set>
+      <if test="adjustNum != null">
+        adjustNum = #{adjustNum,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        updateTime = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateCause != null">
+        updateCause = #{updateCause,jdbcType=VARCHAR},
+      </if>
+      <if test="historyBudget != null">
+        historyBudget = #{historyBudget,jdbcType=DECIMAL},
+      </if>
+      <if test="updatedBudget != null">
+        updatedBudget = #{updatedBudget,jdbcType=DECIMAL},
+      </if>
+      <if test="adjustBudget != null">
+        adjustBudget = #{adjustBudget,jdbcType=DECIMAL},
+      </if>
+      <if test="costBudgetId != null">
+        costBudgetId = #{costBudgetId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.CostBudgetAdjust">
+    update cost_budget_adjust
+    set adjustNum = #{adjustNum,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      updateTime = #{updateTime,jdbcType=TIMESTAMP},
+      updateCause = #{updateCause,jdbcType=VARCHAR},
+      historyBudget = #{historyBudget,jdbcType=DECIMAL},
+      updatedBudget = #{updatedBudget,jdbcType=DECIMAL},
+      adjustBudget = #{adjustBudget,jdbcType=DECIMAL},
+      costBudgetId = #{costBudgetId,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostBudgetAdjust">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="adjustNum" jdbcType="VARCHAR" property="adjustNum" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="updateTime" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="updateCause" jdbcType="VARCHAR" property="updateCause" />
+    <result column="historyBudget" jdbcType="DECIMAL" property="historyBudget" />
+    <result column="updatedBudget" jdbcType="DECIMAL" property="updatedBudget" />
+    <result column="adjustBudget" jdbcType="DECIMAL" property="adjustBudget" />
+    <result column="costBudgetId" jdbcType="BIGINT" property="costBudgetId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, adjustNum, status, updateTime, updateCause, historyBudget, updatedBudget, adjustBudget, 
+    costBudgetId
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cost_budget_adjust
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from cost_budget_adjust
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.CostBudgetAdjust">
+    insert into cost_budget_adjust (id, adjustNum, status, 
+      updateTime, updateCause, historyBudget, 
+      updatedBudget, adjustBudget, costBudgetId
+      )
+    values (#{id,jdbcType=BIGINT}, #{adjustNum,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{updateCause,jdbcType=VARCHAR}, #{historyBudget,jdbcType=DECIMAL}, 
+      #{updatedBudget,jdbcType=DECIMAL}, #{adjustBudget,jdbcType=DECIMAL}, #{costBudgetId,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostBudgetAdjust">
+    insert into cost_budget_adjust
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="adjustNum != null">
+        adjustNum,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="updateTime != null">
+        updateTime,
+      </if>
+      <if test="updateCause != null">
+        updateCause,
+      </if>
+      <if test="historyBudget != null">
+        historyBudget,
+      </if>
+      <if test="updatedBudget != null">
+        updatedBudget,
+      </if>
+      <if test="adjustBudget != null">
+        adjustBudget,
+      </if>
+      <if test="costBudgetId != null">
+        costBudgetId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="adjustNum != null">
+        #{adjustNum,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateCause != null">
+        #{updateCause,jdbcType=VARCHAR},
+      </if>
+      <if test="historyBudget != null">
+        #{historyBudget,jdbcType=DECIMAL},
+      </if>
+      <if test="updatedBudget != null">
+        #{updatedBudget,jdbcType=DECIMAL},
+      </if>
+      <if test="adjustBudget != null">
+        #{adjustBudget,jdbcType=DECIMAL},
+      </if>
+      <if test="costBudgetId != null">
+        #{costBudgetId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.CostBudgetAdjust">
+    update cost_budget_adjust
+    <set>
+      <if test="adjustNum != null">
+        adjustNum = #{adjustNum,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        updateTime = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateCause != null">
+        updateCause = #{updateCause,jdbcType=VARCHAR},
+      </if>
+      <if test="historyBudget != null">
+        historyBudget = #{historyBudget,jdbcType=DECIMAL},
+      </if>
+      <if test="updatedBudget != null">
+        updatedBudget = #{updatedBudget,jdbcType=DECIMAL},
+      </if>
+      <if test="adjustBudget != null">
+        adjustBudget = #{adjustBudget,jdbcType=DECIMAL},
+      </if>
+      <if test="costBudgetId != null">
+        costBudgetId = #{costBudgetId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.CostBudgetAdjust">
+    update cost_budget_adjust
+    set adjustNum = #{adjustNum,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      updateTime = #{updateTime,jdbcType=TIMESTAMP},
+      updateCause = #{updateCause,jdbcType=VARCHAR},
+      historyBudget = #{historyBudget,jdbcType=DECIMAL},
+      updatedBudget = #{updatedBudget,jdbcType=DECIMAL},
+      adjustBudget = #{adjustBudget,jdbcType=DECIMAL},
+      costBudgetId = #{costBudgetId,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostBudgetAdjust">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="adjustNum" jdbcType="VARCHAR" property="adjustNum" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="updateTime" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="updateCause" jdbcType="VARCHAR" property="updateCause" />
+    <result column="historyBudget" jdbcType="DECIMAL" property="historyBudget" />
+    <result column="updatedBudget" jdbcType="DECIMAL" property="updatedBudget" />
+    <result column="adjustBudget" jdbcType="DECIMAL" property="adjustBudget" />
+    <result column="costBudgetId" jdbcType="BIGINT" property="costBudgetId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, adjustNum, status, updateTime, updateCause, historyBudget, updatedBudget, adjustBudget, 
+    costBudgetId
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cost_budget_adjust
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from cost_budget_adjust
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.CostBudgetAdjust">
+    insert into cost_budget_adjust (id, adjustNum, status, 
+      updateTime, updateCause, historyBudget, 
+      updatedBudget, adjustBudget, costBudgetId
+      )
+    values (#{id,jdbcType=BIGINT}, #{adjustNum,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{updateCause,jdbcType=VARCHAR}, #{historyBudget,jdbcType=DECIMAL}, 
+      #{updatedBudget,jdbcType=DECIMAL}, #{adjustBudget,jdbcType=DECIMAL}, #{costBudgetId,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostBudgetAdjust">
+    insert into cost_budget_adjust
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="adjustNum != null">
+        adjustNum,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="updateTime != null">
+        updateTime,
+      </if>
+      <if test="updateCause != null">
+        updateCause,
+      </if>
+      <if test="historyBudget != null">
+        historyBudget,
+      </if>
+      <if test="updatedBudget != null">
+        updatedBudget,
+      </if>
+      <if test="adjustBudget != null">
+        adjustBudget,
+      </if>
+      <if test="costBudgetId != null">
+        costBudgetId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="adjustNum != null">
+        #{adjustNum,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateCause != null">
+        #{updateCause,jdbcType=VARCHAR},
+      </if>
+      <if test="historyBudget != null">
+        #{historyBudget,jdbcType=DECIMAL},
+      </if>
+      <if test="updatedBudget != null">
+        #{updatedBudget,jdbcType=DECIMAL},
+      </if>
+      <if test="adjustBudget != null">
+        #{adjustBudget,jdbcType=DECIMAL},
+      </if>
+      <if test="costBudgetId != null">
+        #{costBudgetId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.CostBudgetAdjust">
+    update cost_budget_adjust
+    <set>
+      <if test="adjustNum != null">
+        adjustNum = #{adjustNum,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        updateTime = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateCause != null">
+        updateCause = #{updateCause,jdbcType=VARCHAR},
+      </if>
+      <if test="historyBudget != null">
+        historyBudget = #{historyBudget,jdbcType=DECIMAL},
+      </if>
+      <if test="updatedBudget != null">
+        updatedBudget = #{updatedBudget,jdbcType=DECIMAL},
+      </if>
+      <if test="adjustBudget != null">
+        adjustBudget = #{adjustBudget,jdbcType=DECIMAL},
+      </if>
+      <if test="costBudgetId != null">
+        costBudgetId = #{costBudgetId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.CostBudgetAdjust">
+    update cost_budget_adjust
+    set adjustNum = #{adjustNum,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      updateTime = #{updateTime,jdbcType=TIMESTAMP},
+      updateCause = #{updateCause,jdbcType=VARCHAR},
+      historyBudget = #{historyBudget,jdbcType=DECIMAL},
+      updatedBudget = #{updatedBudget,jdbcType=DECIMAL},
+      adjustBudget = #{adjustBudget,jdbcType=DECIMAL},
+      costBudgetId = #{costBudgetId,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostBudgetAdjust">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="adjustNum" jdbcType="VARCHAR" property="adjustNum" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="updateTime" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="updateCause" jdbcType="VARCHAR" property="updateCause" />
+    <result column="historyBudget" jdbcType="DECIMAL" property="historyBudget" />
+    <result column="updatedBudget" jdbcType="DECIMAL" property="updatedBudget" />
+    <result column="adjustBudget" jdbcType="DECIMAL" property="adjustBudget" />
+    <result column="costBudgetId" jdbcType="BIGINT" property="costBudgetId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, adjustNum, status, updateTime, updateCause, historyBudget, updatedBudget, adjustBudget, 
+    costBudgetId
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cost_budget_adjust
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from cost_budget_adjust
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.CostBudgetAdjust">
+    insert into cost_budget_adjust (id, adjustNum, status, 
+      updateTime, updateCause, historyBudget, 
+      updatedBudget, adjustBudget, costBudgetId
+      )
+    values (#{id,jdbcType=BIGINT}, #{adjustNum,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{updateCause,jdbcType=VARCHAR}, #{historyBudget,jdbcType=DECIMAL}, 
+      #{updatedBudget,jdbcType=DECIMAL}, #{adjustBudget,jdbcType=DECIMAL}, #{costBudgetId,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostBudgetAdjust">
+    insert into cost_budget_adjust
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="adjustNum != null">
+        adjustNum,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="updateTime != null">
+        updateTime,
+      </if>
+      <if test="updateCause != null">
+        updateCause,
+      </if>
+      <if test="historyBudget != null">
+        historyBudget,
+      </if>
+      <if test="updatedBudget != null">
+        updatedBudget,
+      </if>
+      <if test="adjustBudget != null">
+        adjustBudget,
+      </if>
+      <if test="costBudgetId != null">
+        costBudgetId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="adjustNum != null">
+        #{adjustNum,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateCause != null">
+        #{updateCause,jdbcType=VARCHAR},
+      </if>
+      <if test="historyBudget != null">
+        #{historyBudget,jdbcType=DECIMAL},
+      </if>
+      <if test="updatedBudget != null">
+        #{updatedBudget,jdbcType=DECIMAL},
+      </if>
+      <if test="adjustBudget != null">
+        #{adjustBudget,jdbcType=DECIMAL},
+      </if>
+      <if test="costBudgetId != null">
+        #{costBudgetId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.CostBudgetAdjust">
+    update cost_budget_adjust
+    <set>
+      <if test="adjustNum != null">
+        adjustNum = #{adjustNum,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        updateTime = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateCause != null">
+        updateCause = #{updateCause,jdbcType=VARCHAR},
+      </if>
+      <if test="historyBudget != null">
+        historyBudget = #{historyBudget,jdbcType=DECIMAL},
+      </if>
+      <if test="updatedBudget != null">
+        updatedBudget = #{updatedBudget,jdbcType=DECIMAL},
+      </if>
+      <if test="adjustBudget != null">
+        adjustBudget = #{adjustBudget,jdbcType=DECIMAL},
+      </if>
+      <if test="costBudgetId != null">
+        costBudgetId = #{costBudgetId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.CostBudgetAdjust">
+    update cost_budget_adjust
+    set adjustNum = #{adjustNum,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      updateTime = #{updateTime,jdbcType=TIMESTAMP},
+      updateCause = #{updateCause,jdbcType=VARCHAR},
+      historyBudget = #{historyBudget,jdbcType=DECIMAL},
+      updatedBudget = #{updatedBudget,jdbcType=DECIMAL},
+      adjustBudget = #{adjustBudget,jdbcType=DECIMAL},
+      costBudgetId = #{costBudgetId,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostBudgetAdjust">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="adjustNum" jdbcType="VARCHAR" property="adjustNum" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="updateTime" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="updateCause" jdbcType="VARCHAR" property="updateCause" />
+    <result column="historyBudget" jdbcType="DECIMAL" property="historyBudget" />
+    <result column="updatedBudget" jdbcType="DECIMAL" property="updatedBudget" />
+    <result column="adjustBudget" jdbcType="DECIMAL" property="adjustBudget" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostBudgetAdjust">
+    insert into cost_budget_adjust (id, adjustNum, status, 
+      updateTime, updateCause, historyBudget, 
+      updatedBudget, adjustBudget)
+    values (#{id,jdbcType=BIGINT}, #{adjustNum,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{updateCause,jdbcType=VARCHAR}, #{historyBudget,jdbcType=DECIMAL}, 
+      #{updatedBudget,jdbcType=DECIMAL}, #{adjustBudget,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostBudgetAdjust">
+    insert into cost_budget_adjust
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="adjustNum != null">
+        adjustNum,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="updateTime != null">
+        updateTime,
+      </if>
+      <if test="updateCause != null">
+        updateCause,
+      </if>
+      <if test="historyBudget != null">
+        historyBudget,
+      </if>
+      <if test="updatedBudget != null">
+        updatedBudget,
+      </if>
+      <if test="adjustBudget != null">
+        adjustBudget,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="adjustNum != null">
+        #{adjustNum,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateCause != null">
+        #{updateCause,jdbcType=VARCHAR},
+      </if>
+      <if test="historyBudget != null">
+        #{historyBudget,jdbcType=DECIMAL},
+      </if>
+      <if test="updatedBudget != null">
+        #{updatedBudget,jdbcType=DECIMAL},
+      </if>
+      <if test="adjustBudget != null">
+        #{adjustBudget,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostBudgetAdjust">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="adjustNum" jdbcType="VARCHAR" property="adjustNum" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="updateTime" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="updateCause" jdbcType="VARCHAR" property="updateCause" />
+    <result column="historyBudget" jdbcType="DECIMAL" property="historyBudget" />
+    <result column="updatedBudget" jdbcType="DECIMAL" property="updatedBudget" />
+    <result column="adjustBudget" jdbcType="DECIMAL" property="adjustBudget" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostBudgetAdjust">
+    insert into cost_budget_adjust (id, adjustNum, status, 
+      updateTime, updateCause, historyBudget, 
+      updatedBudget, adjustBudget)
+    values (#{id,jdbcType=BIGINT}, #{adjustNum,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{updateCause,jdbcType=VARCHAR}, #{historyBudget,jdbcType=DECIMAL}, 
+      #{updatedBudget,jdbcType=DECIMAL}, #{adjustBudget,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostBudgetAdjust">
+    insert into cost_budget_adjust
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="adjustNum != null">
+        adjustNum,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="updateTime != null">
+        updateTime,
+      </if>
+      <if test="updateCause != null">
+        updateCause,
+      </if>
+      <if test="historyBudget != null">
+        historyBudget,
+      </if>
+      <if test="updatedBudget != null">
+        updatedBudget,
+      </if>
+      <if test="adjustBudget != null">
+        adjustBudget,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="adjustNum != null">
+        #{adjustNum,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateCause != null">
+        #{updateCause,jdbcType=VARCHAR},
+      </if>
+      <if test="historyBudget != null">
+        #{historyBudget,jdbcType=DECIMAL},
+      </if>
+      <if test="updatedBudget != null">
+        #{updatedBudget,jdbcType=DECIMAL},
+      </if>
+      <if test="adjustBudget != null">
+        #{adjustBudget,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostBudgetAdjust">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="adjustNum" jdbcType="VARCHAR" property="adjustNum" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="updateTime" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="updateCause" jdbcType="VARCHAR" property="updateCause" />
+    <result column="historyBudget" jdbcType="DECIMAL" property="historyBudget" />
+    <result column="updatedBudget" jdbcType="DECIMAL" property="updatedBudget" />
+    <result column="adjustBudget" jdbcType="DECIMAL" property="adjustBudget" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostBudgetAdjust">
+    insert into cost_budget_adjust (id, adjustNum, status, 
+      updateTime, updateCause, historyBudget, 
+      updatedBudget, adjustBudget)
+    values (#{id,jdbcType=BIGINT}, #{adjustNum,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, 
+      #{updateTime,jdbcType=TIMESTAMP}, #{updateCause,jdbcType=VARCHAR}, #{historyBudget,jdbcType=DECIMAL}, 
+      #{updatedBudget,jdbcType=DECIMAL}, #{adjustBudget,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostBudgetAdjust">
+    insert into cost_budget_adjust
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="adjustNum != null">
+        adjustNum,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="updateTime != null">
+        updateTime,
+      </if>
+      <if test="updateCause != null">
+        updateCause,
+      </if>
+      <if test="historyBudget != null">
+        historyBudget,
+      </if>
+      <if test="updatedBudget != null">
+        updatedBudget,
+      </if>
+      <if test="adjustBudget != null">
+        adjustBudget,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="adjustNum != null">
+        #{adjustNum,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateCause != null">
+        #{updateCause,jdbcType=VARCHAR},
+      </if>
+      <if test="historyBudget != null">
+        #{historyBudget,jdbcType=DECIMAL},
+      </if>
+      <if test="updatedBudget != null">
+        #{updatedBudget,jdbcType=DECIMAL},
+      </if>
+      <if test="adjustBudget != null">
+        #{adjustBudget,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostBudgetAdjust">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="adjustNum" jdbcType="VARCHAR" property="adjustnum" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="updateTime" jdbcType="TIMESTAMP" property="updatetime" />
+    <result column="updateCause" jdbcType="VARCHAR" property="updatecause" />
+    <result column="historyBudget" jdbcType="DECIMAL" property="historybudget" />
+    <result column="updatedBudget" jdbcType="DECIMAL" property="updatedbudget" />
+    <result column="adjustBudget" jdbcType="DECIMAL" property="adjustbudget" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostBudgetAdjust">
+    insert into cost_budget_adjust (id, adjustNum, status, 
+      updateTime, updateCause, historyBudget, 
+      updatedBudget, adjustBudget)
+    values (#{id,jdbcType=BIGINT}, #{adjustnum,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, 
+      #{updatetime,jdbcType=TIMESTAMP}, #{updatecause,jdbcType=VARCHAR}, #{historybudget,jdbcType=DECIMAL}, 
+      #{updatedbudget,jdbcType=DECIMAL}, #{adjustbudget,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostBudgetAdjust">
+    insert into cost_budget_adjust
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="adjustnum != null">
+        adjustNum,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="updatetime != null">
+        updateTime,
+      </if>
+      <if test="updatecause != null">
+        updateCause,
+      </if>
+      <if test="historybudget != null">
+        historyBudget,
+      </if>
+      <if test="updatedbudget != null">
+        updatedBudget,
+      </if>
+      <if test="adjustbudget != null">
+        adjustBudget,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="adjustnum != null">
+        #{adjustnum,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatecause != null">
+        #{updatecause,jdbcType=VARCHAR},
+      </if>
+      <if test="historybudget != null">
+        #{historybudget,jdbcType=DECIMAL},
+      </if>
+      <if test="updatedbudget != null">
+        #{updatedbudget,jdbcType=DECIMAL},
+      </if>
+      <if test="adjustbudget != null">
+        #{adjustbudget,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostBudgetAdjust">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="adjustNum" jdbcType="VARCHAR" property="adjustnum" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="updateTime" jdbcType="TIMESTAMP" property="updatetime" />
+    <result column="updateCause" jdbcType="VARCHAR" property="updatecause" />
+    <result column="historyBudget" jdbcType="DECIMAL" property="historybudget" />
+    <result column="updatedBudget" jdbcType="DECIMAL" property="updatedbudget" />
+    <result column="adjustBudget" jdbcType="DECIMAL" property="adjustbudget" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostBudgetAdjust">
+    insert into cost_budget_adjust (id, adjustNum, status, 
+      updateTime, updateCause, historyBudget, 
+      updatedBudget, adjustBudget)
+    values (#{id,jdbcType=BIGINT}, #{adjustnum,jdbcType=VARCHAR}, #{status,jdbcType=INTEGER}, 
+      #{updatetime,jdbcType=TIMESTAMP}, #{updatecause,jdbcType=VARCHAR}, #{historybudget,jdbcType=DECIMAL}, 
+      #{updatedbudget,jdbcType=DECIMAL}, #{adjustbudget,jdbcType=DECIMAL})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostBudgetAdjust">
+    insert into cost_budget_adjust
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="adjustnum != null">
+        adjustNum,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="updatetime != null">
+        updateTime,
+      </if>
+      <if test="updatecause != null">
+        updateCause,
+      </if>
+      <if test="historybudget != null">
+        historyBudget,
+      </if>
+      <if test="updatedbudget != null">
+        updatedBudget,
+      </if>
+      <if test="adjustbudget != null">
+        adjustBudget,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="adjustnum != null">
+        #{adjustnum,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatecause != null">
+        #{updatecause,jdbcType=VARCHAR},
+      </if>
+      <if test="historybudget != null">
+        #{historybudget,jdbcType=DECIMAL},
+      </if>
+      <if test="updatedbudget != null">
+        #{updatedbudget,jdbcType=DECIMAL},
+      </if>
+      <if test="adjustbudget != null">
+        #{adjustbudget,jdbcType=DECIMAL},
+      </if>
+    </trim>
+  </insert>
+</mapper>

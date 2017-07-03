@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lisy.dao.CostLimitSubjectMapper" >
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostLimitSubject" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="limitId" property="limitId" jdbcType="BIGINT" />
+    <result column="subjectId" property="subjectId" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, limitId, subjectId
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from cost_limit_subject
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from cost_limit_subject
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.CostLimitSubject" >
+    insert into cost_limit_subject (id, limitId, subjectId
+      )
+    values (#{id,jdbcType=BIGINT}, #{limitId,jdbcType=BIGINT}, #{subjectId,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostLimitSubject" >
+    insert into cost_limit_subject
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="limitId != null" >
+        limitId,
+      </if>
+      <if test="subjectId != null" >
+        subjectId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="limitId != null" >
+        #{limitId,jdbcType=BIGINT},
+      </if>
+      <if test="subjectId != null" >
+        #{subjectId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.CostLimitSubject" >
+    update cost_limit_subject
+    <set >
+      <if test="limitId != null" >
+        limitId = #{limitId,jdbcType=BIGINT},
+      </if>
+      <if test="subjectId != null" >
+        subjectId = #{subjectId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.CostLimitSubject" >
+    update cost_limit_subject
+    set limitId = #{limitId,jdbcType=BIGINT},
+      subjectId = #{subjectId,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

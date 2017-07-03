@@ -1,0 +1,661 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lisy.dao.ActMarketActivityMapper">
+  <resultMap id="BaseResultMap" type="com.lisy.entity.ActMarketActivity">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="activeType" jdbcType="VARCHAR" property="activeType" />
+    <result column="projectType" jdbcType="VARCHAR" property="projectType" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="sstartTime" jdbcType="TIMESTAMP" property="sstartTime" />
+    <result column="endTime" jdbcType="TIMESTAMP" property="endTime" />
+    <result column="deptId" jdbcType="BIGINT" property="deptId" />
+    <result column="totalBudgetFee" jdbcType="DECIMAL" property="totalBudgetFee" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="pincipalId" jdbcType="BIGINT" property="pincipalId" />
+    <result column="approverId" jdbcType="BIGINT" property="approverId" />
+    <result column="currentApproverNode" jdbcType="INTEGER" property="currentApproverNode" />
+    <result column="detail" jdbcType="VARCHAR" property="detail" />
+    <result column="createrId" jdbcType="BIGINT" property="createrId" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, code, activeType, projectType, name, sstartTime, endTime, deptId, totalBudgetFee, 
+    status, pincipalId, approverId, currentApproverNode, detail, createrId, createTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from act_market_activity
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from act_market_activity
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.ActMarketActivity">
+    insert into act_market_activity (id, code, activeType, 
+      projectType, name, sstartTime, 
+      endTime, deptId, totalBudgetFee, 
+      status, pincipalId, approverId, 
+      currentApproverNode, detail, createrId, 
+      createTime)
+    values (#{id,jdbcType=BIGINT}, #{code,jdbcType=VARCHAR}, #{activeType,jdbcType=VARCHAR}, 
+      #{projectType,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{sstartTime,jdbcType=TIMESTAMP}, 
+      #{endTime,jdbcType=TIMESTAMP}, #{deptId,jdbcType=BIGINT}, #{totalBudgetFee,jdbcType=DECIMAL}, 
+      #{status,jdbcType=INTEGER}, #{pincipalId,jdbcType=BIGINT}, #{approverId,jdbcType=BIGINT}, 
+      #{currentApproverNode,jdbcType=INTEGER}, #{detail,jdbcType=VARCHAR}, #{createrId,jdbcType=BIGINT}, 
+      #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.ActMarketActivity">
+    insert into act_market_activity
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="code != null">
+        code,
+      </if>
+      <if test="activeType != null">
+        activeType,
+      </if>
+      <if test="projectType != null">
+        projectType,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="sstartTime != null">
+        sstartTime,
+      </if>
+      <if test="endTime != null">
+        endTime,
+      </if>
+      <if test="deptId != null">
+        deptId,
+      </if>
+      <if test="totalBudgetFee != null">
+        totalBudgetFee,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="pincipalId != null">
+        pincipalId,
+      </if>
+      <if test="approverId != null">
+        approverId,
+      </if>
+      <if test="currentApproverNode != null">
+        currentApproverNode,
+      </if>
+      <if test="detail != null">
+        detail,
+      </if>
+      <if test="createrId != null">
+        createrId,
+      </if>
+      <if test="createTime != null">
+        createTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="code != null">
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="activeType != null">
+        #{activeType,jdbcType=VARCHAR},
+      </if>
+      <if test="projectType != null">
+        #{projectType,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sstartTime != null">
+        #{sstartTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endTime != null">
+        #{endTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deptId != null">
+        #{deptId,jdbcType=BIGINT},
+      </if>
+      <if test="totalBudgetFee != null">
+        #{totalBudgetFee,jdbcType=DECIMAL},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="pincipalId != null">
+        #{pincipalId,jdbcType=BIGINT},
+      </if>
+      <if test="approverId != null">
+        #{approverId,jdbcType=BIGINT},
+      </if>
+      <if test="currentApproverNode != null">
+        #{currentApproverNode,jdbcType=INTEGER},
+      </if>
+      <if test="detail != null">
+        #{detail,jdbcType=VARCHAR},
+      </if>
+      <if test="createrId != null">
+        #{createrId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.ActMarketActivity">
+    update act_market_activity
+    <set>
+      <if test="code != null">
+        code = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="activeType != null">
+        activeType = #{activeType,jdbcType=VARCHAR},
+      </if>
+      <if test="projectType != null">
+        projectType = #{projectType,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sstartTime != null">
+        sstartTime = #{sstartTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endTime != null">
+        endTime = #{endTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deptId != null">
+        deptId = #{deptId,jdbcType=BIGINT},
+      </if>
+      <if test="totalBudgetFee != null">
+        totalBudgetFee = #{totalBudgetFee,jdbcType=DECIMAL},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="pincipalId != null">
+        pincipalId = #{pincipalId,jdbcType=BIGINT},
+      </if>
+      <if test="approverId != null">
+        approverId = #{approverId,jdbcType=BIGINT},
+      </if>
+      <if test="currentApproverNode != null">
+        currentApproverNode = #{currentApproverNode,jdbcType=INTEGER},
+      </if>
+      <if test="detail != null">
+        detail = #{detail,jdbcType=VARCHAR},
+      </if>
+      <if test="createrId != null">
+        createrId = #{createrId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        createTime = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.ActMarketActivity">
+    update act_market_activity
+    set code = #{code,jdbcType=VARCHAR},
+      activeType = #{activeType,jdbcType=VARCHAR},
+      projectType = #{projectType,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      sstartTime = #{sstartTime,jdbcType=TIMESTAMP},
+      endTime = #{endTime,jdbcType=TIMESTAMP},
+      deptId = #{deptId,jdbcType=BIGINT},
+      totalBudgetFee = #{totalBudgetFee,jdbcType=DECIMAL},
+      status = #{status,jdbcType=INTEGER},
+      pincipalId = #{pincipalId,jdbcType=BIGINT},
+      approverId = #{approverId,jdbcType=BIGINT},
+      currentApproverNode = #{currentApproverNode,jdbcType=INTEGER},
+      detail = #{detail,jdbcType=VARCHAR},
+      createrId = #{createrId,jdbcType=BIGINT},
+      createTime = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.ActMarketActivity">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="activeType" jdbcType="VARCHAR" property="activeType" />
+    <result column="projectType" jdbcType="VARCHAR" property="projectType" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="sstartTime" jdbcType="TIMESTAMP" property="sstartTime" />
+    <result column="endTime" jdbcType="TIMESTAMP" property="endTime" />
+    <result column="deptId" jdbcType="BIGINT" property="deptId" />
+    <result column="totalBudgetFee" jdbcType="DECIMAL" property="totalBudgetFee" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="pincipalId" jdbcType="BIGINT" property="pincipalId" />
+    <result column="approverId" jdbcType="BIGINT" property="approverId" />
+    <result column="currentApproverNode" jdbcType="INTEGER" property="currentApproverNode" />
+    <result column="detail" jdbcType="VARCHAR" property="detail" />
+    <result column="createrId" jdbcType="BIGINT" property="createrId" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, code, activeType, projectType, name, sstartTime, endTime, deptId, totalBudgetFee, 
+    status, pincipalId, approverId, currentApproverNode, detail, createrId, createTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from act_market_activity
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from act_market_activity
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.ActMarketActivity">
+    insert into act_market_activity (id, code, activeType, 
+      projectType, name, sstartTime, 
+      endTime, deptId, totalBudgetFee, 
+      status, pincipalId, approverId, 
+      currentApproverNode, detail, createrId, 
+      createTime)
+    values (#{id,jdbcType=BIGINT}, #{code,jdbcType=VARCHAR}, #{activeType,jdbcType=VARCHAR}, 
+      #{projectType,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{sstartTime,jdbcType=TIMESTAMP}, 
+      #{endTime,jdbcType=TIMESTAMP}, #{deptId,jdbcType=BIGINT}, #{totalBudgetFee,jdbcType=DECIMAL}, 
+      #{status,jdbcType=INTEGER}, #{pincipalId,jdbcType=BIGINT}, #{approverId,jdbcType=BIGINT}, 
+      #{currentApproverNode,jdbcType=INTEGER}, #{detail,jdbcType=VARCHAR}, #{createrId,jdbcType=BIGINT}, 
+      #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.ActMarketActivity">
+    insert into act_market_activity
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="code != null">
+        code,
+      </if>
+      <if test="activeType != null">
+        activeType,
+      </if>
+      <if test="projectType != null">
+        projectType,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="sstartTime != null">
+        sstartTime,
+      </if>
+      <if test="endTime != null">
+        endTime,
+      </if>
+      <if test="deptId != null">
+        deptId,
+      </if>
+      <if test="totalBudgetFee != null">
+        totalBudgetFee,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="pincipalId != null">
+        pincipalId,
+      </if>
+      <if test="approverId != null">
+        approverId,
+      </if>
+      <if test="currentApproverNode != null">
+        currentApproverNode,
+      </if>
+      <if test="detail != null">
+        detail,
+      </if>
+      <if test="createrId != null">
+        createrId,
+      </if>
+      <if test="createTime != null">
+        createTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="code != null">
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="activeType != null">
+        #{activeType,jdbcType=VARCHAR},
+      </if>
+      <if test="projectType != null">
+        #{projectType,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sstartTime != null">
+        #{sstartTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endTime != null">
+        #{endTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deptId != null">
+        #{deptId,jdbcType=BIGINT},
+      </if>
+      <if test="totalBudgetFee != null">
+        #{totalBudgetFee,jdbcType=DECIMAL},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="pincipalId != null">
+        #{pincipalId,jdbcType=BIGINT},
+      </if>
+      <if test="approverId != null">
+        #{approverId,jdbcType=BIGINT},
+      </if>
+      <if test="currentApproverNode != null">
+        #{currentApproverNode,jdbcType=INTEGER},
+      </if>
+      <if test="detail != null">
+        #{detail,jdbcType=VARCHAR},
+      </if>
+      <if test="createrId != null">
+        #{createrId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.ActMarketActivity">
+    update act_market_activity
+    <set>
+      <if test="code != null">
+        code = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="activeType != null">
+        activeType = #{activeType,jdbcType=VARCHAR},
+      </if>
+      <if test="projectType != null">
+        projectType = #{projectType,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sstartTime != null">
+        sstartTime = #{sstartTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endTime != null">
+        endTime = #{endTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deptId != null">
+        deptId = #{deptId,jdbcType=BIGINT},
+      </if>
+      <if test="totalBudgetFee != null">
+        totalBudgetFee = #{totalBudgetFee,jdbcType=DECIMAL},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="pincipalId != null">
+        pincipalId = #{pincipalId,jdbcType=BIGINT},
+      </if>
+      <if test="approverId != null">
+        approverId = #{approverId,jdbcType=BIGINT},
+      </if>
+      <if test="currentApproverNode != null">
+        currentApproverNode = #{currentApproverNode,jdbcType=INTEGER},
+      </if>
+      <if test="detail != null">
+        detail = #{detail,jdbcType=VARCHAR},
+      </if>
+      <if test="createrId != null">
+        createrId = #{createrId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        createTime = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.ActMarketActivity">
+    update act_market_activity
+    set code = #{code,jdbcType=VARCHAR},
+      activeType = #{activeType,jdbcType=VARCHAR},
+      projectType = #{projectType,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      sstartTime = #{sstartTime,jdbcType=TIMESTAMP},
+      endTime = #{endTime,jdbcType=TIMESTAMP},
+      deptId = #{deptId,jdbcType=BIGINT},
+      totalBudgetFee = #{totalBudgetFee,jdbcType=DECIMAL},
+      status = #{status,jdbcType=INTEGER},
+      pincipalId = #{pincipalId,jdbcType=BIGINT},
+      approverId = #{approverId,jdbcType=BIGINT},
+      currentApproverNode = #{currentApproverNode,jdbcType=INTEGER},
+      detail = #{detail,jdbcType=VARCHAR},
+      createrId = #{createrId,jdbcType=BIGINT},
+      createTime = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.ActMarketActivity">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="code" jdbcType="VARCHAR" property="code" />
+    <result column="activeType" jdbcType="VARCHAR" property="activeType" />
+    <result column="projectType" jdbcType="VARCHAR" property="projectType" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="sstartTime" jdbcType="TIMESTAMP" property="sstartTime" />
+    <result column="endTime" jdbcType="TIMESTAMP" property="endTime" />
+    <result column="deptId" jdbcType="BIGINT" property="deptId" />
+    <result column="totalBudgetFee" jdbcType="DECIMAL" property="totalBudgetFee" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="pincipalId" jdbcType="BIGINT" property="pincipalId" />
+    <result column="approverId" jdbcType="BIGINT" property="approverId" />
+    <result column="currentApproverNode" jdbcType="INTEGER" property="currentApproverNode" />
+    <result column="detail" jdbcType="VARCHAR" property="detail" />
+    <result column="createrId" jdbcType="BIGINT" property="createrId" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, code, activeType, projectType, name, sstartTime, endTime, deptId, totalBudgetFee, 
+    status, pincipalId, approverId, currentApproverNode, detail, createrId, createTime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from act_market_activity
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from act_market_activity
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.ActMarketActivity">
+    insert into act_market_activity (id, code, activeType, 
+      projectType, name, sstartTime, 
+      endTime, deptId, totalBudgetFee, 
+      status, pincipalId, approverId, 
+      currentApproverNode, detail, createrId, 
+      createTime)
+    values (#{id,jdbcType=BIGINT}, #{code,jdbcType=VARCHAR}, #{activeType,jdbcType=VARCHAR}, 
+      #{projectType,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{sstartTime,jdbcType=TIMESTAMP}, 
+      #{endTime,jdbcType=TIMESTAMP}, #{deptId,jdbcType=BIGINT}, #{totalBudgetFee,jdbcType=DECIMAL}, 
+      #{status,jdbcType=INTEGER}, #{pincipalId,jdbcType=BIGINT}, #{approverId,jdbcType=BIGINT}, 
+      #{currentApproverNode,jdbcType=INTEGER}, #{detail,jdbcType=VARCHAR}, #{createrId,jdbcType=BIGINT}, 
+      #{createTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.ActMarketActivity">
+    insert into act_market_activity
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="code != null">
+        code,
+      </if>
+      <if test="activeType != null">
+        activeType,
+      </if>
+      <if test="projectType != null">
+        projectType,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="sstartTime != null">
+        sstartTime,
+      </if>
+      <if test="endTime != null">
+        endTime,
+      </if>
+      <if test="deptId != null">
+        deptId,
+      </if>
+      <if test="totalBudgetFee != null">
+        totalBudgetFee,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="pincipalId != null">
+        pincipalId,
+      </if>
+      <if test="approverId != null">
+        approverId,
+      </if>
+      <if test="currentApproverNode != null">
+        currentApproverNode,
+      </if>
+      <if test="detail != null">
+        detail,
+      </if>
+      <if test="createrId != null">
+        createrId,
+      </if>
+      <if test="createTime != null">
+        createTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="code != null">
+        #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="activeType != null">
+        #{activeType,jdbcType=VARCHAR},
+      </if>
+      <if test="projectType != null">
+        #{projectType,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sstartTime != null">
+        #{sstartTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endTime != null">
+        #{endTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deptId != null">
+        #{deptId,jdbcType=BIGINT},
+      </if>
+      <if test="totalBudgetFee != null">
+        #{totalBudgetFee,jdbcType=DECIMAL},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="pincipalId != null">
+        #{pincipalId,jdbcType=BIGINT},
+      </if>
+      <if test="approverId != null">
+        #{approverId,jdbcType=BIGINT},
+      </if>
+      <if test="currentApproverNode != null">
+        #{currentApproverNode,jdbcType=INTEGER},
+      </if>
+      <if test="detail != null">
+        #{detail,jdbcType=VARCHAR},
+      </if>
+      <if test="createrId != null">
+        #{createrId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.ActMarketActivity">
+    update act_market_activity
+    <set>
+      <if test="code != null">
+        code = #{code,jdbcType=VARCHAR},
+      </if>
+      <if test="activeType != null">
+        activeType = #{activeType,jdbcType=VARCHAR},
+      </if>
+      <if test="projectType != null">
+        projectType = #{projectType,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sstartTime != null">
+        sstartTime = #{sstartTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="endTime != null">
+        endTime = #{endTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deptId != null">
+        deptId = #{deptId,jdbcType=BIGINT},
+      </if>
+      <if test="totalBudgetFee != null">
+        totalBudgetFee = #{totalBudgetFee,jdbcType=DECIMAL},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="pincipalId != null">
+        pincipalId = #{pincipalId,jdbcType=BIGINT},
+      </if>
+      <if test="approverId != null">
+        approverId = #{approverId,jdbcType=BIGINT},
+      </if>
+      <if test="currentApproverNode != null">
+        currentApproverNode = #{currentApproverNode,jdbcType=INTEGER},
+      </if>
+      <if test="detail != null">
+        detail = #{detail,jdbcType=VARCHAR},
+      </if>
+      <if test="createrId != null">
+        createrId = #{createrId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        createTime = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.ActMarketActivity">
+    update act_market_activity
+    set code = #{code,jdbcType=VARCHAR},
+      activeType = #{activeType,jdbcType=VARCHAR},
+      projectType = #{projectType,jdbcType=VARCHAR},
+      name = #{name,jdbcType=VARCHAR},
+      sstartTime = #{sstartTime,jdbcType=TIMESTAMP},
+      endTime = #{endTime,jdbcType=TIMESTAMP},
+      deptId = #{deptId,jdbcType=BIGINT},
+      totalBudgetFee = #{totalBudgetFee,jdbcType=DECIMAL},
+      status = #{status,jdbcType=INTEGER},
+      pincipalId = #{pincipalId,jdbcType=BIGINT},
+      approverId = #{approverId,jdbcType=BIGINT},
+      currentApproverNode = #{currentApproverNode,jdbcType=INTEGER},
+      detail = #{detail,jdbcType=VARCHAR},
+      createrId = #{createrId,jdbcType=BIGINT},
+      createTime = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

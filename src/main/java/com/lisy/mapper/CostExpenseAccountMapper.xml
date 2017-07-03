@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.lisy.dao.CostExpenseAccountMapper" >
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostExpenseAccount" >
+    <id column="id" property="id" jdbcType="BIGINT" />
+    <result column="costTypeId" property="costTypeId" jdbcType="BIGINT" />
+    <result column="isBudget" property="isBudget" jdbcType="VARCHAR" />
+    <result column="createMonth" property="createMonth" jdbcType="DATE" />
+    <result column="payModel" property="payModel" jdbcType="VARCHAR" />
+    <result column="companyId" property="companyId" jdbcType="BIGINT" />
+    <result column="beginDate" property="beginDate" jdbcType="DATE" />
+    <result column="endDate" property="endDate" jdbcType="DATE" />
+    <result column="dayCount" property="dayCount" jdbcType="INTEGER" />
+    <result column="totalMoney" property="totalMoney" jdbcType="DECIMAL" />
+    <result column="memo" property="memo" jdbcType="VARCHAR" />
+    <result column="approverId" property="approverId" jdbcType="BIGINT" />
+    <result column="expenseType" property="expenseType" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="VARCHAR" />
+    <result column="ownerId" property="ownerId" jdbcType="BIGINT" />
+    <result column="requestTime" property="requestTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, costTypeId, isBudget, createMonth, payModel, companyId, beginDate, endDate, dayCount, 
+    totalMoney, memo, approverId, expenseType, status, ownerId, requestTime
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from cost_expense_account
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from cost_expense_account
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.CostExpenseAccount" >
+    insert into cost_expense_account (id, costTypeId, isBudget, 
+      createMonth, payModel, companyId, 
+      beginDate, endDate, dayCount, 
+      totalMoney, memo, approverId, 
+      expenseType, status, ownerId, 
+      requestTime)
+    values (#{id,jdbcType=BIGINT}, #{costTypeId,jdbcType=BIGINT}, #{isBudget,jdbcType=VARCHAR}, 
+      #{createMonth,jdbcType=DATE}, #{payModel,jdbcType=VARCHAR}, #{companyId,jdbcType=BIGINT}, 
+      #{beginDate,jdbcType=DATE}, #{endDate,jdbcType=DATE}, #{dayCount,jdbcType=INTEGER}, 
+      #{totalMoney,jdbcType=DECIMAL}, #{memo,jdbcType=VARCHAR}, #{approverId,jdbcType=BIGINT}, 
+      #{expenseType,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{ownerId,jdbcType=BIGINT}, 
+      #{requestTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostExpenseAccount" >
+    insert into cost_expense_account
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="costTypeId != null" >
+        costTypeId,
+      </if>
+      <if test="isBudget != null" >
+        isBudget,
+      </if>
+      <if test="createMonth != null" >
+        createMonth,
+      </if>
+      <if test="payModel != null" >
+        payModel,
+      </if>
+      <if test="companyId != null" >
+        companyId,
+      </if>
+      <if test="beginDate != null" >
+        beginDate,
+      </if>
+      <if test="endDate != null" >
+        endDate,
+      </if>
+      <if test="dayCount != null" >
+        dayCount,
+      </if>
+      <if test="totalMoney != null" >
+        totalMoney,
+      </if>
+      <if test="memo != null" >
+        memo,
+      </if>
+      <if test="approverId != null" >
+        approverId,
+      </if>
+      <if test="expenseType != null" >
+        expenseType,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="ownerId != null" >
+        ownerId,
+      </if>
+      <if test="requestTime != null" >
+        requestTime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="costTypeId != null" >
+        #{costTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="isBudget != null" >
+        #{isBudget,jdbcType=VARCHAR},
+      </if>
+      <if test="createMonth != null" >
+        #{createMonth,jdbcType=DATE},
+      </if>
+      <if test="payModel != null" >
+        #{payModel,jdbcType=VARCHAR},
+      </if>
+      <if test="companyId != null" >
+        #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="beginDate != null" >
+        #{beginDate,jdbcType=DATE},
+      </if>
+      <if test="endDate != null" >
+        #{endDate,jdbcType=DATE},
+      </if>
+      <if test="dayCount != null" >
+        #{dayCount,jdbcType=INTEGER},
+      </if>
+      <if test="totalMoney != null" >
+        #{totalMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="memo != null" >
+        #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="approverId != null" >
+        #{approverId,jdbcType=BIGINT},
+      </if>
+      <if test="expenseType != null" >
+        #{expenseType,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="ownerId != null" >
+        #{ownerId,jdbcType=BIGINT},
+      </if>
+      <if test="requestTime != null" >
+        #{requestTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.CostExpenseAccount" >
+    update cost_expense_account
+    <set >
+      <if test="costTypeId != null" >
+        costTypeId = #{costTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="isBudget != null" >
+        isBudget = #{isBudget,jdbcType=VARCHAR},
+      </if>
+      <if test="createMonth != null" >
+        createMonth = #{createMonth,jdbcType=DATE},
+      </if>
+      <if test="payModel != null" >
+        payModel = #{payModel,jdbcType=VARCHAR},
+      </if>
+      <if test="companyId != null" >
+        companyId = #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="beginDate != null" >
+        beginDate = #{beginDate,jdbcType=DATE},
+      </if>
+      <if test="endDate != null" >
+        endDate = #{endDate,jdbcType=DATE},
+      </if>
+      <if test="dayCount != null" >
+        dayCount = #{dayCount,jdbcType=INTEGER},
+      </if>
+      <if test="totalMoney != null" >
+        totalMoney = #{totalMoney,jdbcType=DECIMAL},
+      </if>
+      <if test="memo != null" >
+        memo = #{memo,jdbcType=VARCHAR},
+      </if>
+      <if test="approverId != null" >
+        approverId = #{approverId,jdbcType=BIGINT},
+      </if>
+      <if test="expenseType != null" >
+        expenseType = #{expenseType,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="ownerId != null" >
+        ownerId = #{ownerId,jdbcType=BIGINT},
+      </if>
+      <if test="requestTime != null" >
+        requestTime = #{requestTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.CostExpenseAccount" >
+    update cost_expense_account
+    set costTypeId = #{costTypeId,jdbcType=BIGINT},
+      isBudget = #{isBudget,jdbcType=VARCHAR},
+      createMonth = #{createMonth,jdbcType=DATE},
+      payModel = #{payModel,jdbcType=VARCHAR},
+      companyId = #{companyId,jdbcType=BIGINT},
+      beginDate = #{beginDate,jdbcType=DATE},
+      endDate = #{endDate,jdbcType=DATE},
+      dayCount = #{dayCount,jdbcType=INTEGER},
+      totalMoney = #{totalMoney,jdbcType=DECIMAL},
+      memo = #{memo,jdbcType=VARCHAR},
+      approverId = #{approverId,jdbcType=BIGINT},
+      expenseType = #{expenseType,jdbcType=VARCHAR},
+      status = #{status,jdbcType=VARCHAR},
+      ownerId = #{ownerId,jdbcType=BIGINT},
+      requestTime = #{requestTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

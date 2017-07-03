@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lisy.dao.CostPersonLimitMapper">
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostPersonLimit">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="operantTime" jdbcType="TIMESTAMP" property="operantTime" />
+    <result column="deptId" jdbcType="BIGINT" property="deptId" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="subjectId" jdbcType="BIGINT" property="subjectId" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="costTypeId" jdbcType="BIGINT" property="costTypeId" />
+    <result column="isAvailable" jdbcType="INTEGER" property="isAvailable" />
+    <result column="createrId" jdbcType="BIGINT" property="createrId" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostPersonLimit">
+    insert into cost_person_limit (id, operantTime, deptId, 
+      createTime, subjectId, remark, 
+      costTypeId, isAvailable, createrId
+      )
+    values (#{id,jdbcType=BIGINT}, #{operantTime,jdbcType=TIMESTAMP}, #{deptId,jdbcType=BIGINT}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{subjectId,jdbcType=BIGINT}, #{remark,jdbcType=VARCHAR}, 
+      #{costTypeId,jdbcType=BIGINT}, #{isAvailable,jdbcType=INTEGER}, #{createrId,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostPersonLimit">
+    insert into cost_person_limit
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="operantTime != null">
+        operantTime,
+      </if>
+      <if test="deptId != null">
+        deptId,
+      </if>
+      <if test="createTime != null">
+        createTime,
+      </if>
+      <if test="subjectId != null">
+        subjectId,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="costTypeId != null">
+        costTypeId,
+      </if>
+      <if test="isAvailable != null">
+        isAvailable,
+      </if>
+      <if test="createrId != null">
+        createrId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="operantTime != null">
+        #{operantTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deptId != null">
+        #{deptId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="subjectId != null">
+        #{subjectId,jdbcType=BIGINT},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="costTypeId != null">
+        #{costTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="isAvailable != null">
+        #{isAvailable,jdbcType=INTEGER},
+      </if>
+      <if test="createrId != null">
+        #{createrId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostPersonLimit">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="operantTime" jdbcType="TIMESTAMP" property="operantTime" />
+    <result column="deptId" jdbcType="BIGINT" property="deptId" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="subjectId" jdbcType="BIGINT" property="subjectId" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="costTypeId" jdbcType="BIGINT" property="costTypeId" />
+    <result column="isAvailable" jdbcType="INTEGER" property="isAvailable" />
+    <result column="createrId" jdbcType="BIGINT" property="createrId" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostPersonLimit">
+    insert into cost_person_limit (id, operantTime, deptId, 
+      createTime, subjectId, remark, 
+      costTypeId, isAvailable, createrId
+      )
+    values (#{id,jdbcType=BIGINT}, #{operantTime,jdbcType=TIMESTAMP}, #{deptId,jdbcType=BIGINT}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{subjectId,jdbcType=BIGINT}, #{remark,jdbcType=VARCHAR}, 
+      #{costTypeId,jdbcType=BIGINT}, #{isAvailable,jdbcType=INTEGER}, #{createrId,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostPersonLimit">
+    insert into cost_person_limit
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="operantTime != null">
+        operantTime,
+      </if>
+      <if test="deptId != null">
+        deptId,
+      </if>
+      <if test="createTime != null">
+        createTime,
+      </if>
+      <if test="subjectId != null">
+        subjectId,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="costTypeId != null">
+        costTypeId,
+      </if>
+      <if test="isAvailable != null">
+        isAvailable,
+      </if>
+      <if test="createrId != null">
+        createrId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="operantTime != null">
+        #{operantTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deptId != null">
+        #{deptId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="subjectId != null">
+        #{subjectId,jdbcType=BIGINT},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="costTypeId != null">
+        #{costTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="isAvailable != null">
+        #{isAvailable,jdbcType=INTEGER},
+      </if>
+      <if test="createrId != null">
+        #{createrId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostPersonLimit">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="operantTime" jdbcType="TIMESTAMP" property="operantTime" />
+    <result column="deptId" jdbcType="BIGINT" property="deptId" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="subjectId" jdbcType="BIGINT" property="subjectId" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="costTypeId" jdbcType="BIGINT" property="costTypeId" />
+    <result column="isAvailable" jdbcType="INTEGER" property="isAvailable" />
+    <result column="createrId" jdbcType="BIGINT" property="createrId" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostPersonLimit">
+    insert into cost_person_limit (id, operantTime, deptId, 
+      createTime, subjectId, remark, 
+      costTypeId, isAvailable, createrId
+      )
+    values (#{id,jdbcType=BIGINT}, #{operantTime,jdbcType=TIMESTAMP}, #{deptId,jdbcType=BIGINT}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{subjectId,jdbcType=BIGINT}, #{remark,jdbcType=VARCHAR}, 
+      #{costTypeId,jdbcType=BIGINT}, #{isAvailable,jdbcType=INTEGER}, #{createrId,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostPersonLimit">
+    insert into cost_person_limit
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="operantTime != null">
+        operantTime,
+      </if>
+      <if test="deptId != null">
+        deptId,
+      </if>
+      <if test="createTime != null">
+        createTime,
+      </if>
+      <if test="subjectId != null">
+        subjectId,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="costTypeId != null">
+        costTypeId,
+      </if>
+      <if test="isAvailable != null">
+        isAvailable,
+      </if>
+      <if test="createrId != null">
+        createrId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="operantTime != null">
+        #{operantTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deptId != null">
+        #{deptId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="subjectId != null">
+        #{subjectId,jdbcType=BIGINT},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="costTypeId != null">
+        #{costTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="isAvailable != null">
+        #{isAvailable,jdbcType=INTEGER},
+      </if>
+      <if test="createrId != null">
+        #{createrId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostPersonLimit">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="operantTime" jdbcType="TIMESTAMP" property="operanttime" />
+    <result column="deptId" jdbcType="BIGINT" property="deptid" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="subjectId" jdbcType="BIGINT" property="subjectid" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="costTypeId" jdbcType="BIGINT" property="costtypeid" />
+    <result column="isAvailable" jdbcType="INTEGER" property="isavailable" />
+    <result column="createrId" jdbcType="BIGINT" property="createrid" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostPersonLimit">
+    insert into cost_person_limit (id, operantTime, deptId, 
+      createTime, subjectId, remark, 
+      costTypeId, isAvailable, createrId
+      )
+    values (#{id,jdbcType=BIGINT}, #{operanttime,jdbcType=TIMESTAMP}, #{deptid,jdbcType=BIGINT}, 
+      #{createtime,jdbcType=TIMESTAMP}, #{subjectid,jdbcType=BIGINT}, #{remark,jdbcType=VARCHAR}, 
+      #{costtypeid,jdbcType=BIGINT}, #{isavailable,jdbcType=INTEGER}, #{createrid,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostPersonLimit">
+    insert into cost_person_limit
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="operanttime != null">
+        operantTime,
+      </if>
+      <if test="deptid != null">
+        deptId,
+      </if>
+      <if test="createtime != null">
+        createTime,
+      </if>
+      <if test="subjectid != null">
+        subjectId,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="costtypeid != null">
+        costTypeId,
+      </if>
+      <if test="isavailable != null">
+        isAvailable,
+      </if>
+      <if test="createrid != null">
+        createrId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="operanttime != null">
+        #{operanttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deptid != null">
+        #{deptid,jdbcType=BIGINT},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="subjectid != null">
+        #{subjectid,jdbcType=BIGINT},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="costtypeid != null">
+        #{costtypeid,jdbcType=BIGINT},
+      </if>
+      <if test="isavailable != null">
+        #{isavailable,jdbcType=INTEGER},
+      </if>
+      <if test="createrid != null">
+        #{createrid,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostPersonLimit">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="operantTime" jdbcType="TIMESTAMP" property="operanttime" />
+    <result column="deptId" jdbcType="BIGINT" property="deptid" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="subjectId" jdbcType="BIGINT" property="subjectid" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="costTypeId" jdbcType="BIGINT" property="costtypeid" />
+    <result column="isAvailable" jdbcType="INTEGER" property="isavailable" />
+    <result column="createrId" jdbcType="BIGINT" property="createrid" />
+  </resultMap>
+  <insert id="insert" parameterType="com.lisy.entity.CostPersonLimit">
+    insert into cost_person_limit (id, operantTime, deptId, 
+      createTime, subjectId, remark, 
+      costTypeId, isAvailable, createrId
+      )
+    values (#{id,jdbcType=BIGINT}, #{operanttime,jdbcType=TIMESTAMP}, #{deptid,jdbcType=BIGINT}, 
+      #{createtime,jdbcType=TIMESTAMP}, #{subjectid,jdbcType=BIGINT}, #{remark,jdbcType=VARCHAR}, 
+      #{costtypeid,jdbcType=BIGINT}, #{isavailable,jdbcType=INTEGER}, #{createrid,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostPersonLimit">
+    insert into cost_person_limit
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="operanttime != null">
+        operantTime,
+      </if>
+      <if test="deptid != null">
+        deptId,
+      </if>
+      <if test="createtime != null">
+        createTime,
+      </if>
+      <if test="subjectid != null">
+        subjectId,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="costtypeid != null">
+        costTypeId,
+      </if>
+      <if test="isavailable != null">
+        isAvailable,
+      </if>
+      <if test="createrid != null">
+        createrId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="operanttime != null">
+        #{operanttime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="deptid != null">
+        #{deptid,jdbcType=BIGINT},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="subjectid != null">
+        #{subjectid,jdbcType=BIGINT},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="costtypeid != null">
+        #{costtypeid,jdbcType=BIGINT},
+      </if>
+      <if test="isavailable != null">
+        #{isavailable,jdbcType=INTEGER},
+      </if>
+      <if test="createrid != null">
+        #{createrid,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+</mapper>

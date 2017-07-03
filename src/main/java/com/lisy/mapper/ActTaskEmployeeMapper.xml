@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lisy.dao.ActTaskEmployeeMapper">
+  <resultMap id="BaseResultMap" type="com.lisy.entity.ActTaskEmployee">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="employeeId" jdbcType="BIGINT" property="employeeId" />
+    <result column="activeTaskId" jdbcType="BIGINT" property="activeTaskId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, employeeId, activeTaskId
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from act_task_employee
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from act_task_employee
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.ActTaskEmployee">
+    insert into act_task_employee (id, employeeId, activeTaskId
+      )
+    values (#{id,jdbcType=BIGINT}, #{employeeId,jdbcType=BIGINT}, #{activeTaskId,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.ActTaskEmployee">
+    insert into act_task_employee
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="employeeId != null">
+        employeeId,
+      </if>
+      <if test="activeTaskId != null">
+        activeTaskId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="employeeId != null">
+        #{employeeId,jdbcType=BIGINT},
+      </if>
+      <if test="activeTaskId != null">
+        #{activeTaskId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.ActTaskEmployee">
+    update act_task_employee
+    <set>
+      <if test="employeeId != null">
+        employeeId = #{employeeId,jdbcType=BIGINT},
+      </if>
+      <if test="activeTaskId != null">
+        activeTaskId = #{activeTaskId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.ActTaskEmployee">
+    update act_task_employee
+    set employeeId = #{employeeId,jdbcType=BIGINT},
+      activeTaskId = #{activeTaskId,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.ActTaskEmployee">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="employeeId" jdbcType="BIGINT" property="employeeId" />
+    <result column="activeTaskId" jdbcType="BIGINT" property="activeTaskId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, employeeId, activeTaskId
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from act_task_employee
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from act_task_employee
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.ActTaskEmployee">
+    insert into act_task_employee (id, employeeId, activeTaskId
+      )
+    values (#{id,jdbcType=BIGINT}, #{employeeId,jdbcType=BIGINT}, #{activeTaskId,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.ActTaskEmployee">
+    insert into act_task_employee
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="employeeId != null">
+        employeeId,
+      </if>
+      <if test="activeTaskId != null">
+        activeTaskId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="employeeId != null">
+        #{employeeId,jdbcType=BIGINT},
+      </if>
+      <if test="activeTaskId != null">
+        #{activeTaskId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.ActTaskEmployee">
+    update act_task_employee
+    <set>
+      <if test="employeeId != null">
+        employeeId = #{employeeId,jdbcType=BIGINT},
+      </if>
+      <if test="activeTaskId != null">
+        activeTaskId = #{activeTaskId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.ActTaskEmployee">
+    update act_task_employee
+    set employeeId = #{employeeId,jdbcType=BIGINT},
+      activeTaskId = #{activeTaskId,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.ActTaskEmployee">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="employeeId" jdbcType="BIGINT" property="employeeId" />
+    <result column="activeTaskId" jdbcType="BIGINT" property="activeTaskId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, employeeId, activeTaskId
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from act_task_employee
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from act_task_employee
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.ActTaskEmployee">
+    insert into act_task_employee (id, employeeId, activeTaskId
+      )
+    values (#{id,jdbcType=BIGINT}, #{employeeId,jdbcType=BIGINT}, #{activeTaskId,jdbcType=BIGINT}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.ActTaskEmployee">
+    insert into act_task_employee
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="employeeId != null">
+        employeeId,
+      </if>
+      <if test="activeTaskId != null">
+        activeTaskId,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="employeeId != null">
+        #{employeeId,jdbcType=BIGINT},
+      </if>
+      <if test="activeTaskId != null">
+        #{activeTaskId,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.ActTaskEmployee">
+    update act_task_employee
+    <set>
+      <if test="employeeId != null">
+        employeeId = #{employeeId,jdbcType=BIGINT},
+      </if>
+      <if test="activeTaskId != null">
+        activeTaskId = #{activeTaskId,jdbcType=BIGINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.ActTaskEmployee">
+    update act_task_employee
+    set employeeId = #{employeeId,jdbcType=BIGINT},
+      activeTaskId = #{activeTaskId,jdbcType=BIGINT}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

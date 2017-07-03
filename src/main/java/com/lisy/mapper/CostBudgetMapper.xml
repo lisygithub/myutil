@@ -1,0 +1,924 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lisy.dao.CostBudgetMapper">
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostBudget">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="budgetTypeId" jdbcType="BIGINT" property="budgetTypeId" />
+    <result column="budgetTime" jdbcType="VARCHAR" property="budgetTime" />
+    <result column="companyId" jdbcType="BIGINT" property="companyId" />
+    <result column="supperDeptId" jdbcType="BIGINT" property="supperDeptId" />
+    <result column="ownerDeptId" jdbcType="BIGINT" property="ownerDeptId" />
+    <result column="breedId" jdbcType="BIGINT" property="breedId" />
+    <result column="hospitalId" jdbcType="BIGINT" property="hospitalId" />
+    <result column="totalBudget" jdbcType="DECIMAL" property="totalBudget" />
+    <result column="isAllowable" jdbcType="INTEGER" property="isAllowable" />
+    <result column="createrId" jdbcType="BIGINT" property="createrId" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, budgetTypeId, budgetTime, companyId, supperDeptId, ownerDeptId, breedId, hospitalId, 
+    totalBudget, isAllowable, createrId, createTime, status
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cost_budget
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from cost_budget
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.CostBudget">
+    insert into cost_budget (id, budgetTypeId, budgetTime, 
+      companyId, supperDeptId, ownerDeptId, 
+      breedId, hospitalId, totalBudget, 
+      isAllowable, createrId, createTime, 
+      status)
+    values (#{id,jdbcType=BIGINT}, #{budgetTypeId,jdbcType=BIGINT}, #{budgetTime,jdbcType=VARCHAR}, 
+      #{companyId,jdbcType=BIGINT}, #{supperDeptId,jdbcType=BIGINT}, #{ownerDeptId,jdbcType=BIGINT}, 
+      #{breedId,jdbcType=BIGINT}, #{hospitalId,jdbcType=BIGINT}, #{totalBudget,jdbcType=DECIMAL}, 
+      #{isAllowable,jdbcType=INTEGER}, #{createrId,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{status,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostBudget">
+    insert into cost_budget
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="budgetTypeId != null">
+        budgetTypeId,
+      </if>
+      <if test="budgetTime != null">
+        budgetTime,
+      </if>
+      <if test="companyId != null">
+        companyId,
+      </if>
+      <if test="supperDeptId != null">
+        supperDeptId,
+      </if>
+      <if test="ownerDeptId != null">
+        ownerDeptId,
+      </if>
+      <if test="breedId != null">
+        breedId,
+      </if>
+      <if test="hospitalId != null">
+        hospitalId,
+      </if>
+      <if test="totalBudget != null">
+        totalBudget,
+      </if>
+      <if test="isAllowable != null">
+        isAllowable,
+      </if>
+      <if test="createrId != null">
+        createrId,
+      </if>
+      <if test="createTime != null">
+        createTime,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="budgetTypeId != null">
+        #{budgetTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="budgetTime != null">
+        #{budgetTime,jdbcType=VARCHAR},
+      </if>
+      <if test="companyId != null">
+        #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="supperDeptId != null">
+        #{supperDeptId,jdbcType=BIGINT},
+      </if>
+      <if test="ownerDeptId != null">
+        #{ownerDeptId,jdbcType=BIGINT},
+      </if>
+      <if test="breedId != null">
+        #{breedId,jdbcType=BIGINT},
+      </if>
+      <if test="hospitalId != null">
+        #{hospitalId,jdbcType=BIGINT},
+      </if>
+      <if test="totalBudget != null">
+        #{totalBudget,jdbcType=DECIMAL},
+      </if>
+      <if test="isAllowable != null">
+        #{isAllowable,jdbcType=INTEGER},
+      </if>
+      <if test="createrId != null">
+        #{createrId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.CostBudget">
+    update cost_budget
+    <set>
+      <if test="budgetTypeId != null">
+        budgetTypeId = #{budgetTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="budgetTime != null">
+        budgetTime = #{budgetTime,jdbcType=VARCHAR},
+      </if>
+      <if test="companyId != null">
+        companyId = #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="supperDeptId != null">
+        supperDeptId = #{supperDeptId,jdbcType=BIGINT},
+      </if>
+      <if test="ownerDeptId != null">
+        ownerDeptId = #{ownerDeptId,jdbcType=BIGINT},
+      </if>
+      <if test="breedId != null">
+        breedId = #{breedId,jdbcType=BIGINT},
+      </if>
+      <if test="hospitalId != null">
+        hospitalId = #{hospitalId,jdbcType=BIGINT},
+      </if>
+      <if test="totalBudget != null">
+        totalBudget = #{totalBudget,jdbcType=DECIMAL},
+      </if>
+      <if test="isAllowable != null">
+        isAllowable = #{isAllowable,jdbcType=INTEGER},
+      </if>
+      <if test="createrId != null">
+        createrId = #{createrId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        createTime = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.CostBudget">
+    update cost_budget
+    set budgetTypeId = #{budgetTypeId,jdbcType=BIGINT},
+      budgetTime = #{budgetTime,jdbcType=VARCHAR},
+      companyId = #{companyId,jdbcType=BIGINT},
+      supperDeptId = #{supperDeptId,jdbcType=BIGINT},
+      ownerDeptId = #{ownerDeptId,jdbcType=BIGINT},
+      breedId = #{breedId,jdbcType=BIGINT},
+      hospitalId = #{hospitalId,jdbcType=BIGINT},
+      totalBudget = #{totalBudget,jdbcType=DECIMAL},
+      isAllowable = #{isAllowable,jdbcType=INTEGER},
+      createrId = #{createrId,jdbcType=BIGINT},
+      createTime = #{createTime,jdbcType=TIMESTAMP},
+      status = #{status,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostBudget">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="budgetTypeId" jdbcType="BIGINT" property="budgetTypeId" />
+    <result column="budgetTime" jdbcType="VARCHAR" property="budgetTime" />
+    <result column="companyId" jdbcType="BIGINT" property="companyId" />
+    <result column="supperDeptId" jdbcType="BIGINT" property="supperDeptId" />
+    <result column="ownerDeptId" jdbcType="BIGINT" property="ownerDeptId" />
+    <result column="breedId" jdbcType="BIGINT" property="breedId" />
+    <result column="hospitalId" jdbcType="BIGINT" property="hospitalId" />
+    <result column="totalBudget" jdbcType="DECIMAL" property="totalBudget" />
+    <result column="isAllowable" jdbcType="INTEGER" property="isAllowable" />
+    <result column="createrId" jdbcType="BIGINT" property="createrId" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, budgetTypeId, budgetTime, companyId, supperDeptId, ownerDeptId, breedId, hospitalId, 
+    totalBudget, isAllowable, createrId, createTime, status
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cost_budget
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from cost_budget
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.CostBudget">
+    insert into cost_budget (id, budgetTypeId, budgetTime, 
+      companyId, supperDeptId, ownerDeptId, 
+      breedId, hospitalId, totalBudget, 
+      isAllowable, createrId, createTime, 
+      status)
+    values (#{id,jdbcType=BIGINT}, #{budgetTypeId,jdbcType=BIGINT}, #{budgetTime,jdbcType=VARCHAR}, 
+      #{companyId,jdbcType=BIGINT}, #{supperDeptId,jdbcType=BIGINT}, #{ownerDeptId,jdbcType=BIGINT}, 
+      #{breedId,jdbcType=BIGINT}, #{hospitalId,jdbcType=BIGINT}, #{totalBudget,jdbcType=DECIMAL}, 
+      #{isAllowable,jdbcType=INTEGER}, #{createrId,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{status,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostBudget">
+    insert into cost_budget
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="budgetTypeId != null">
+        budgetTypeId,
+      </if>
+      <if test="budgetTime != null">
+        budgetTime,
+      </if>
+      <if test="companyId != null">
+        companyId,
+      </if>
+      <if test="supperDeptId != null">
+        supperDeptId,
+      </if>
+      <if test="ownerDeptId != null">
+        ownerDeptId,
+      </if>
+      <if test="breedId != null">
+        breedId,
+      </if>
+      <if test="hospitalId != null">
+        hospitalId,
+      </if>
+      <if test="totalBudget != null">
+        totalBudget,
+      </if>
+      <if test="isAllowable != null">
+        isAllowable,
+      </if>
+      <if test="createrId != null">
+        createrId,
+      </if>
+      <if test="createTime != null">
+        createTime,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="budgetTypeId != null">
+        #{budgetTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="budgetTime != null">
+        #{budgetTime,jdbcType=VARCHAR},
+      </if>
+      <if test="companyId != null">
+        #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="supperDeptId != null">
+        #{supperDeptId,jdbcType=BIGINT},
+      </if>
+      <if test="ownerDeptId != null">
+        #{ownerDeptId,jdbcType=BIGINT},
+      </if>
+      <if test="breedId != null">
+        #{breedId,jdbcType=BIGINT},
+      </if>
+      <if test="hospitalId != null">
+        #{hospitalId,jdbcType=BIGINT},
+      </if>
+      <if test="totalBudget != null">
+        #{totalBudget,jdbcType=DECIMAL},
+      </if>
+      <if test="isAllowable != null">
+        #{isAllowable,jdbcType=INTEGER},
+      </if>
+      <if test="createrId != null">
+        #{createrId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.CostBudget">
+    update cost_budget
+    <set>
+      <if test="budgetTypeId != null">
+        budgetTypeId = #{budgetTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="budgetTime != null">
+        budgetTime = #{budgetTime,jdbcType=VARCHAR},
+      </if>
+      <if test="companyId != null">
+        companyId = #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="supperDeptId != null">
+        supperDeptId = #{supperDeptId,jdbcType=BIGINT},
+      </if>
+      <if test="ownerDeptId != null">
+        ownerDeptId = #{ownerDeptId,jdbcType=BIGINT},
+      </if>
+      <if test="breedId != null">
+        breedId = #{breedId,jdbcType=BIGINT},
+      </if>
+      <if test="hospitalId != null">
+        hospitalId = #{hospitalId,jdbcType=BIGINT},
+      </if>
+      <if test="totalBudget != null">
+        totalBudget = #{totalBudget,jdbcType=DECIMAL},
+      </if>
+      <if test="isAllowable != null">
+        isAllowable = #{isAllowable,jdbcType=INTEGER},
+      </if>
+      <if test="createrId != null">
+        createrId = #{createrId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        createTime = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.CostBudget">
+    update cost_budget
+    set budgetTypeId = #{budgetTypeId,jdbcType=BIGINT},
+      budgetTime = #{budgetTime,jdbcType=VARCHAR},
+      companyId = #{companyId,jdbcType=BIGINT},
+      supperDeptId = #{supperDeptId,jdbcType=BIGINT},
+      ownerDeptId = #{ownerDeptId,jdbcType=BIGINT},
+      breedId = #{breedId,jdbcType=BIGINT},
+      hospitalId = #{hospitalId,jdbcType=BIGINT},
+      totalBudget = #{totalBudget,jdbcType=DECIMAL},
+      isAllowable = #{isAllowable,jdbcType=INTEGER},
+      createrId = #{createrId,jdbcType=BIGINT},
+      createTime = #{createTime,jdbcType=TIMESTAMP},
+      status = #{status,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostBudget">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="budgetTypeId" jdbcType="BIGINT" property="budgetTypeId" />
+    <result column="budgetTime" jdbcType="VARCHAR" property="budgetTime" />
+    <result column="companyId" jdbcType="BIGINT" property="companyId" />
+    <result column="supperDeptId" jdbcType="BIGINT" property="supperDeptId" />
+    <result column="ownerDeptId" jdbcType="BIGINT" property="ownerDeptId" />
+    <result column="breedId" jdbcType="BIGINT" property="breedId" />
+    <result column="hospitalId" jdbcType="BIGINT" property="hospitalId" />
+    <result column="totalBudget" jdbcType="DECIMAL" property="totalBudget" />
+    <result column="isAllowable" jdbcType="INTEGER" property="isAllowable" />
+    <result column="createrId" jdbcType="BIGINT" property="createrId" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, budgetTypeId, budgetTime, companyId, supperDeptId, ownerDeptId, breedId, hospitalId, 
+    totalBudget, isAllowable, createrId, createTime, status
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cost_budget
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from cost_budget
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.CostBudget">
+    insert into cost_budget (id, budgetTypeId, budgetTime, 
+      companyId, supperDeptId, ownerDeptId, 
+      breedId, hospitalId, totalBudget, 
+      isAllowable, createrId, createTime, 
+      status)
+    values (#{id,jdbcType=BIGINT}, #{budgetTypeId,jdbcType=BIGINT}, #{budgetTime,jdbcType=VARCHAR}, 
+      #{companyId,jdbcType=BIGINT}, #{supperDeptId,jdbcType=BIGINT}, #{ownerDeptId,jdbcType=BIGINT}, 
+      #{breedId,jdbcType=BIGINT}, #{hospitalId,jdbcType=BIGINT}, #{totalBudget,jdbcType=DECIMAL}, 
+      #{isAllowable,jdbcType=INTEGER}, #{createrId,jdbcType=BIGINT}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{status,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostBudget">
+    insert into cost_budget
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="budgetTypeId != null">
+        budgetTypeId,
+      </if>
+      <if test="budgetTime != null">
+        budgetTime,
+      </if>
+      <if test="companyId != null">
+        companyId,
+      </if>
+      <if test="supperDeptId != null">
+        supperDeptId,
+      </if>
+      <if test="ownerDeptId != null">
+        ownerDeptId,
+      </if>
+      <if test="breedId != null">
+        breedId,
+      </if>
+      <if test="hospitalId != null">
+        hospitalId,
+      </if>
+      <if test="totalBudget != null">
+        totalBudget,
+      </if>
+      <if test="isAllowable != null">
+        isAllowable,
+      </if>
+      <if test="createrId != null">
+        createrId,
+      </if>
+      <if test="createTime != null">
+        createTime,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="budgetTypeId != null">
+        #{budgetTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="budgetTime != null">
+        #{budgetTime,jdbcType=VARCHAR},
+      </if>
+      <if test="companyId != null">
+        #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="supperDeptId != null">
+        #{supperDeptId,jdbcType=BIGINT},
+      </if>
+      <if test="ownerDeptId != null">
+        #{ownerDeptId,jdbcType=BIGINT},
+      </if>
+      <if test="breedId != null">
+        #{breedId,jdbcType=BIGINT},
+      </if>
+      <if test="hospitalId != null">
+        #{hospitalId,jdbcType=BIGINT},
+      </if>
+      <if test="totalBudget != null">
+        #{totalBudget,jdbcType=DECIMAL},
+      </if>
+      <if test="isAllowable != null">
+        #{isAllowable,jdbcType=INTEGER},
+      </if>
+      <if test="createrId != null">
+        #{createrId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.CostBudget">
+    update cost_budget
+    <set>
+      <if test="budgetTypeId != null">
+        budgetTypeId = #{budgetTypeId,jdbcType=BIGINT},
+      </if>
+      <if test="budgetTime != null">
+        budgetTime = #{budgetTime,jdbcType=VARCHAR},
+      </if>
+      <if test="companyId != null">
+        companyId = #{companyId,jdbcType=BIGINT},
+      </if>
+      <if test="supperDeptId != null">
+        supperDeptId = #{supperDeptId,jdbcType=BIGINT},
+      </if>
+      <if test="ownerDeptId != null">
+        ownerDeptId = #{ownerDeptId,jdbcType=BIGINT},
+      </if>
+      <if test="breedId != null">
+        breedId = #{breedId,jdbcType=BIGINT},
+      </if>
+      <if test="hospitalId != null">
+        hospitalId = #{hospitalId,jdbcType=BIGINT},
+      </if>
+      <if test="totalBudget != null">
+        totalBudget = #{totalBudget,jdbcType=DECIMAL},
+      </if>
+      <if test="isAllowable != null">
+        isAllowable = #{isAllowable,jdbcType=INTEGER},
+      </if>
+      <if test="createrId != null">
+        createrId = #{createrId,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        createTime = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.CostBudget">
+    update cost_budget
+    set budgetTypeId = #{budgetTypeId,jdbcType=BIGINT},
+      budgetTime = #{budgetTime,jdbcType=VARCHAR},
+      companyId = #{companyId,jdbcType=BIGINT},
+      supperDeptId = #{supperDeptId,jdbcType=BIGINT},
+      ownerDeptId = #{ownerDeptId,jdbcType=BIGINT},
+      breedId = #{breedId,jdbcType=BIGINT},
+      hospitalId = #{hospitalId,jdbcType=BIGINT},
+      totalBudget = #{totalBudget,jdbcType=DECIMAL},
+      isAllowable = #{isAllowable,jdbcType=INTEGER},
+      createrId = #{createrId,jdbcType=BIGINT},
+      createTime = #{createTime,jdbcType=TIMESTAMP},
+      status = #{status,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostBudget">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="budgetTypeId" jdbcType="BIGINT" property="budgettypeid" />
+    <result column="budgetTime" jdbcType="VARCHAR" property="budgettime" />
+    <result column="companyId" jdbcType="BIGINT" property="companyid" />
+    <result column="supperDeptId" jdbcType="BIGINT" property="supperdeptid" />
+    <result column="ownerDeptId" jdbcType="BIGINT" property="ownerdeptid" />
+    <result column="breedId" jdbcType="BIGINT" property="breedid" />
+    <result column="hospitalId" jdbcType="BIGINT" property="hospitalid" />
+    <result column="totalBudget" jdbcType="DECIMAL" property="totalbudget" />
+    <result column="isAllowable" jdbcType="INTEGER" property="isallowable" />
+    <result column="createrId" jdbcType="BIGINT" property="createrid" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, budgetTypeId, budgetTime, companyId, supperDeptId, ownerDeptId, breedId, hospitalId, 
+    totalBudget, isAllowable, createrId, createTime, status
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cost_budget
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from cost_budget
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.CostBudget">
+    insert into cost_budget (id, budgetTypeId, budgetTime, 
+      companyId, supperDeptId, ownerDeptId, 
+      breedId, hospitalId, totalBudget, 
+      isAllowable, createrId, createTime, 
+      status)
+    values (#{id,jdbcType=BIGINT}, #{budgettypeid,jdbcType=BIGINT}, #{budgettime,jdbcType=VARCHAR}, 
+      #{companyid,jdbcType=BIGINT}, #{supperdeptid,jdbcType=BIGINT}, #{ownerdeptid,jdbcType=BIGINT}, 
+      #{breedid,jdbcType=BIGINT}, #{hospitalid,jdbcType=BIGINT}, #{totalbudget,jdbcType=DECIMAL}, 
+      #{isallowable,jdbcType=INTEGER}, #{createrid,jdbcType=BIGINT}, #{createtime,jdbcType=TIMESTAMP}, 
+      #{status,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostBudget">
+    insert into cost_budget
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="budgettypeid != null">
+        budgetTypeId,
+      </if>
+      <if test="budgettime != null">
+        budgetTime,
+      </if>
+      <if test="companyid != null">
+        companyId,
+      </if>
+      <if test="supperdeptid != null">
+        supperDeptId,
+      </if>
+      <if test="ownerdeptid != null">
+        ownerDeptId,
+      </if>
+      <if test="breedid != null">
+        breedId,
+      </if>
+      <if test="hospitalid != null">
+        hospitalId,
+      </if>
+      <if test="totalbudget != null">
+        totalBudget,
+      </if>
+      <if test="isallowable != null">
+        isAllowable,
+      </if>
+      <if test="createrid != null">
+        createrId,
+      </if>
+      <if test="createtime != null">
+        createTime,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="budgettypeid != null">
+        #{budgettypeid,jdbcType=BIGINT},
+      </if>
+      <if test="budgettime != null">
+        #{budgettime,jdbcType=VARCHAR},
+      </if>
+      <if test="companyid != null">
+        #{companyid,jdbcType=BIGINT},
+      </if>
+      <if test="supperdeptid != null">
+        #{supperdeptid,jdbcType=BIGINT},
+      </if>
+      <if test="ownerdeptid != null">
+        #{ownerdeptid,jdbcType=BIGINT},
+      </if>
+      <if test="breedid != null">
+        #{breedid,jdbcType=BIGINT},
+      </if>
+      <if test="hospitalid != null">
+        #{hospitalid,jdbcType=BIGINT},
+      </if>
+      <if test="totalbudget != null">
+        #{totalbudget,jdbcType=DECIMAL},
+      </if>
+      <if test="isallowable != null">
+        #{isallowable,jdbcType=INTEGER},
+      </if>
+      <if test="createrid != null">
+        #{createrid,jdbcType=BIGINT},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.CostBudget">
+    update cost_budget
+    <set>
+      <if test="budgettypeid != null">
+        budgetTypeId = #{budgettypeid,jdbcType=BIGINT},
+      </if>
+      <if test="budgettime != null">
+        budgetTime = #{budgettime,jdbcType=VARCHAR},
+      </if>
+      <if test="companyid != null">
+        companyId = #{companyid,jdbcType=BIGINT},
+      </if>
+      <if test="supperdeptid != null">
+        supperDeptId = #{supperdeptid,jdbcType=BIGINT},
+      </if>
+      <if test="ownerdeptid != null">
+        ownerDeptId = #{ownerdeptid,jdbcType=BIGINT},
+      </if>
+      <if test="breedid != null">
+        breedId = #{breedid,jdbcType=BIGINT},
+      </if>
+      <if test="hospitalid != null">
+        hospitalId = #{hospitalid,jdbcType=BIGINT},
+      </if>
+      <if test="totalbudget != null">
+        totalBudget = #{totalbudget,jdbcType=DECIMAL},
+      </if>
+      <if test="isallowable != null">
+        isAllowable = #{isallowable,jdbcType=INTEGER},
+      </if>
+      <if test="createrid != null">
+        createrId = #{createrid,jdbcType=BIGINT},
+      </if>
+      <if test="createtime != null">
+        createTime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.CostBudget">
+    update cost_budget
+    set budgetTypeId = #{budgettypeid,jdbcType=BIGINT},
+      budgetTime = #{budgettime,jdbcType=VARCHAR},
+      companyId = #{companyid,jdbcType=BIGINT},
+      supperDeptId = #{supperdeptid,jdbcType=BIGINT},
+      ownerDeptId = #{ownerdeptid,jdbcType=BIGINT},
+      breedId = #{breedid,jdbcType=BIGINT},
+      hospitalId = #{hospitalid,jdbcType=BIGINT},
+      totalBudget = #{totalbudget,jdbcType=DECIMAL},
+      isAllowable = #{isallowable,jdbcType=INTEGER},
+      createrId = #{createrid,jdbcType=BIGINT},
+      createTime = #{createtime,jdbcType=TIMESTAMP},
+      status = #{status,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.CostBudget">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="budgetTypeId" jdbcType="BIGINT" property="budgettypeid" />
+    <result column="budgetTime" jdbcType="VARCHAR" property="budgettime" />
+    <result column="companyId" jdbcType="BIGINT" property="companyid" />
+    <result column="supperDeptId" jdbcType="BIGINT" property="supperdeptid" />
+    <result column="ownerDeptId" jdbcType="BIGINT" property="ownerdeptid" />
+    <result column="breedId" jdbcType="BIGINT" property="breedid" />
+    <result column="hospitalId" jdbcType="BIGINT" property="hospitalid" />
+    <result column="totalBudget" jdbcType="DECIMAL" property="totalbudget" />
+    <result column="isAllowable" jdbcType="INTEGER" property="isallowable" />
+    <result column="createrId" jdbcType="BIGINT" property="createrid" />
+    <result column="createTime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, budgetTypeId, budgetTime, companyId, supperDeptId, ownerDeptId, breedId, hospitalId, 
+    totalBudget, isAllowable, createrId, createTime, status
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from cost_budget
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from cost_budget
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.CostBudget">
+    insert into cost_budget (id, budgetTypeId, budgetTime, 
+      companyId, supperDeptId, ownerDeptId, 
+      breedId, hospitalId, totalBudget, 
+      isAllowable, createrId, createTime, 
+      status)
+    values (#{id,jdbcType=BIGINT}, #{budgettypeid,jdbcType=BIGINT}, #{budgettime,jdbcType=VARCHAR}, 
+      #{companyid,jdbcType=BIGINT}, #{supperdeptid,jdbcType=BIGINT}, #{ownerdeptid,jdbcType=BIGINT}, 
+      #{breedid,jdbcType=BIGINT}, #{hospitalid,jdbcType=BIGINT}, #{totalbudget,jdbcType=DECIMAL}, 
+      #{isallowable,jdbcType=INTEGER}, #{createrid,jdbcType=BIGINT}, #{createtime,jdbcType=TIMESTAMP}, 
+      #{status,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.CostBudget">
+    insert into cost_budget
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="budgettypeid != null">
+        budgetTypeId,
+      </if>
+      <if test="budgettime != null">
+        budgetTime,
+      </if>
+      <if test="companyid != null">
+        companyId,
+      </if>
+      <if test="supperdeptid != null">
+        supperDeptId,
+      </if>
+      <if test="ownerdeptid != null">
+        ownerDeptId,
+      </if>
+      <if test="breedid != null">
+        breedId,
+      </if>
+      <if test="hospitalid != null">
+        hospitalId,
+      </if>
+      <if test="totalbudget != null">
+        totalBudget,
+      </if>
+      <if test="isallowable != null">
+        isAllowable,
+      </if>
+      <if test="createrid != null">
+        createrId,
+      </if>
+      <if test="createtime != null">
+        createTime,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="budgettypeid != null">
+        #{budgettypeid,jdbcType=BIGINT},
+      </if>
+      <if test="budgettime != null">
+        #{budgettime,jdbcType=VARCHAR},
+      </if>
+      <if test="companyid != null">
+        #{companyid,jdbcType=BIGINT},
+      </if>
+      <if test="supperdeptid != null">
+        #{supperdeptid,jdbcType=BIGINT},
+      </if>
+      <if test="ownerdeptid != null">
+        #{ownerdeptid,jdbcType=BIGINT},
+      </if>
+      <if test="breedid != null">
+        #{breedid,jdbcType=BIGINT},
+      </if>
+      <if test="hospitalid != null">
+        #{hospitalid,jdbcType=BIGINT},
+      </if>
+      <if test="totalbudget != null">
+        #{totalbudget,jdbcType=DECIMAL},
+      </if>
+      <if test="isallowable != null">
+        #{isallowable,jdbcType=INTEGER},
+      </if>
+      <if test="createrid != null">
+        #{createrid,jdbcType=BIGINT},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.CostBudget">
+    update cost_budget
+    <set>
+      <if test="budgettypeid != null">
+        budgetTypeId = #{budgettypeid,jdbcType=BIGINT},
+      </if>
+      <if test="budgettime != null">
+        budgetTime = #{budgettime,jdbcType=VARCHAR},
+      </if>
+      <if test="companyid != null">
+        companyId = #{companyid,jdbcType=BIGINT},
+      </if>
+      <if test="supperdeptid != null">
+        supperDeptId = #{supperdeptid,jdbcType=BIGINT},
+      </if>
+      <if test="ownerdeptid != null">
+        ownerDeptId = #{ownerdeptid,jdbcType=BIGINT},
+      </if>
+      <if test="breedid != null">
+        breedId = #{breedid,jdbcType=BIGINT},
+      </if>
+      <if test="hospitalid != null">
+        hospitalId = #{hospitalid,jdbcType=BIGINT},
+      </if>
+      <if test="totalbudget != null">
+        totalBudget = #{totalbudget,jdbcType=DECIMAL},
+      </if>
+      <if test="isallowable != null">
+        isAllowable = #{isallowable,jdbcType=INTEGER},
+      </if>
+      <if test="createrid != null">
+        createrId = #{createrid,jdbcType=BIGINT},
+      </if>
+      <if test="createtime != null">
+        createTime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.CostBudget">
+    update cost_budget
+    set budgetTypeId = #{budgettypeid,jdbcType=BIGINT},
+      budgetTime = #{budgettime,jdbcType=VARCHAR},
+      companyId = #{companyid,jdbcType=BIGINT},
+      supperDeptId = #{supperdeptid,jdbcType=BIGINT},
+      ownerDeptId = #{ownerdeptid,jdbcType=BIGINT},
+      breedId = #{breedid,jdbcType=BIGINT},
+      hospitalId = #{hospitalid,jdbcType=BIGINT},
+      totalBudget = #{totalbudget,jdbcType=DECIMAL},
+      isAllowable = #{isallowable,jdbcType=INTEGER},
+      createrId = #{createrid,jdbcType=BIGINT},
+      createTime = #{createtime,jdbcType=TIMESTAMP},
+      status = #{status,jdbcType=INTEGER}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

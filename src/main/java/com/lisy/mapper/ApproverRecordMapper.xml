@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lisy.dao.ApproverRecordMapper">
+  <resultMap id="BaseResultMap" type="com.lisy.entity.ApproverRecord">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="node" jdbcType="INTEGER" property="node" />
+    <result column="approver" jdbcType="BIGINT" property="approver" />
+    <result column="idea" jdbcType="VARCHAR" property="idea" />
+    <result column="result" jdbcType="INTEGER" property="result" />
+    <result column="time" jdbcType="TIMESTAMP" property="time" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, node, approver, idea, result, time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from approver_record
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from approver_record
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.ApproverRecord">
+    insert into approver_record (id, node, approver, 
+      idea, result, time
+      )
+    values (#{id,jdbcType=BIGINT}, #{node,jdbcType=INTEGER}, #{approver,jdbcType=BIGINT}, 
+      #{idea,jdbcType=VARCHAR}, #{result,jdbcType=INTEGER}, #{time,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.ApproverRecord">
+    insert into approver_record
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="node != null">
+        node,
+      </if>
+      <if test="approver != null">
+        approver,
+      </if>
+      <if test="idea != null">
+        idea,
+      </if>
+      <if test="result != null">
+        result,
+      </if>
+      <if test="time != null">
+        time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="node != null">
+        #{node,jdbcType=INTEGER},
+      </if>
+      <if test="approver != null">
+        #{approver,jdbcType=BIGINT},
+      </if>
+      <if test="idea != null">
+        #{idea,jdbcType=VARCHAR},
+      </if>
+      <if test="result != null">
+        #{result,jdbcType=INTEGER},
+      </if>
+      <if test="time != null">
+        #{time,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.ApproverRecord">
+    update approver_record
+    <set>
+      <if test="node != null">
+        node = #{node,jdbcType=INTEGER},
+      </if>
+      <if test="approver != null">
+        approver = #{approver,jdbcType=BIGINT},
+      </if>
+      <if test="idea != null">
+        idea = #{idea,jdbcType=VARCHAR},
+      </if>
+      <if test="result != null">
+        result = #{result,jdbcType=INTEGER},
+      </if>
+      <if test="time != null">
+        time = #{time,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.ApproverRecord">
+    update approver_record
+    set node = #{node,jdbcType=INTEGER},
+      approver = #{approver,jdbcType=BIGINT},
+      idea = #{idea,jdbcType=VARCHAR},
+      result = #{result,jdbcType=INTEGER},
+      time = #{time,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.ApproverRecord">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="node" jdbcType="INTEGER" property="node" />
+    <result column="approver" jdbcType="BIGINT" property="approver" />
+    <result column="idea" jdbcType="VARCHAR" property="idea" />
+    <result column="result" jdbcType="INTEGER" property="result" />
+    <result column="time" jdbcType="TIMESTAMP" property="time" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, node, approver, idea, result, time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from approver_record
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from approver_record
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.ApproverRecord">
+    insert into approver_record (id, node, approver, 
+      idea, result, time
+      )
+    values (#{id,jdbcType=BIGINT}, #{node,jdbcType=INTEGER}, #{approver,jdbcType=BIGINT}, 
+      #{idea,jdbcType=VARCHAR}, #{result,jdbcType=INTEGER}, #{time,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.ApproverRecord">
+    insert into approver_record
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="node != null">
+        node,
+      </if>
+      <if test="approver != null">
+        approver,
+      </if>
+      <if test="idea != null">
+        idea,
+      </if>
+      <if test="result != null">
+        result,
+      </if>
+      <if test="time != null">
+        time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="node != null">
+        #{node,jdbcType=INTEGER},
+      </if>
+      <if test="approver != null">
+        #{approver,jdbcType=BIGINT},
+      </if>
+      <if test="idea != null">
+        #{idea,jdbcType=VARCHAR},
+      </if>
+      <if test="result != null">
+        #{result,jdbcType=INTEGER},
+      </if>
+      <if test="time != null">
+        #{time,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.ApproverRecord">
+    update approver_record
+    <set>
+      <if test="node != null">
+        node = #{node,jdbcType=INTEGER},
+      </if>
+      <if test="approver != null">
+        approver = #{approver,jdbcType=BIGINT},
+      </if>
+      <if test="idea != null">
+        idea = #{idea,jdbcType=VARCHAR},
+      </if>
+      <if test="result != null">
+        result = #{result,jdbcType=INTEGER},
+      </if>
+      <if test="time != null">
+        time = #{time,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.ApproverRecord">
+    update approver_record
+    set node = #{node,jdbcType=INTEGER},
+      approver = #{approver,jdbcType=BIGINT},
+      idea = #{idea,jdbcType=VARCHAR},
+      result = #{result,jdbcType=INTEGER},
+      time = #{time,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <resultMap id="BaseResultMap" type="com.lisy.entity.ApproverRecord">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="node" jdbcType="INTEGER" property="node" />
+    <result column="approver" jdbcType="BIGINT" property="approver" />
+    <result column="idea" jdbcType="VARCHAR" property="idea" />
+    <result column="result" jdbcType="INTEGER" property="result" />
+    <result column="time" jdbcType="TIMESTAMP" property="time" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, node, approver, idea, result, time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from approver_record
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from approver_record
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.lisy.entity.ApproverRecord">
+    insert into approver_record (id, node, approver, 
+      idea, result, time
+      )
+    values (#{id,jdbcType=BIGINT}, #{node,jdbcType=INTEGER}, #{approver,jdbcType=BIGINT}, 
+      #{idea,jdbcType=VARCHAR}, #{result,jdbcType=INTEGER}, #{time,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.lisy.entity.ApproverRecord">
+    insert into approver_record
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="node != null">
+        node,
+      </if>
+      <if test="approver != null">
+        approver,
+      </if>
+      <if test="idea != null">
+        idea,
+      </if>
+      <if test="result != null">
+        result,
+      </if>
+      <if test="time != null">
+        time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="node != null">
+        #{node,jdbcType=INTEGER},
+      </if>
+      <if test="approver != null">
+        #{approver,jdbcType=BIGINT},
+      </if>
+      <if test="idea != null">
+        #{idea,jdbcType=VARCHAR},
+      </if>
+      <if test="result != null">
+        #{result,jdbcType=INTEGER},
+      </if>
+      <if test="time != null">
+        #{time,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.lisy.entity.ApproverRecord">
+    update approver_record
+    <set>
+      <if test="node != null">
+        node = #{node,jdbcType=INTEGER},
+      </if>
+      <if test="approver != null">
+        approver = #{approver,jdbcType=BIGINT},
+      </if>
+      <if test="idea != null">
+        idea = #{idea,jdbcType=VARCHAR},
+      </if>
+      <if test="result != null">
+        result = #{result,jdbcType=INTEGER},
+      </if>
+      <if test="time != null">
+        time = #{time,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.lisy.entity.ApproverRecord">
+    update approver_record
+    set node = #{node,jdbcType=INTEGER},
+      approver = #{approver,jdbcType=BIGINT},
+      idea = #{idea,jdbcType=VARCHAR},
+      result = #{result,jdbcType=INTEGER},
+      time = #{time,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
